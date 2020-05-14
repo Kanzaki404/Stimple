@@ -40,7 +40,7 @@ export default function Overview() {
             </Menu.Item>
           </Menu.Menu>
         </Menu>
-              <Courses className='course-container' sendData={data}/>
+              <Courses sendData={data}/>
               <Courses/>
               <Courses/>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import StudentProfile from "./studentComponents/studentProfile";
 import Stats from "./studentComponents/stats";
 import Overview from "./studentComponents/overview";
-import '../../styles/containers.css'
+
 
 export default function StudentMain() {
   return (

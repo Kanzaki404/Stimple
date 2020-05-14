@@ -31,14 +31,27 @@
 
 .student-overview {
     grid-area: "Overview";
-    border: 1px solid red;
+
 }
 
-.profile-comp { grid-area: Profile; }
+.profile-comp { 
+    grid-area: Profile;
+   
+}
+
+.image{
+    img{
+        border: 1px solid transparent;
+        border-radius: 10px !important;
+    }
+}
 
 .progress-comp { grid-area: Stats; }
 
-.student-overview { grid-area: Overview; }
+.student-overview { 
+    grid-area: Overview;
+    /* margin-top: -3rem;  */
+}
 
 .student-container{
 
@@ -48,6 +61,7 @@
   gap: 1px 1px;
   grid-template-areas: "Profile Overview Overview Overview" "Stats Overview Overview Overview";
   height: 90vh;
+  margin-top: 3rem;
 }
 
 .card{
@@ -56,6 +70,7 @@
 
 .course-comp{
     border: 1px solid black;
+    border-radius: 10px;
     min-height: 20vh;
     padding: 1rem;
     margin: 1rem;

@@ -1,9 +1,18 @@
 import React from 'react'
+import '../../styles/nav.css'
+import Hamburger from '../../assets/button.svg'
 
 export default function NavBar() {
     return (
-        <div>
-            <p>Stimple</p>
-        </div>
+        <header className='navbar'>
+            <div className='nav-wrapper'>
+            <img className='menu-btn' src={Hamburger} alt="menu"/>
+            <h1>Stimple</h1>
+
+
+            </div>
+        </header>
     )
 }
+
+
