@@ -1,16 +1,16 @@
 import React from 'react';
-import NavBar from './components/nav-bar/navBar'
-import LogIn from './components/logIn/logIn'
+/* import NavBar from './components/nav-bar/navBar' */
+import LogIn from './components/logIn/LogIn'
+/* import LoginHeader from './components/logIn/loginHeader' */
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <NavBar/>
-      </header>
+
       <main>
-        <LogIn/>
+        <LogIn />
       </main>
     </div>
   );
