@@ -1,7 +1,9 @@
 import React from 'react';
 import NavBar from './components/nav-bar/navBar'
-import LogIn from './components/logIn/logIn'
+//import LogIn from './components/logIn/logIn'
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
+import Student from './components/student/studentMain'
 
 function App() {
   return (
@@ -10,10 +12,11 @@ function App() {
        <NavBar/>
       </header>
       <main>
-        <LogIn/>
+        <Student/>
+        
       </main>
     </div>
   );
 }
-
+//<LogIn/>
 export default App;

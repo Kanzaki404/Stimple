@@ -1,0 +1,63 @@
+/* .student-overview-container{
+    border: 1px solid red;
+   
+    height: 90vh;
+}
+
+.student-stats-container{
+    border: 1px solid blue;
+    width: 150px;
+    height: 80vh;
+}
+
+.student-profile-container{
+    border: 1px solid green;
+    width: 150px;
+    height: 50vh;
+} */
+
+
+
+.profile-comp{
+    grid-area: "StudentProfile";
+    border: 1px solid green;
+
+}
+
+.progress-comp{
+    grid-area: "Stats";
+    border: 1px solid blue;
+}
+
+.student-overview {
+    grid-area: "Overview";
+    border: 1px solid red;
+}
+
+.profile-comp { grid-area: Profile; }
+
+.progress-comp { grid-area: Stats; }
+
+.student-overview { grid-area: Overview; }
+
+.student-container{
+
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Profile Overview Overview Overview" "Stats Overview Overview Overview";
+  height: 90vh;
+}
+
+.card{
+    position: relative;
+}
+
+.course-comp{
+    border: 1px solid black;
+    min-height: 20vh;
+    padding: 1rem;
+    margin: 1rem;
+}
+
