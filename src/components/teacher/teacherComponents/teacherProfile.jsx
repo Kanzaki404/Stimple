@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function teacherProfile() {
+export default function SeacherProfile() {
     return (
         <div>
             

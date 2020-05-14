@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function viewCourses() {
+export default function ViewCourses() {
     return (
         <div>
             
