@@ -3,12 +3,18 @@
 .menu-btn{
     width: 2rem;
     margin-right: 2rem;
+    margin-left: 5rem;
     margin-top: 4px;
 }
 
 .navbar{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    p{
+        font-size: 1rem;
+    }
     h1{
         margin: auto;
         font-family: 'Poiret One', cursive;
@@ -22,4 +28,21 @@
     display: flex;
     align-items: baseline;
     margin-left: 2rem;
+}
+
+.logged-in {
+    display: flex;
+    margin: auto 0;
+    // margin-left: 79rem;
+  
+
+}
+
+.logout-btn{
+    background-color: #E65425 !important;
+    margin-right: 2rem;
+    img{
+        min-width: 1vw;
+        max-width: 1vw;
+    }
 }

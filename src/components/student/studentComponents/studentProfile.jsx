@@ -5,7 +5,7 @@ export default function StudentProfile() {
    
   return (
     <div className="student-profile-container">
-      <Card className="card" >
+      <Card raised className="card" >
         <Image className="image" src={imagee} wrapped ui={false} />
         <Card.Content>
           <Card.Header>Bill Gates</Card.Header>
