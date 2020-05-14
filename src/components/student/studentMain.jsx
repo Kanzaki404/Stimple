@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function studentMain() {
+export default function StudentMain() {
     return (
         <div>
             

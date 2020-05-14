@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function searchCourses() {
+export default function SearchCourses() {
     return (
         <div>
             
