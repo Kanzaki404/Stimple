@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 .menu-btn{
     width: 2rem;
+    margin-right: 2rem;
+    margin-top: 4px;
 }
 
 .navbar{
     display: flex;
     flex-direction: row;
+    h1{
+        margin: auto;
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+
+
+    }
 }
 
-.nanavbar > h1 {
-    
+.nav-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin-left: 2rem;
 }

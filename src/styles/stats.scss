@@ -61,7 +61,7 @@ html,
 
 
 .set-size {
-  font-size: 10em;
+  font-size: 15rem;
 }
 
 .charts-container {
@@ -169,5 +169,17 @@ html,
   .label {
     background: transparent;
   }
+  
+}
+
+.stats-wrapper{
+  margin-top: 3vh;
+  border: 1px solid #ccc;
+  display: inline-block;
+  width: 21vw;
+  border-radius: 10px;
+  h2{
+        margin: 1rem !important;
+      }
   
 }

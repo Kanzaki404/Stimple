@@ -1,32 +1,33 @@
-/* .student-overview-container{
-    border: 1px solid red;
-   
-    height: 90vh;
-}
 
+ 
+ .student-overview-container{
+    
+   
+    width:70vw;
+}
+/*
 .student-stats-container{
     border: 1px solid blue;
     width: 150px;
     height: 80vh;
 }
-
+*/
 .student-profile-container{
-    border: 1px solid green;
-    width: 150px;
-    height: 50vh;
-} */
+    display: flex;
+justify-content: center;
+
+} 
 
 
 
 .profile-comp{
     grid-area: "StudentProfile";
-    border: 1px solid green;
+    margin-top: 3rem;
 
 }
 
 .progress-comp{
     grid-area: "Stats";
-    border: 1px solid blue;
 }
 
 .student-overview {
@@ -50,7 +51,7 @@
 
 .student-overview { 
     grid-area: Overview;
-    /* margin-top: -3rem;  */
+    margin-top: 3rem;
 }
 
 .student-container{
@@ -60,8 +61,8 @@
   grid-template-rows: 1fr 1fr;
   gap: 1px 1px;
   grid-template-areas: "Profile Overview Overview Overview" "Stats Overview Overview Overview";
-  height: 90vh;
-  margin-top: 3rem;
+  height: 100vh;
+//   margin-top: 1rem;
 }
 
 .card{
@@ -75,4 +76,3 @@
     padding: 1rem;
     margin: 1rem;
 }
-

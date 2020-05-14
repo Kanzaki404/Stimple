@@ -1,6 +1,6 @@
 import React, {useState}from 'react'
 import Courses from './courses'
-import { Input, Menu, Segment } from 'semantic-ui-react'
+import { Input, Menu } from 'semantic-ui-react'
 
 export default function Overview() {
 
