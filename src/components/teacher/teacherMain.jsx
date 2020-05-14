@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function teacherMain() {
+export default function TeacherMain() {
     return (
         <div>
             <p>hello</p>
