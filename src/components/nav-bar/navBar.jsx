@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../styles/nav.css'
 import Hamburger from '../../assets/button.svg'
 
 export default function NavBar() {
