@@ -1,11 +1,11 @@
 import React, {useState}from 'react'
 import Courses from './courses'
-import { Input, Menu } from 'semantic-ui-react'
+import { Input, Menu, Label } from 'semantic-ui-react'
 
 export default function Overview() {
 
     const [tab, setTab] = useState('Current');
-    const [data, setData] = useState('current')
+    const [data, setData] = useState('JavaScript1')
     // const [currentCourse, setCurrentCourses] = useState([
     //   {name:'JavaScript 2', completion: 1 },
     //   {name:'JavaScript 3', completion: 2 }
@@ -36,22 +36,37 @@ export default function Overview() {
         <div className='student-overview-container'>
            <Menu attached='top' tabular>
           <Menu.Item
+            as='a'
             name='Current'
             active={tab === 'Current'}
-            onClick={() => handleClick('Current','CurrentData')}
-          />
-
+            onClick={() => handleClick('Current','JavaScript1')}
+            > Current
+              <Label color='yellow' floating circular>
+                1
+              </Label>
+            </Menu.Item>
           <Menu.Item
+            as='a'
             name='Completed'
             active={tab === 'Completed'}
-            onClick={() => handleClick('Completed','CompleteData')}
-          />
-
+            onClick={() => handleClick('Completed','JavaScript2')}
+          > Completed
+              <Label color='teal' floating circular>
+              3
+            </Label>
+           </Menu.Item>
           <Menu.Item
+            as='a'
             name='Uncomplete'
             active={tab === 'Uncomplete'}
             onClick={() => handleClick('Uncomplete','Uncomplete')}
-          />
+          >
+            Incompleted
+
+          <Label color='red' floating circular>
+            22
+          </Label>
+    </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item>
               <Input
