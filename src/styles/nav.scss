@@ -20,8 +20,6 @@
         margin: auto;
         font-family: 'Poiret One', cursive;
         font-weight: bold;
-
-
     }
 }
 
@@ -50,3 +48,30 @@
         max-width: 13px;
     }
 }
+
+@media(max-width: 835px) {
+
+    .menu-btn {
+        margin-left: 0rem;
+    }
+}
+
+@media(max-width: 863px) {
+
+    .menu-btn {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 443px) {
+
+    .logged-in {
+
+    p {
+
+        display: none!important;}
+
+    }
+}
+
+
