@@ -7,7 +7,11 @@ export default function ViewStudents() {
     return (
         <div className='student-overview-container'>
 
-            <div className="student-info">
+
+
+        <div className="search-students">
+
+        <div className="student-info">
                 <h2>ViewStudents</h2>
                 <hr/>
 
@@ -24,13 +28,10 @@ export default function ViewStudents() {
                 </div>
             </div>
 
-        <div className="search-students">
-
-
         </div>
 
 
-        <div className="side-border">
+        <div className="side-border-teacher">
             <Students/>
               <Students/>
               <Students/>

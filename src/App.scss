@@ -3,6 +3,7 @@
 @import './styles/nav.scss';
 @import './styles/courses.scss';
 @import './styles/login.scss';
+@import './styles/searchStudent.scss';
 .App {
   text-align: center;
 }
@@ -19,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #3a3a3a;
   min-height: 5vh;
   display: flex;
   flex-direction: column;

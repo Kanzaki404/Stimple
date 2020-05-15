@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio } from 'semantic-ui-react'
 
-const LogIn = () => {
+const LogIn = ({datafromLogIn}) => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -26,7 +26,7 @@ const LogIn = () => {
     /* const handleLoginBtn = () => {
         setResult()
     } */
-
+    
 
 return (
   <Segment placeholder className="loginForm">
@@ -52,11 +52,15 @@ return (
           />
 
           <Button content='Login' primary  />
+          <hr/>
+        <p>for testing purposes</p>
+        <button onClick={()=>datafromLogIn('Student')}>Student</button>
+        <button onClick={()=>datafromLogIn('Teacher')}>Teacher</button>
         </Form>
       </Grid.Column>
-
       <Grid.Column verticalAlign='middle'>
         <Button content='Sign up' icon='signup' size='big' />
+        
       </Grid.Column>
     </Grid>
 
