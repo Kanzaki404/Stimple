@@ -57,3 +57,20 @@
   background: rgba(0, 0, 0, 0.096) !important;
 
 }
+
+footer{
+  background-color: #282c34;
+    min-height: 5vh;
+}
+
+
+@media(max-width: 1300px) {
+
+  ::-webkit-scrollbar {
+
+    margin-right: 1000px;
+
+
+  }
+
+}

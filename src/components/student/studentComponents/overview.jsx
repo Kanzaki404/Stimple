@@ -5,7 +5,7 @@ import { Input, Menu } from 'semantic-ui-react'
 export default function Overview() {
 
     const [tab, setTab] = useState('Current');
-    const [data, setData] = useState('current')
+    const [data, setData] = useState('JavaScript1')
     // const [currentCourse, setCurrentCourses] = useState([
     //   {name:'JavaScript 2', completion: 1 },
     //   {name:'JavaScript 3', completion: 2 }
@@ -38,13 +38,13 @@ export default function Overview() {
           <Menu.Item
             name='Current'
             active={tab === 'Current'}
-            onClick={() => handleClick('Current','CurrentData')}
+            onClick={() => handleClick('Current','JavaScript1')}
           />
 
           <Menu.Item
             name='Completed'
             active={tab === 'Completed'}
-            onClick={() => handleClick('Completed','CompleteData')}
+            onClick={() => handleClick('Completed','JavaScript2')}
           />
 
           <Menu.Item

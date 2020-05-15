@@ -15,6 +15,9 @@ function App() {
         <Student/>
         
       </main>
+      <footer>
+        Hej
+      </footer>
     </div>
   );
 }
