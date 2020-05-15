@@ -2,7 +2,7 @@
 @import './styles/stats.scss';
 @import './styles/nav.scss';
 @import './styles/courses.scss';
-@import './styles/viewStudent.scss';
+@import './styles/login.scss';
 .App {
   text-align: center;
 }
@@ -64,6 +64,7 @@ footer{
     min-height: 5vh;
     color: white;
 }
+
 
 
 @media(max-width: 1300px) {
