@@ -3,8 +3,8 @@ import NavBar from './components/nav-bar/navBar'
 //import LogIn from './components/logIn/logIn'
 import './App.scss';
 import 'semantic-ui-css/semantic.min.css'
-import Student from './components/student/studentMain'
-
+//import Student from './components/student/studentMain'
+import Teacher from './components/teacher/teacherMain'
 function App() {
   return (
     <div className="App">
@@ -12,7 +12,7 @@ function App() {
        <NavBar/>
       </header>
       <main>
-        <Student/>
+        <Teacher/>
         
       </main>
       <footer>
@@ -21,5 +21,5 @@ function App() {
     </div>
   );
 }
-//<LogIn/>
+//<LogIn/> <Student/>
 export default App;
