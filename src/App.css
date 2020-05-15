@@ -14,3 +14,13 @@ html{
   display: flex;
   justify-content: flex-start;
 }
+
+.loginForm {
+  height: 100vh;
+}
+
+.radioBtns {
+  display: flex;
+  flex-direction: row;
+}
+
