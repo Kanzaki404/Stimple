@@ -1,6 +1,7 @@
 @import './styles/containers.scss';
 @import './styles/stats.scss';
 @import './styles/nav.scss';
+@import './styles/courses.scss';
 .App {
   text-align: center;
 }
@@ -18,7 +19,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
 
@@ -38,4 +39,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(102, 102, 102);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888;  */
+  background: rgba(0, 0, 0, 0.096) !important;
+
 }

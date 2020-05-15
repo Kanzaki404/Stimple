@@ -1,5 +1,5 @@
 import React from 'react'
-import Hamburger from '../../assets/button.svg'
+import Hamburger from '../../assets/menu.svg'
 import {Button} from 'semantic-ui-react'
 import Logout from '../../assets/technology.svg'
 
@@ -15,8 +15,9 @@ export default function NavBar() {
             </div>
             <div className='logged-in'>
                 <p>Student: Bill Gates</p>
+                <Button className='logout-btn'><img src={Logout} alt="logout"/></Button>
             </div>
-            <Button className='logout-btn'><img src={Logout} alt="logout"/></Button>
+
         </header>
             </div>
     )

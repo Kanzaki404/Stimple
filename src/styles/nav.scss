@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 .menu-btn{
-    width: 2rem;
     margin-right: 2rem;
     margin-left: 5rem;
     margin-top: 4px;
+    width: 25px;
+    height: 29px;
 }
 
 .navbar{
@@ -34,15 +35,18 @@
     display: flex;
     margin: auto 0;
     // margin-left: 79rem;
-  
+  p{
+    margin: auto !important;
+  }
 
 }
 
 .logout-btn{
     background-color: #E65425 !important;
     margin-right: 2rem;
+    margin-left: 25px !important;
     img{
-        min-width: 1vw;
-        max-width: 1vw;
+        min-width: 13px;
+        max-width: 13px;
     }
 }
