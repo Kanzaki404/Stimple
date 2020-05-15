@@ -4,6 +4,11 @@
 
 
     width:65vw;
+    .active{
+        background: none #282c34c4 !important;
+        color: rgba(255, 255, 255, 0.95) !important;
+        border-color: snow !important;
+    }
     
 }
 .ui.attached.tabular.menu{
