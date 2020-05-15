@@ -6,31 +6,31 @@ export default function Overview() {
 
     const [tab, setTab] = useState('Current');
     const [data, setData] = useState('current')
-    const [currentCourse, setCurrentCourses] = useState([
-      {name:'JavaScript 2', completion: 1 },
-      {name:'JavaScript 3', completion: 2 }
-    ])
-    const [completedCourses, setCompletedCourses] = useState([
-      {name:'JavaScript 1', completion: 3 },
-      {name:'HTML&CSS', completion: 3 },
-      {name:'Graphical Design', completion: 2 }
-    ])
-    const [uncomplete, setunCompleteCourses] = useState([
-      {name:'Server Side', completion: 0 },
-      {name:'Project Course', completion: 0 },
-      {name:'LIA', completion: 0 }
-    ])
+    // const [currentCourse, setCurrentCourses] = useState([
+    //   {name:'JavaScript 2', completion: 1 },
+    //   {name:'JavaScript 3', completion: 2 }
+    // ])
+    // const [completedCourses, setCompletedCourses] = useState([
+    //   {name:'JavaScript 1', completion: 3 },
+    //   {name:'HTML&CSS', completion: 3 },
+    //   {name:'Graphical Design', completion: 2 }
+    // ])
+    // const [uncomplete, setunCompleteCourses] = useState([
+    //   {name:'Server Side', completion: 0 },
+    //   {name:'Project Course', completion: 0 },
+    //   {name:'LIA', completion: 0 }
+    // ])
     function handleClick(tab,data){
         setTab(tab)
         setData(data)
-        switch(tab){
-          case 'Current':
-          return currentCourse;
-          case 'Completed':
-            return completedCourses
-          case 'Uncomplete':
-            return uncomplete
-        }
+        // switch(tab){
+        //   case 'Current':
+        //   return currentCourse;
+        //   case 'Completed':
+        //     return completedCourses
+        //   case 'Uncomplete':
+        //     return uncomplete
+        // }
     }
     return (
         <div className='student-overview-container'>
