@@ -28,7 +28,7 @@ function App() {
 
       <main>
         {showLogIn ? (
-          <LogIn setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
+          <LogIn username={username} setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar
