@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
-
+.ui.dimmer {
+    background-color: rgba(0, 0, 0, 0.87) !important;
+}
 .menu-btn{
     margin-right: 1rem;
     margin-left: 5rem;
@@ -8,6 +10,16 @@
     height: 29px;
 }
 
+// .rotate {
+//     -moz-transition: all .5s linear;
+//     -webkit-transition: all .5s linear;
+//     transition: all .5s linear;
+// }
+// .rotate.down {
+//     -moz-transform:rotate(90deg);
+//     -webkit-transform:rotate(90deg);
+//     transform:rotate(90deg);
+// }
 .navbar{
     display: flex;
     flex-direction: row;
@@ -29,6 +41,7 @@
     display: flex;
     align-items: baseline;
     margin-left: 2rem;
+    
 }
 
 .logged-in {

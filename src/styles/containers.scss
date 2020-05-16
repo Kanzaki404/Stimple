@@ -1,17 +1,46 @@
-
-
- .student-overview-container{
-
-    width:65vw;
-    .active{
-        background: none #282c34c4 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        border-color: snow !important;
-    }
-
+hr {
+  width: 50%;
+  margin-top: 30px;
 }
-.ui.attached.tabular.menu{
-    width: 98% !important;
+.remove-border {
+  border: none !important;
+  .item:last-child {
+    border: none !important;
+  }
+}
+
+.ui.grid > .column:not(.row) {
+  padding-top: 3rem !important;
+  padding-bottom: 0rem;
+}
+.focused-wrapper > div > div {
+  margin: auto 0;
+  text-align: left;
+}
+
+.ui.grid {
+  justify-content: center;
+}
+
+.student-photo {
+  height: 170px;
+  width: 170px;
+  border: 8px solid #fff7f7;
+  border-radius: 100px;
+  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+    0 2px 10px 0 rgba(34, 36, 38, 0.15);
+  object-fit: cover;
+}
+.student-overview-container {
+  width: 65vw;
+  .active {
+    background: none #282c34c4 !important;
+    color: rgba(255, 255, 255, 0.95) !important;
+    border-color: snow !important;
+  }
+}
+.ui.attached.tabular.menu {
+  width: 98% !important;
 }
 /*
 .student-stats-container{
@@ -20,176 +49,173 @@
     height: 80vh;
 }
 */
-.student-profile-container{
-
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    .ui.raised.card{
-        background-color: snow;
-        box-shadow: none !important;
+.student-profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  .ui.raised.card {
+    background-color: snow;
+    box-shadow: none !important;
+    div > img {
+      border: 8px solid rgb(255, 255, 255);
+      box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+        0 2px 10px 0 rgba(34, 36, 38, 0.15);
+      object-fit: cover;
+      padding: 0 !important;
     }
-    .content{
-        border-top: none !important;
-        border-bottom: 1px solid #5A5C62 !important;
-        .ui.card>:last-child{
-            border-radius: 0 !important;
-        }
+  }
+  .content {
+    border-top: none !important;
+    // border-bottom: 1px solid #5a5c62 !important;
+    .ui.card > :last-child {
+      border-radius: 0 !important;
     }
-}
-
-.profile-comp{
-    grid-area: "StudentProfile";
-    margin-top: 3rem;
-}
-
-.progress-comp{
-    grid-area: "Stats";
-}
-
-.student-overview {
-    grid-area: "Overview";
-
+  }
 }
 
 .profile-comp {
-    grid-area: Profile;
-
+  grid-area: "StudentProfile";
+  margin-top: 3rem;
 }
 
-.image{
-    width: 80%;
-    margin: auto;
-    background: rgb(40, 44, 52) !important;
-
-    .ui.card>:first-child{
-        border-radius: 30px !important;
-    }
-    img{
-        border: 1px solid transparent;
-        padding: 10px;
-        height: 300px !important;
-    }
+.progress-comp {
+  grid-area: "Stats";
+  display: inline-grid !important;
+  justify-content: center !important;
 }
-
-.progress-comp { grid-area: Stats; }
 
 .student-overview {
-    grid-area: Overview;
-    margin-top: 3rem;
+  grid-area: "Overview";
 }
 
-.student-container{
-    height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "Profile Overview Overview Overview" "Stats Overview Overview Overview";
-    background-color: snow;
-
-//   margin-top: 1rem;
+.profile-comp {
+  grid-area: Profile;
 }
 
-.card{
-    position: relative;
+.image {
+  width: 80%;
+  margin: auto;
+  background: rgb(40, 44, 52) !important;
+
+  .ui.card > :first-child {
+    border-radius: 30px !important;
+  }
+  img {
+    border: 1px solid transparent;
+    padding: 10px;
+    height: 300px !important;
+  }
 }
 
-.course-comp{
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    min-height: 20vh;
-    padding: 1rem;
-    margin: 15px;
-    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34,36,38,.12), 0 2px 10px 0 rgba(34,36,38,.15);
-    background-color: #fff3f387;
-
+.progress-comp {
+  grid-area: Stats;
 }
 
-.side-border{
-    padding-top: 10px;
-    overflow-y: scroll;
-    max-height: 715px;
+.student-overview {
+  grid-area: Overview;
+  margin-top: 3rem;
 }
 
-.side-border-teacher{
-    margin-top: 40px;
-    overflow-y: scroll;
-    max-height: 500px;
+.student-container {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "Profile Overview Overview Overview" "Stats Overview Overview Overview";
+  background-color: snow;
+
+  //   margin-top: 1rem;
+}
+
+.card {
+  position: relative;
+}
+
+.course-comp {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 20vh;
+  padding: 1rem;
+  margin: 15px;
+  box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
+    0 2px 10px 0 rgba(34, 36, 38, 0.15);
+  background-color: #fff3f387;
+}
+
+.side-border {
+  padding-top: 10px;
+  overflow-y: scroll;
+  max-height: 715px;
+}
+
+.side-border-teacher {
+  margin-top: 40px;
+  overflow-y: scroll;
+  max-height: 434px;
 }
 .item:last-child {
-    border: 1px solid #ccc !important;
-    border-radius: 6px;
-    margin-bottom: 10px;
+  border: 1px solid #ccc !important;
+  border-radius: 6px;
+  margin-bottom: 10px;
 }
 
-@media(max-width: 900px) {
+@media (max-width: 903px) {
+  .profile-comp {
+    grid-area: Profile;
+    display: none;
+  }
 
-    .profile-comp {
-        grid-area: Profile;
-        display: none;
-    };
+  .progress-comp {
+    grid-area: Stats;
+    display: none;
+  }
 
-    .progress-comp {
-        grid-area: Stats;
-        display: none;
-     };
+  .student-overview {
+    grid-area: Overview;
+    margin: auto;
+  }
 
-     .student-overview {
-        grid-area: Overview;
-        margin: auto;;
-    }
-
-     .student-container{
-        height: 90vh;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr ;
-        gap: 1px 1px;
-        grid-template-areas: "Overview";
-        background-color: snow;
+  .student-container {
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "Overview";
+    background-color: snow;
     //   margin-top: 1rem;
-    }
-
+  }
 }
 
-@media(max-width: 835px) {
-
-    .student-overview-container {
-
-        width: 100vw;
-
-    }
+@media (max-width: 835px) {
+  .student-overview-container {
+    width: 100vw;
+  }
 }
 
-@media(max-width: 578px) {
-
-    .item:last-child {
-        display: none !important;
-     };
+@media (max-width: 578px) {
+  .item:last-child {
+    display: none !important;
+  }
 }
 
-@media(max-width: 868px) {
-
-    .side-border{
-        padding-top: 10px;
-        overflow-y: scroll;
-        max-height: 75vh;
-    }
+@media (max-width: 868px) {
+  .ui.attached.tabular.menu {
+    margin-top: 1rem;
+  }
+  .side-border {
+    padding-top: 10px;
+    overflow-y: scroll;
+    max-height: 75vh;
+  }
 }
-@media(max-width: 360px) {
-
-    .ui.attached.tabular.menu{
-        display: grid;
-    }
-    .side-border{
-        max-height: 60vh;;
-    }
+@media (max-width: 361px) {
+  .ui.attached.tabular.menu {
+    display: grid;
+    margin-top: 1rem !important;
+  }
+  .side-border {
+    max-height: 60vh;
+  }
 }
-
-
-
-
-
-
-

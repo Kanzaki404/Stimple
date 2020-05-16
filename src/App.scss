@@ -4,6 +4,24 @@
 @import './styles/courses.scss';
 @import './styles/login.scss';
 @import './styles/searchStudent.scss';
+main > div{
+  margin: 0 !important;
+}
+.ui.inverted.menu {
+  background: #3a3a3a !important;
+
+}
+.ui.inverted.icon.menu .item {
+  color: snow !important;
+  border: none !important;
+}
+
+.ui.segment {
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 .App {
   text-align: center;
 }

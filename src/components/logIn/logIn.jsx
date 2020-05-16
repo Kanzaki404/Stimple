@@ -30,13 +30,14 @@ const LogIn = ({datafromLogIn}) => {
 
 return (
   <Segment placeholder className="loginForm">
-    <Grid columns={2} relaxed='very' stackable >
-      <Grid.Column>
+    
+        <button onClick={()=>datafromLogIn('Student')}>Student</button>
+        <button onClick={()=>datafromLogIn('Teacher')}>Teacher</button>
         <Form>
-            <div className="radioBtns">
+            {/* <div className="radioBtns">
                 <Form.Input type="radio" label='Student' onChange={handleChangeStudent} ></Form.Input>
                 <Form.Input type="radio" label='Teacher' onChange={handleChangeTeacher}></Form.Input>
-            </div>
+            </div> */}
           <Form.Input
             icon='user'
             iconPosition='left'
@@ -51,21 +52,15 @@ return (
             onChange={handleChangePassword}
           />
 
-          <Button content='Login' primary  />
-          <hr/>
-        <p>for testing purposes</p>
-        <button onClick={()=>datafromLogIn('Student')}>Student</button>
-        <button onClick={()=>datafromLogIn('Teacher')}>Teacher</button>
+        <Button className='login-btn' content='Login' primary  />
+        <Divider horizontal>Or</Divider>
+        <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' />
         </Form>
-      </Grid.Column>
-      <Grid.Column verticalAlign='middle'>
-        <Button content='Sign up' icon='signup' size='big' />
         
-      </Grid.Column>
-    </Grid>
-
-    <Divider vertical>Or</Divider>
+     
+    
   </Segment>
+  
 )}
 
 
