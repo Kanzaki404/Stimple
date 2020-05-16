@@ -2,16 +2,19 @@ import React, {useState} from 'react'
 import Hamburger from '../../assets/menu.svg'
 import Logout from '../../assets/technology.svg'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
-export default function NavBar() {
+export default function NavBar({sideNav}) {
     const [modalState, setModalState] = useState(false)
     const logOutButton = <Button onClick={()=>setModalState(true)} className='logout-btn'><img src={Logout} alt="logout"/></Button>
-
-    
+    let [tog, setTog] = useState(false)
+    function choice(){
+        setModalState(false)
+        window.location.reload();
+    }
     return (
-        <div>
-        <header className='navbar'>
+        <div className='navbar'>
+        
             <div className='nav-wrapper'>
-            <img className='menu-btn' src={Hamburger} alt="menu"/>
+            <img onClick={()=>sideNav(tog = !tog)} className='menu-btn rotate' src={Hamburger} alt="menu"/>
             <h1>Stimple</h1>
 
 
@@ -34,13 +37,13 @@ export default function NavBar() {
                 <Button basic color='red' inverted onClick={()=>setModalState(false)}>
                     <Icon name='remove' /> No
                 </Button>
-                <Button color='green' inverted  onClick={()=>setModalState(false)}>
+                <Button color='green' inverted  onClick={()=> choice()}>
                     <Icon name='checkmark' /> Yes
                 </Button>
                 </Modal.Actions>
             </Modal>
             </div>
-        </header>
+        
         
             </div>
     )
