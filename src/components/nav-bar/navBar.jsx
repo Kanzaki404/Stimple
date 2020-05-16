@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Hamburger from '../../assets/menu.svg'
 import Logout from '../../assets/technology.svg'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
-export default function NavBar({sideNav}) {
+export default function NavBar({sideNav, username}) {
     const [modalState, setModalState] = useState(false)
     const logOutButton = <Button onClick={()=>setModalState(true)} className='logout-btn'><img src={Logout} alt="logout"/></Button>
     let [tog, setTog] = useState(false)
@@ -20,7 +20,7 @@ export default function NavBar({sideNav}) {
 
             </div>
             <div className='logged-in'>
-                <p>Student: Bill Gates</p>
+            <p>Logged in as: {username}</p>
             <Modal 
             trigger={logOutButton} 
             basic size='small' 

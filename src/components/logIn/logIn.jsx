@@ -2,27 +2,24 @@
 import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio } from 'semantic-ui-react'
 
-const LogIn = ({datafromLogIn}) => {
+const LogIn = ({datafromLogIn, setUsername}) => {
 
-    const [username, setUsername] = useState("");
     const [selected, setSelected] = useState("")
-
 
     const handleChange = event => {
         setSelected(event.target.value);
     };
-    
-    /* const handleChangeUsername = event => {
-        setUsername(event.target.value);
-    }; */
+
+    const handleChangeUsername = event => {
+      setUsername(event.target.value);
+    };
+
     const handleLoginBtn = () => {
-      console.log(selected)
         if (selected === 'Student')
           datafromLogIn('Student')
         else if (selected === 'Teacher')
-        datafromLogIn('Teacher')
+          datafromLogIn('Teacher')
     }
-    
 
 return (
   <Segment placeholder className="loginForm">
@@ -35,7 +32,7 @@ return (
             icon='user'
             iconPosition='left'
             label='Username'
-            /* onChange={handleChangeUsername} */
+            onChange={handleChangeUsername}
           />
           <Form.Input
             icon='lock'
@@ -43,14 +40,10 @@ return (
             label='Password'
             type='password'
           />
-
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
         <Divider horizontal>Or</Divider>
         <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' />
         </Form>
-        
-     
-    
   </Segment>
   
 )}

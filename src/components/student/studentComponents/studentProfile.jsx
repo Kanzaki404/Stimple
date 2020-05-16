@@ -1,14 +1,14 @@
 import React from "react";
 import { Card, Icon, Image } from "semantic-ui-react";
 import imagee from '../studentAssets/studentSample.jpg'
-export default function StudentProfile() {
+export default function StudentProfile({username}) {
 
   return (
     <div className="student-profile-container">
       <Card raised className="card" >
         <Image className="image" src={imagee} wrapped ui={false} />
         <Card.Content>
-          <Card.Header>Bill Gates</Card.Header>
+  <Card.Header>{username}</Card.Header>
           <Card.Meta>
             <span className="date">Joined in 2019</span>
           </Card.Meta>

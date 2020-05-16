@@ -10,9 +10,12 @@ function App() {
   const [visible, setVisible] = useState(false);
   const [showLogIn, setShow] = useState(true);
   const [cat, setCat] = useState("");
+  const [username, setUsername] = useState("")
+  
   function hamburger(click) {
     setVisible(click);
   }
+
   function showOne(choice) {
     setShow(false);
     setCat(choice);
@@ -20,12 +23,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar sideNav={(click) => hamburger(click)} />}
+        {showLogIn ? null : <NavBar username={username} sideNav={(click) => hamburger(click)} />}
       </header>
 
       <main>
         {showLogIn ? (
-          <LogIn datafromLogIn={(choice) => showOne(choice)} />
+          <LogIn setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -69,7 +72,7 @@ function App() {
 
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
-              {cat === "Student" ? <Student /> : null}
+              {cat === "Student" ? <Student username={username} /> : null}
               {cat === "Teacher" ? <Teacher /> : null}
             </Segment>
           </Sidebar.Pusher>
