@@ -4,12 +4,12 @@ import SearchStudent from "./teacherComponents/searchStudents";
 import ViewStudents from "./teacherComponents/viewStudents";
 // import ViewCourses from "./teacherComponents/viewCourses";
 // import SearchCourses from "./teacherComponents/searchCourses";
-export default function TeacherMain() {
+export default function TeacherMain({username}) {
     return (
         <div>
             <div className="student-container">
                 <div className="profile-comp">
-                    <TeacherProfile />
+                    <TeacherProfile username={username} />
                 </div>
                 <div className="progress-comp">
                     <SearchStudent />

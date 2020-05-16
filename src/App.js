@@ -73,7 +73,7 @@ function App() {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
               {cat === "Student" ? <Student username={username} /> : null}
-              {cat === "Teacher" ? <Teacher /> : null}
+              {cat === "Teacher" ? <Teacher username={username} /> : null}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
@@ -82,5 +82,5 @@ function App() {
     </div>
   );
 }
-//<LogIn/> <Student/>
+
 export default App;

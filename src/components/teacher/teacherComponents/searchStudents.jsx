@@ -39,7 +39,7 @@ export default function SearchStudents({getStudents}) {
           e.toLowerCase().match(input.toLowerCase())
       )
     .map((e) => {
-        return <div>{e}</div>
+        return <div key={e}>{e}</div>
     });
 
     return (

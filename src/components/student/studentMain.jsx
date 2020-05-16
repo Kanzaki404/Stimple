@@ -4,11 +4,11 @@ import Stats from "./studentComponents/stats";
 import Overview from "./studentComponents/overview";
 
 
-export default function StudentMain() {
+export default function StudentMain({username}) {
   return (
     <div className="student-container">
       <div className="profile-comp">
-        <StudentProfile />
+        <StudentProfile username={username} />
       </div>
       <div className="progress-comp">
         <Stats />
