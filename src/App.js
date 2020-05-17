@@ -59,11 +59,10 @@ function App() {
             ) : (
               <div>
                 <Menu.Item as="a">
-                  <Icon name="home" />
+                <Icon name="home" />
                   Home
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <Icon name="calendar alternate outline" />
                   Schedule
                 </Menu.Item>
               </div>

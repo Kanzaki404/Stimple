@@ -6,6 +6,7 @@ const LogIn = ({datafromLogIn, setUsername, username}) => {
 
     const [selected, setSelected] = useState("")
     const [pw, setPw] = useState("")
+  
 
     const handleChange = event => {
         setSelected(event.target.value);
@@ -41,13 +42,15 @@ return (
             label='Username'
             onChange={handleChangeUsername}
           />
+          
           <Form.Input
             icon='lock'
             iconPosition='left'
             label='Password'
-            type='password'
+            type="password"
             onChange={handleChangePw}
           />
+         
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} disabled={!pw || !username || !selected} primary  />
         <Divider horizontal>Or</Divider>
         <Button className='sign-up-btn' content='Sign up' icon='signup' size='big'  />
