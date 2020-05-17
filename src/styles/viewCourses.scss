@@ -1,0 +1,71 @@
+.view-courses{
+    min-height: 80vh;
+    margin-right: 5rem;
+    margin-top: 3rem;
+
+}
+
+
+.course-info-up{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 2rem; */
+    padding: 1rem 1rem 0rem 1rem;
+    .addBtn:hover{
+        background-color: rgba(0, 181, 173, 0.7) !important;
+        color: rgba(0,0,0,.8) !important;
+        transition: ease-in-out 0.3s;
+    }
+}
+.course-info{
+    hr{
+        width: 95%;
+    margin-top: 1rem;
+    }
+
+}
+
+.course-list-container{
+    overflow: scroll;
+    max-height: 60vh;
+    overflow-x: hidden;
+}
+
+/*------------------------Courses SCSS-------------------------------*/
+
+.courses-cards{
+    border: 1px solid #ccc;
+    margin: 1rem;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: snow !important;
+    box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12), 0 2px 10px 0 rgba(34, 36, 38, 0.15);
+}
+.upper-items {
+text-align: left;
+}
+
+.lower-items {
+    display: flex;
+    justify-content: space-between;
+    p{
+        margin-top: 1rem;
+    }
+}
+
+.button-group{
+
+    .editBtn:hover{
+        background-color: rgba(230, 76, 20, 0.612) !important;
+        color: rgba(0,0,0,.8) !important;
+        transition: ease-in-out 0.3s;
+    }
+
+    .infoBtn:hover{
+        background-color:rgba(0, 0, 0, 0.692) !important;
+        color:white !important;
+        transition: ease-in-out 0.3s;
+    }
+
+
+}

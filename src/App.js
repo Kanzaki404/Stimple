@@ -5,13 +5,13 @@ import "semantic-ui-css/semantic.min.css";
 import Student from "./components/student/studentMain";
 import Teacher from "./components/teacher/teacherMain";
 import LogIn from "./components/logIn/logIn";
-import { Header, Icon, Image, Menu, Segment, Sidebar } from "semantic-ui-react";
+import { Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
 function App() {
   const [visible, setVisible] = useState(false);
   const [showLogIn, setShow] = useState(true);
   const [cat, setCat] = useState("");
   const [username, setUsername] = useState("")
-  
+  const [teachMenu, setTeachMenu] = useState('students')
   function hamburger(click) {
     setVisible(click);
   }
@@ -20,6 +20,7 @@ function App() {
     setShow(false);
     setCat(choice);
   }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -43,11 +44,15 @@ function App() {
           >
             {cat === "Teacher" ? (
               <div>
-                <Menu.Item as="a">
+                <Menu.Item
+                onClick={()=>setTeachMenu('students')}
+                as="a">
                   <Icon name="user" />
                   Students
                 </Menu.Item>
-                <Menu.Item as="a">
+                <Menu.Item
+                 onClick={()=>setTeachMenu('courses')}
+                as="a">
                   <Icon name="clipboard list" />
                   Courses
                 </Menu.Item>
@@ -72,7 +77,7 @@ function App() {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
               {cat === "Student" ? <Student username={username} /> : null}
-              {cat === "Teacher" ? <Teacher username={username} /> : null}
+              {cat === "Teacher" ? <Teacher username={username}  menu={teachMenu}/> : null}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
