@@ -19,7 +19,7 @@
 }
 .course-info{
     hr{
-        width: 95%;
+    width: 95%;
     margin-top: 1rem;
     }
 
@@ -67,5 +67,40 @@ text-align: left;
         transition: ease-in-out 0.3s;
     }
 
+}
+
+@media(max-width: 906px){
+
+.view-courses{
+    min-height: 80vh;
+    margin:auto;
+}
+
+.lower-items {
+    display: block;
+
+    .editBtn {
+    margin-bottom: .625rem !important;
+    width: 100px !important;
+    }
 
 }
+
+.upper-items {
+
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.course-list-container{
+    width: 86vw;
+}
+
+.course-info-up {
+    display: block;
+}
+
+}
+
+
+
+
