@@ -21,8 +21,38 @@
 .right-items{
     float: right;
 }
+// .item-grade{
+//     display: inline-flex;
+//     p{
+//         margin-right: 1rem;
+//         padding-top: 10px;
+//     }
+    
+// }
 
+.grade{
+    margin-top: 1rem;
+}
+
+.final-grade{
+    margin-top: 1rem;
+}
 .student-info{
     display: block;
+}
+
+.modal-grades{
+    text-align: center;
+}
+
+.modal-title{
+    text-align: center !important;
+}
+
+.ui.modal>.actions {
+    text-align: center !important;
+}
+.ui.modal>.header {
+    display: inline-flex !important;
 }
 

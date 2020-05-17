@@ -11,30 +11,38 @@ export default function Students({sendData}) {
         console.log(percent)
     }
     const options = [
-        { key: 1, text: 'Choice 1', value: 1 },
-        { key: 2, text: 'Choice 2', value: 2 },
-        { key: 3, text: 'Choice 3', value: 3 },
+        { key: 1, text: 'IG', value: 1 },
+        { key: 2, text: 'G', value: 2 },
+        { key: 3, text: 'VG', value: 3 },
       ]
     return (
         <div className='course-comp'>
            <h2>{sendData}</h2>
            <div className="low-items">
-
-           <Modal
+            <div className="modal-grades">
+            <Modal 
+            className="modal-title"
             trigger={detailButton}
             basic size='small'
             open={modalState}
             onClose={modalState}>
 
                 <Header icon='tag' content='JavaScript 1' />
+                <hr/>
                 <Modal.Content>
                     <div className="item-grade">
+                        <div className="grade">
                         <p>Assignment 1</p>
                         <Dropdown  options={options} selection />
+                        </div>
+                        <div className="grade">
                         <p>Assignment 2</p>
                         <Dropdown clearable options={options} selection />
+                        </div>
+                        <div className="grade">
                         <p>Assignment 3</p>
                         <Dropdown clearable options={options} selection />
+                        </div>
                     </div>
                     <div className="final-grade">
                         <p>Final Grade</p>
@@ -47,14 +55,16 @@ export default function Students({sendData}) {
                 </Modal.Content>
                 <Modal.Actions>
                 <Button basic color='red' inverted onClick={()=>setModalState(false)}>
-                    <Icon name='remove' /> No
+                    <Icon name='remove' /> Cancel
                 </Button>
                 <Button color='green' inverted  onClick={()=> setModalState(false)}>
-                    <Icon name='checkmark' /> Yes
+                    <Icon name='checkmark' /> Confirm
                 </Button>
 
                 </Modal.Actions>
             </Modal>
+            </div>
+           
             <p>Assignment: {incr}/3</p>
            <Progress className='prog-bar' active percent={percent} indicating />
            </div>

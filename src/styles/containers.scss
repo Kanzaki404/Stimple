@@ -160,7 +160,7 @@ hr {
   margin-bottom: 10px;
 }
 
-@media (max-width: 903px) {
+@media (max-width: 904px) {
   .profile-comp {
     grid-area: Profile;
     display: none;
@@ -168,7 +168,7 @@ hr {
 
   .progress-comp {
     grid-area: Stats;
-    display: none;
+    display: none !important;
   }
 
   .student-overview {
@@ -184,8 +184,12 @@ hr {
     gap: 1px 1px;
     grid-template-areas: "Overview";
     background-color: snow;
-    //   margin-top: 1rem;
+
   }
+  .ui.attached.tabular.menu {
+    margin-top: 1rem !important;
+  }
+
 }
 
 @media (max-width: 835px) {
@@ -202,7 +206,7 @@ hr {
 
 @media (max-width: 868px) {
   .ui.attached.tabular.menu {
-    margin-top: 1rem;
+    margin-top: 1rem !important;
   }
   .side-border {
     padding-top: 10px;
@@ -210,10 +214,10 @@ hr {
     max-height: 75vh;
   }
 }
-@media (max-width: 361px) {
+@media (max-width: 360px) {
   .ui.attached.tabular.menu {
     display: grid;
-    margin-top: 1rem !important;
+    margin-top: 1rem;
   }
   .side-border {
     max-height: 60vh;
