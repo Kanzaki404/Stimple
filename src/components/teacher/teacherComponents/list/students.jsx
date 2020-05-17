@@ -17,7 +17,7 @@ export default function Students({sendData}) {
       ]
     return (
         <div className='course-comp'>
-           <h2>{sendData}</h2>
+           <h2>JavaScript 2</h2>
            <div className="low-items">
             <div className="modal-grades">
             <Modal 
