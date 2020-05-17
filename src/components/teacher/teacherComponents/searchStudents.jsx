@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Input, Menu, Label } from 'semantic-ui-react'
+import { Input} from 'semantic-ui-react'
 export default function SearchStudents({getStudents}) {
     const [input, setInput] = useState('')
     const testArr = [

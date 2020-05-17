@@ -2,9 +2,9 @@ import React from 'react'
 import TeacherProfile from "./teacherComponents/teacherProfile";
 import SearchStudent from "./teacherComponents/searchStudents";
 import ViewStudents from "./teacherComponents/viewStudents";
-// import ViewCourses from "./teacherComponents/viewCourses";
-// import SearchCourses from "./teacherComponents/searchCourses";
-export default function TeacherMain({username}) {
+import ViewCourses from "./teacherComponents/viewCourses";
+import SearchCourses from "./teacherComponents/searchCourses";
+export default function TeacherMain({username, menu}) {
     return (
         <div>
             <div className="student-container">
@@ -12,10 +12,12 @@ export default function TeacherMain({username}) {
                     <TeacherProfile username={username} />
                 </div>
                 <div className="progress-comp">
-                    <SearchStudent />
+                    {menu === 'students' ? <SearchStudent /> : <SearchCourses />}
+
                 </div>
                 <div className="student-overview">
-                    <ViewStudents />
+                {menu === 'students' ? <ViewStudents /> : <ViewCourses />}
+
                 </div>
             </div>
         </div>

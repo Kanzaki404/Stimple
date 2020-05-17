@@ -7,6 +7,7 @@ export default function NavBar({sideNav, username}) {
     const logOutButton = <Button onClick={()=>setModalState(true)} className='logout-btn'><img src={Logout} alt="logout"/></Button>
     let [tog, setTog] = useState(false)
     function choice(){
+        setTog(false)
         setModalState(false)
         window.location.reload();
     }

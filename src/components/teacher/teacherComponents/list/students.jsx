@@ -5,11 +5,11 @@ export default function Students({sendData}) {
     const [incr ,setInc] = useState(0)
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button onClick={()=> setModalState(true)}>Test</Button>
-    function testIncrement(inc){
-        setPrecent(inc)
-        setInc(incr+1)
-        console.log(percent)
-    }
+    // function testIncrement(inc){
+    //     setPrecent(inc)
+    //     setInc(incr+1)
+    //     console.log(percent)
+    // }
     const options = [
         { key: 1, text: 'IG', value: 1 },
         { key: 2, text: 'G', value: 2 },

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Button, Divider, Form, Grid, Segment, Radio } from 'semantic-ui-react'
+import { Button, Divider, Form, Segment } from 'semantic-ui-react'
 
 const LogIn = ({datafromLogIn, setUsername, username}) => {
 
