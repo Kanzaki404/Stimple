@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { Input} from 'semantic-ui-react'
-export default function SearchStudents({getStudents}) {
+import { Input, Menu, Label } from 'semantic-ui-react'
+export default function SearchStudents({getStudents, studentList}) {
     const [input, setInput] = useState('')
     const testArr = [
         'Alexander Colik',
@@ -30,10 +30,9 @@ export default function SearchStudents({getStudents}) {
         'Apple Pie',
         'Lavender Breado',
         'Xavier Pancake'
-
     ]
 
-    const studentList = testArr
+    const studentList2 = testArr
     .filter(
         (e) =>
           e.toLowerCase().match(input.toLowerCase())
@@ -41,6 +40,8 @@ export default function SearchStudents({getStudents}) {
     .map((e) => {
         return <div key={e}>{e}</div>
     });
+
+    
 
     return (
         <div className='search-student-container'>
@@ -52,7 +53,12 @@ export default function SearchStudents({getStudents}) {
                 onChange={(e) => setInput(e.target.value)}
               />
               <div className="student-list-container">
-                {studentList}
+                  {/* {studentList.map( (p, i ) => (
+                      <li key={i}>
+                        {p.username}
+                      </li>
+                  ))} */}
+                 {studentList2} 
               </div>
         </div>
 
