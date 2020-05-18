@@ -11,6 +11,7 @@ function App() {
   const [showLogIn, setShow] = useState(true);
   const [cat, setCat] = useState("");
   const [username, setUsername] = useState("")
+  const [studentList, setStudentList] = useState([])
   
   function hamburger(click) {
     setVisible(click);
@@ -28,7 +29,7 @@ function App() {
 
       <main>
         {showLogIn ? (
-          <LogIn username={username} setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
+          <LogIn username={username} studentList={studentList} setStudentList={setStudentList} setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -72,7 +73,7 @@ function App() {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
               {cat === "Student" ? <Student username={username} /> : null}
-              {cat === "Teacher" ? <Teacher username={username} /> : null}
+              {cat === "Teacher" ? <Teacher studentList={studentList} username={username} /> : null}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
