@@ -6,19 +6,14 @@ import Student from "./components/student/studentMain";
 import Teacher from "./components/teacher/teacherMain";
 import LogIn from "./components/logIn/logIn";
 import { Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
-import { useSelector, useDispatch } from 'react-redux';
-import { actions } from './features/data';
+import {useSelector, useDispatch} from "react-redux"
+import {actions} from './features/menu'
 function App() {
-  const dispatch = useDispatch();
-  const value = useSelector(state => state.menu);
-  const selectMenu = () => dispatch(actions.changeMenu());
   const [visible, setVisible] = useState(false);
   const [showLogIn, setShow] = useState(true);
   const [cat, setCat] = useState("");
   const [username, setUsername] = useState("")
-  const [teachMenu, setTeachMenu] = useState('students')
-  const [studentList, setStudentList] = useState([])
-  
+
   function hamburger(click) {
     setVisible(click);
   }
@@ -27,6 +22,9 @@ function App() {
     setShow(false);
     setCat(choice);
   }
+  const dispatch = useDispatch();
+  
+  
 
   return (
     <div className="App">
@@ -52,13 +50,13 @@ function App() {
             {cat === "Teacher" ? (
               <div>
                 <Menu.Item
-                onClick={()=>selectMenu('students')}
+                onClick={()=>dispatch(actions.changeMenu('students'))}
                 as="a">
                   <Icon name="user" />
                   Students
                 </Menu.Item>
                 <Menu.Item
-                 onClick={()=>selectMenu('courses')}
+                 onClick={()=>dispatch(actions.changeMenu('courses'))}
                 as="a">
                   <Icon name="clipboard list" />
                   Courses
@@ -84,7 +82,7 @@ function App() {
           <Sidebar.Pusher dimmed={visible}>
             <Segment basic>
               {cat === "Student" ? <Student username={username} /> : null}
-              {cat === "Teacher" ? <Teacher studentList={studentList} username={username} /> : null}
+              {cat === "Teacher" ? <Teacher username={username} /> : null}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>
