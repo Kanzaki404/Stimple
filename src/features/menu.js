@@ -6,33 +6,31 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 // const removeFromCart = createAction('remove from cart');
 // const increaseAmount = createAction('increase amount');
 // const decreaseAmount = createAction('decreaseAmount');
-const changeMenu = createAction('students')
+const changeMenu = createAction('menuOptions')
 
 const actions = { changeMenu };
 
 
-const initialState = [
-    // {
-    //     product: { name: 'Otto', price: 1000 },
-    //     count: 1
-    // }
-]
+const initialState = {
+
+    type: 'menuOptions',
+    status: 'students'
+
+}
+
+
+
+
 
 const reducer = createReducer(initialState, {
     [changeMenu]: (state, action) => {
-        console.log(state, action)
-       
+        
+        return { ...state, status: action.payload }
+
+
 
     }
 })
-
-
-
-
-
-
-
-
 
 
 export { actions, reducer };

@@ -4,7 +4,11 @@ import SearchStudent from "./teacherComponents/searchStudents";
 import ViewStudents from "./teacherComponents/viewStudents";
 import ViewCourses from "./teacherComponents/viewCourses";
 import SearchCourses from "./teacherComponents/searchCourses";
-export default function TeacherMain({username, menu}) {
+import {useSelector} from "react-redux"
+export default function TeacherMain({username}) {
+    
+    const teachMenu = useSelector(state=> state.menu.status)
+   
     return (
         <div>
             <div className="student-container">
@@ -12,11 +16,11 @@ export default function TeacherMain({username, menu}) {
                     <TeacherProfile username={username} />
                 </div>
                 <div className="progress-comp">
-                    {menu === 'students' ? <SearchStudent /> : <SearchCourses />}
+                    {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses />}
 
                 </div>
                 <div className="student-overview">
-                {menu === 'students' ? <ViewStudents /> : <ViewCourses />}
+                {teachMenu === 'students' ? <ViewStudents /> : <ViewCourses />}
 
                 </div>
             </div>

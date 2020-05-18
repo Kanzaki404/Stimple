@@ -41,7 +41,7 @@ export default function Courses () {
                 <p>Deadline 24/12/2020</p>
                 <div className="button-group">
 
-                <Button className="editBtn"><Icon Icon name="edit"/>Edit</Button>
+                <Button className="editBtn"><Icon name="edit"/>Edit</Button>
                 {modal}
                 </div>
             </div>
