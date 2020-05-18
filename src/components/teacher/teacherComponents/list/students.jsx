@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Button, Header, Icon, Modal, Progress, Dropdown } from 'semantic-ui-react'
-export default function Students({sendData}) {
+export default function Students() {
     const [percent, setPrecent] = useState(0)
     const [incr ,setInc] = useState(0)
     const [modalState, setModalState] = useState(false)

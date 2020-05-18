@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react'
 import { Button, Divider, Form, Segment } from 'semantic-ui-react'
+import {useDispatch,useSelector} from "react-redux"
+import {actions} from '../../features/menu'
 
-const LogIn = ({datafromLogIn, setUsername, username}) => {
-
+const LogIn = ({setUsername, username}) => {
+    const dispatch = useDispatch();
     const [selected, setSelected] = useState("")
     const [pw, setPw] = useState("")
-  
+
 
     const handleChange = event => {
         setSelected(event.target.value);
@@ -20,13 +22,13 @@ const LogIn = ({datafromLogIn, setUsername, username}) => {
       setUsername(event.target.value);
     };
 
-    
+
 
     const handleLoginBtn = () => {
         if (selected === 'Student')
-          datafromLogIn('Student')
+         dispatch(actions.LoggedIn('Student'))
         else if (selected === 'Teacher')
-          datafromLogIn('Teacher')
+        dispatch(actions.LoggedIn('Teacher'))
     }
 
 return (
@@ -42,7 +44,7 @@ return (
             label='Username'
             onChange={handleChangeUsername}
           />
-          
+
           <Form.Input
             icon='lock'
             iconPosition='left'
@@ -50,13 +52,13 @@ return (
             type="password"
             onChange={handleChangePw}
           />
-         
+
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} disabled={!pw || !username || !selected} primary  />
         <Divider horizontal>Or</Divider>
         <Button className='sign-up-btn' content='Sign up' icon='signup' size='big'  />
         </Form>
   </Segment>
-  
+
 )}
 
 
