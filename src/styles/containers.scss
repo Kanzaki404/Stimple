@@ -146,13 +146,13 @@ hr {
 .side-border {
   padding-top: 10px;
   overflow-y: scroll;
-  max-height: 715px;
+  max-height: 885px;
 }
 
 .side-border-teacher {
   margin-top: 40px;
   overflow-y: scroll;
-  max-height: 434px;
+  max-height: 586px;
 }
 .item:last-child {
   border: 1px solid #ccc !important;
@@ -223,3 +223,24 @@ hr {
     max-height: 60vh;
   }
 }
+
+@media(max-width: 620px) {
+
+  .low-items {
+    display: grid;
+
+    .assignment{
+      text-align: left;
+      margin-top: 10px;
+
+   }
+
+  }
+  .ui.button{
+    width: fit-content;
+
+  }
+
+}
+
+

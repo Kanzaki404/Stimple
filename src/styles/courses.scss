@@ -11,7 +11,17 @@
 
     }
 }
+@media(max-width: 620px) {
 
+    .low-items {
+      text-align: left; 
+      margin-left: 20px;
+      Button{
+          float: left !important;
+      }
+  
+     }
+    }
 .low-items{
     margin-top: 90px;
     margin-bottom: 20px;
@@ -43,3 +53,4 @@
 .links {
     font-weight: bold;;
 }
+

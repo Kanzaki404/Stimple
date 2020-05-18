@@ -10,7 +10,7 @@ export default function ViewCourses() {
         console.log(e);
         setDate(e)
       }
-    const addBtn = <Button onClick={()=> setModalState(true)} className="addBtn"  ><Icon icon name="add"/>Add new Assignment</Button>
+    const addBtn = <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  ><Icon icon name="add"/>Add new Assignment</Button>
     const modalAddNew =
   <Modal
   trigger={addBtn}
