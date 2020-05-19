@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import Courses from './list/courses';
 import {Input,Button, Icon, Modal} from 'semantic-ui-react';
-/* import Calendar from 'react-calendar'; */
 export default function ViewCourses() {
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
@@ -10,7 +9,11 @@ export default function ViewCourses() {
         console.log(e);
         setDate(e)
       }
-    const addBtn = <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  ><Icon icon name="add"/>Add new Assignment</Button>
+    const addBtn = 
+    <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  >
+        <Icon name="add"/>
+        Add new Assignment
+    </Button>
     const modalAddNew =
   <Modal
   trigger={addBtn}

@@ -5,6 +5,7 @@ import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 
 const LogIn = ({datafromLogIn, setUsername, username, setStudentList, studentList}) => {
 
     const [selected, setSelected] = useState("")
+    const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("")
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
@@ -16,6 +17,10 @@ const LogIn = ({datafromLogIn, setUsername, username, setStudentList, studentLis
 
     const handleChangePw = event => {
       setPw(event.target.value);
+    };
+
+    const handleChangeRegTeacher = event => {
+      setRegTeacher(event.target.value);
     };
 
     const handleChangeUsername = event => {
@@ -41,13 +46,12 @@ const LogIn = ({datafromLogIn, setUsername, username, setStudentList, studentLis
 
     const registerBtn = () => {
       setModalState(false)
-      if (selected === 'Student'){
+      if (regTeacher === "asd123")
+      datafromLogIn('Teacher')
+      else {
         datafromLogIn('Student')
         setStudentList([...studentList, {username: username}])
       }
-      else if (selected === 'Teacher')
-        datafromLogIn('Teacher')
-      
     }
 
 return (
@@ -85,10 +89,8 @@ return (
                 <Form.Input className="regForm" type="email" placeholder="Email..." icon="mail" iconPosition="left"></Form.Input>
                 <Form.Input className="regForm" type="text" placeholder="Username..." icon="user" iconPosition="left" onChange={handleChangeUsername} ></Form.Input>
                 <Form.Input className="regForm" type="password" placeholder="Password..." icon="lock" iconPosition="left"></Form.Input>
-                <div className="radioBtnsReg">
-                  <Form.Input type="radio" label='Student' value="Student" onChange={handleChange} checked={selected === 'Student'} ></Form.Input>
-                  <Form.Input type="radio" label='Teacher' value="Teacher" onChange={handleChange} checked={selected === 'Teacher'} ></Form.Input>
-                </div>
+                <label className="regForm asd">To sign up as a Teacher you will need a key from your workplace!</label>
+                <Form.Input className="regForm" type="password" placeholder="Teacher key..." icon="lock" iconPosition="left" onChange={handleChangeRegTeacher}></Form.Input>
                 <Form.Checkbox className="regForm"
                 error={{
                   content: 'You must agree to the terms and conditions',
