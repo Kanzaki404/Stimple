@@ -11,7 +11,7 @@ export default function ViewCourses() {
       }
     const addBtn = 
     <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  >
-        <Icon name="add"/>
+        <Icon  name="add"/>
         Add new Assignment
     </Button>
     const modalAddNew =
@@ -19,7 +19,7 @@ export default function ViewCourses() {
   trigger={addBtn}
   centered={false}
   open={modalState}
-  onClose={modalState}
+  onClose={()=>setModalState(false)}
 
   >
   <Modal.Header>New Assignment:</Modal.Header>
@@ -28,7 +28,7 @@ export default function ViewCourses() {
          <h5>Title:</h5>
          <Input className="input-title"
                 transparent
-                // icon={{ name: 'search', link: true }}
+               
 
 
             />
@@ -43,8 +43,8 @@ export default function ViewCourses() {
 
      </div>
      <div className="button-group">
-        <Button onClick={()=> setModalState(false)} inverted color='green' className="confirmBtn"><Icon Icon name="checkmark"/>Add</Button>
-        <Button onClick={()=> setModalState(false)} className="cancelBtn"><Icon Icon name="cancel"/>Cancel</Button>
+        <Button onClick={()=> setModalState(false)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
+        <Button onClick={()=> setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
      </div>
 
   </Modal.Content>

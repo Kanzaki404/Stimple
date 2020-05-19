@@ -3,7 +3,7 @@ import {Button, Icon, Modal} from 'semantic-ui-react';
 
 
 export default function Courses () {
-    const detailBtn =  <Button className="infoBtn"><Icon icon name="info"/>Detail</Button>
+    const detailBtn =  <Button className="infoBtn"><Icon name="info"/>Detail</Button>
     const modal =
     <Modal trigger={detailBtn} centered={false}>
     <Modal.Header>Assignment # Details:</Modal.Header>
