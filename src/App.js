@@ -9,10 +9,10 @@ import { Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from './features/menu'
 function App() {
-
-  const [username, setUsername] = useState("") // leave it for now till actual solution
-
   const dispatch = useDispatch();
+  const [username, setUsername] = useState("") // leave it for now till actual solution
+  const [studentList,setStudentList] =useState([])
+  
   const sideBarToggle = useSelector(state=> state.menu.toggle)
   const category = useSelector(state=> state.menu.loggedIn)
   const showLogIn = useSelector(state=> state.menu.showLogInScreen)
@@ -21,12 +21,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar username={username}  />}
+        {showLogIn ? null : <NavBar username={username} studentList={studentList} setStudentList={setStudentList} />}
       </header>
 
       <main>
         {showLogIn ? (
-          <LogIn username={username} setUsername={setUsername}  />
+          <LogIn username={username} setUsername={setUsername}   />
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar

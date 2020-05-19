@@ -8,7 +8,7 @@ import {useSelector} from "react-redux"
 export default function TeacherMain({username}) {
     
     const teachMenu = useSelector(state=> state.menu.status)
-   
+
     return (
         <div>
             <div className="student-container">
@@ -17,7 +17,6 @@ export default function TeacherMain({username}) {
                 </div>
                 <div className="progress-comp">
                     {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses />}
-
                 </div>
                 <div className="student-overview">
                 {teachMenu === 'students' ? <ViewStudents /> : <ViewCourses />}

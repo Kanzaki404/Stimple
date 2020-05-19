@@ -34,3 +34,25 @@ html{
   .sign-up-btn{
     margin-top: 10vh !important;
   }
+
+  .registerForm {
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center ;
+  }
+
+  .radioBtnsReg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+
+  .regForm {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .asd {
+    justify-content: center;
+  }
