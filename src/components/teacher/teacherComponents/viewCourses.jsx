@@ -63,20 +63,7 @@ export default function ViewCourses() {
             </div>
             <div className="course-list-container">
                 <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
+                
             </div>
 
 
