@@ -9,6 +9,7 @@ import { Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from './features/menu'
 function App() {
+
   const dispatch = useDispatch();
   const [username, setUsername] = useState("") // leave it for now till actual solution
   const [studentList,setStudentList] =useState([])
@@ -26,7 +27,9 @@ function App() {
 
       <main>
         {showLogIn ? (
-          <LogIn username={username} setUsername={setUsername}   />
+
+          <LogIn username={username} studentList={studentList} setStudentList={setStudentList} setUsername={setUsername} />
+
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar

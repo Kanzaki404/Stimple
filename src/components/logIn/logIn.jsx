@@ -4,24 +4,31 @@ import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from '../../features/menu'
 
+
 const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     const dispatch = useDispatch();
     const [selected, setSelected] = useState("")
+    const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("")
+
     const [regTeacher, setRegTeacher] = useState("");
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-    
 
     const handleChange = event => {
-        setSelected(event.target.value);
+      setSelected(event.target.value);
     };
 
     const handleChangePw = event => {
       setPw(event.target.value);
     };
 
+    const handleChangeRegTeacher = event => {
+      setRegTeacher(event.target.value);
+    };
+
     const handleChangeUsername = event => {
+      localStorage.setItem("username", event.target.value)
       setUsername(event.target.value);
     };
 
@@ -32,7 +39,7 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     const handleLoginBtn = () => {
         if (selected === 'Student'){
           dispatch(actions.LoggedIn('Student'))
-          setStudentList([...studentList, {username: username}])
+          //setStudentList([...studentList, {username: username}])
         }else if (selected === 'Teacher'){
           dispatch(actions.LoggedIn('Teacher'))
         }
@@ -76,6 +83,7 @@ return (
 
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} disabled={!pw || !username || !selected} primary  />
         <Divider horizontal>Or</Divider>
+
         <Modal
             trigger={detailButton}
             basic size='small'
