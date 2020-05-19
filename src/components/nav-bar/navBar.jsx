@@ -31,7 +31,7 @@ export default function NavBar({username}) {
             trigger={logOutButton} 
             basic size='small' 
             open={modalState}
-            onClose={modalState}>
+            onClose={()=>setModalState(false)}>
                 <Header icon='log out' content='You will be logged out, are you sure?' />
                 <Modal.Content>
                 {/* <p>

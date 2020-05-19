@@ -25,7 +25,7 @@ export default function Students() {
             trigger={detailButton}
             basic size='small'
             open={modalState}
-            onClose={modalState}>
+            onClose={()=>setModalState(false)}>
 
                 <Header icon='tag' content='JavaScript 1' />
                 <hr/>
