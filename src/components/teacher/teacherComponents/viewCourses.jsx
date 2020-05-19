@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Courses from './list/courses';
 import {Input,Button, Icon, Modal} from 'semantic-ui-react';
-import Calendar from 'react-calendar';
+/* import Calendar from 'react-calendar'; */
 export default function ViewCourses() {
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
