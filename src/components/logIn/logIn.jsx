@@ -10,8 +10,6 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     const [selected, setSelected] = useState("")
     const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("")
-
-    const [regTeacher, setRegTeacher] = useState("");
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
 
@@ -32,9 +30,6 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
       setUsername(event.target.value);
     };
 
-    const handleChangeRegTeacher = event => {
-      setRegTeacher(event.target.value);
-    };
 
     const handleLoginBtn = () => {
         if (selected === 'Student'){
