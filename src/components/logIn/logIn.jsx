@@ -1,16 +1,20 @@
 
 import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
+import {useDispatch,useSelector} from "react-redux"
+import {actions} from '../../features/menu'
 
-const LogIn = ({datafromLogIn, setUsername, username, setStudentList, studentList}) => {
 
+const LogIn = ({setUsername, username, setStudentList, studentList}) => {
+    const dispatch = useDispatch();
     const [selected, setSelected] = useState("")
     const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("")
+
+    const [regTeacher, setRegTeacher] = useState("");
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-    
-  
+
     const handleChange = event => {
       setSelected(event.target.value);
     };
@@ -28,31 +32,32 @@ const LogIn = ({datafromLogIn, setUsername, username, setStudentList, studentLis
       setUsername(event.target.value);
     };
 
+    const handleChangeRegTeacher = event => {
+      setRegTeacher(event.target.value);
+    };
+
     const handleLoginBtn = () => {
         if (selected === 'Student'){
-          datafromLogIn('Student')
-          setStudentList([...studentList, {username: username}])
+          dispatch(actions.LoggedIn('Student'))
+          //setStudentList([...studentList, {username: username}])
+        }else if (selected === 'Teacher'){
+          dispatch(actions.LoggedIn('Teacher'))
         }
-        else if (selected === 'Teacher')
-          datafromLogIn('Teacher')
-
-        /* else if(registered){
-          datafromLogIn('Student')
-          setStudentList([...studentList, {username: username}])
-        } */
-
-          console.log("student list", studentList)
+        
     }
 
     const registerBtn = () => {
       setModalState(false)
       if (regTeacher === "asd123")
-      datafromLogIn('Teacher')
+      dispatch(actions.LoggedIn('Teacher'))
       else {
-        datafromLogIn('Student')
-        setStudentList([...studentList, {username: username}])
+        dispatch(actions.LoggedIn('Student'))
+        //setStudentList([...studentList, {username: username}])
       }
     }
+
+
+
 
 return (
   <Segment placeholder className="loginForm">
@@ -67,7 +72,7 @@ return (
             label='Username'
             onChange={handleChangeUsername}
           />
-          
+
           <Form.Input
             icon='lock'
             iconPosition='left'
@@ -75,10 +80,10 @@ return (
             type="password"
             onChange={handleChangePw}
           />
-         
+
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} disabled={!pw || !username || !selected} primary  />
         <Divider horizontal>Or</Divider>
-        
+
         <Modal
             trigger={detailButton}
             basic size='small'
@@ -106,8 +111,10 @@ return (
         </Modal>
         </Form>
   </Segment>
-  
+
 )}
 
 
 export default LogIn;
+
+

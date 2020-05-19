@@ -6,35 +6,30 @@ import Student from "./components/student/studentMain";
 import Teacher from "./components/teacher/teacherMain";
 import LogIn from "./components/logIn/logIn";
 import { Icon, Menu, Segment, Sidebar } from "semantic-ui-react";
-import {useSelector, useDispatch} from "react-redux"
+import {useDispatch,useSelector} from "react-redux"
 import {actions} from './features/menu'
 function App() {
-  const [visible, setVisible] = useState(false);
-  const [showLogIn, setShow] = useState(true);
-  const [cat, setCat] = useState("");
-  const [username, setUsername] = useState("")
-  const [studentList, setStudentList] = useState([])
-  function hamburger(click) {
-    setVisible(click);
-  }
 
-  function showOne(choice) {
-    setShow(false);
-    setCat(choice);
-  }
   const dispatch = useDispatch();
+  const [username, setUsername] = useState("") // leave it for now till actual solution
+  const [studentList,setStudentList] =useState([])
   
+  const sideBarToggle = useSelector(state=> state.menu.toggle)
+  const category = useSelector(state=> state.menu.loggedIn)
+  const showLogIn = useSelector(state=> state.menu.showLogInScreen)
   
 
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar username={username} sideNav={(click) => hamburger(click)} />}
+        {showLogIn ? null : <NavBar username={username} studentList={studentList} setStudentList={setStudentList} />}
       </header>
 
       <main>
         {showLogIn ? (
-          <LogIn username={username} studentList={studentList} setStudentList={setStudentList} setUsername={setUsername} datafromLogIn={(choice) => showOne(choice)} />
+
+          <LogIn username={username} studentList={studentList} setStudentList={setStudentList} setUsername={setUsername} />
+
         ) : null}
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -42,12 +37,12 @@ function App() {
             animation="slide along"
             icon="labeled"
             inverted
-            onHide={() => setVisible(false)}
+            onHide={()=>dispatch(actions.sideNavToggler(false))}
             vertical
-            visible={visible}
+            visible={sideBarToggle}
             width="thin"
           >
-            {cat === "Teacher" ? (
+            {category === "Teacher" ? (
               <div>
                 <Menu.Item
                 onClick={()=>dispatch(actions.changeMenu('students'))}
@@ -79,10 +74,10 @@ function App() {
             )}
           </Sidebar>
 
-          <Sidebar.Pusher dimmed={visible}>
+          <Sidebar.Pusher dimmed={sideBarToggle}>
             <Segment basic>
-              {cat === "Student" ? <Student username={username} /> : null}
-              {cat === "Teacher" ? <Teacher username={username} /> : null}
+              {category === "Student" ? <Student username={username} /> : null}
+              {category === "Teacher" ? <Teacher username={username} /> : null}
             </Segment>
           </Sidebar.Pusher>
         </Sidebar.Pushable>

@@ -2,20 +2,25 @@ import React, {useState} from 'react'
 import Hamburger from '../../assets/menu.svg'
 import Logout from '../../assets/technology.svg'
 import { Button, Header, Icon, Modal } from 'semantic-ui-react'
-export default function NavBar({sideNav, username}) {
+import {useDispatch} from "react-redux"
+import {actions} from '../../features/menu'
+export default function NavBar({username}) {
     const [modalState, setModalState] = useState(false)
+    
     const logOutButton = <Button onClick={()=>setModalState(true)} className='logout-btn'><img src={Logout} alt="logout"/></Button>
-    let [tog, setTog] = useState(false)
+    
+
     function choice(){
-        setTog(false)
+        
         setModalState(false)
         window.location.reload();
     }
+    const dispatch = useDispatch();
     return (
         <div className='navbar'>
         
             <div className='nav-wrapper'>
-            <img onClick={()=>sideNav(tog = !tog)} className='menu-btn rotate' src={Hamburger} alt="menu"/>
+            <img onClick={()=>dispatch(actions.sideNavToggler(true))} className='menu-btn rotate' src={Hamburger} alt="menu"/>
             <h1>Stimple</h1>
 
 
