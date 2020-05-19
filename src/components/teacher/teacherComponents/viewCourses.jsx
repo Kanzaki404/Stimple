@@ -4,6 +4,7 @@ import {Input,Button, Icon, Modal} from 'semantic-ui-react';
 export default function ViewCourses() {
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
+    const [input, setInput] = useState('')
 
     function handler(e){
         console.log(e);
@@ -28,7 +29,9 @@ export default function ViewCourses() {
          <h5>Title:</h5>
          <Input className="input-title"
                 transparent
-               
+                placeholder='Search Students...'
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
 
 
             />
