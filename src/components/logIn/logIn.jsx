@@ -3,18 +3,25 @@ import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from '../../features/menu'
+import { useForm } from "react-hook-form";
 
 
 const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     const dispatch = useDispatch();
     const [selected, setSelected] = useState("")
     const [regTeacher, setRegTeacher] = useState("");
-    const [pw, setPw] = useState("")
-    const [modalState, setModalState] = useState(false)
+    const [pw, setPw] = useState("");
+    const [modalState, setModalState] = useState(false);
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
+    const [termsNcondition, setTermsNcondition] = useState("");
+    const { register, handleSubmit, errors } = useForm();
 
     const handleChange = event => {
       setSelected(event.target.value);
+    };
+
+    const handleChangeTerms = event => {
+      setTermsNcondition(event.target.value);
     };
 
     const handleChangePw = event => {
@@ -29,7 +36,6 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
       localStorage.setItem("username", event.target.value)
       setUsername(event.target.value);
     };
-
 
     const handleLoginBtn = () => {
         if (selected === 'Student'){
@@ -88,10 +94,11 @@ return (
              <div className="registerForm">
                 <Form.Input className="regForm" type="email" placeholder="Email..." icon="mail" iconPosition="left"></Form.Input>
                 <Form.Input className="regForm" type="text" placeholder="Username..." icon="user" iconPosition="left" onChange={handleChangeUsername} ></Form.Input>
-                <Form.Input className="regForm" type="password" placeholder="Password..." icon="lock" iconPosition="left"></Form.Input>
+                <Form.Input className="regForm" type="password" placeholder="Password..." icon="lock" iconPosition="left" onChange={handleChangePw} ></Form.Input>
                 <label className="regForm asd">To sign up as a Teacher you will need a key from your workplace!</label>
                 <Form.Input className="regForm" type="password" placeholder="Teacher key..." icon="lock" iconPosition="left" onChange={handleChangeRegTeacher}></Form.Input>
-                <Form.Checkbox className="regForm"
+                <Form.Checkbox className="regForm" 
+                onChange={handleChangeTerms}
                 error={{
                   content: 'You must agree to the terms and conditions',
                   pointing: 'left',
@@ -99,7 +106,7 @@ return (
               </div>
            </Modal.Content>
             <Modal.Actions className="asd">
-                <Button color='green'   inverted  onClick={registerBtn}>
+                <Button color='green'   inverted  onClick={registerBtn} disabled={!username || !pw} >
                     <Icon name='sign in' /> Sign up and Log in!
                 </Button>
             </Modal.Actions>
