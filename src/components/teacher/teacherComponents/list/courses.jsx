@@ -6,15 +6,19 @@ import {useSelector} from "react-redux"
 export default function Courses () {
     const currentCourseData = useSelector(state=>state.courses.currentCourseData)
    
+
+    const descr = currentCourseData.map((e)=>
+    <p className="assign-detail">
+        
+    {e.description}
+     </p>
+  )
     const detailBtn =  <Button className="infoBtn"><Icon name="info"/>Detail</Button>
-    const modal =
+    const modal = 
     <Modal trigger={detailBtn} centered={false}>
     <Modal.Header>Assignment # Details:</Modal.Header>
     <Modal.Content>
-       <p className="assign-detail">
-        
-       {/* {currentCourseData.description} */}
-        </p>
+       {descr}
 
         <p className="links"> Links:
             <div>
@@ -23,8 +27,9 @@ export default function Courses () {
         </p>
     </Modal.Content>
   </Modal>
-    console.log(currentCourseData)
-    const assignments =  currentCourseData.map((e)=>
+    let assignSplice = [...currentCourseData]
+    assignSplice.splice(0,1);
+    const assignments =  assignSplice.map((e)=>
     <div className ="courses-cards" key={e.assigName}>
 
             <div className="upper-items">

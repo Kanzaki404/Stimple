@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Courses from './list/courses';
 import {Input,Button, Icon, Modal} from 'semantic-ui-react';
 import {useDispatch,useSelector} from "react-redux"
@@ -15,11 +15,15 @@ export default function ViewCourses() {
     const currentData = useSelector(state=>state.courses.currentCourseData)
     const getID = useSelector(state=>state.courses.currentID)
     const allData = useSelector(state=>state.courses.courses)
+    const [change, setchange] = useState(false)
+    useEffect(() => {
+        setchange(false)
+    }, [change])
     function handler(e){
-        
+
         setDate(e)
       }
-    const addBtn = 
+    const addBtn =
     <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  >
         <Icon  name="add"/>
         Add new Assignment
@@ -75,8 +79,10 @@ let arr = []
         axios.put(APIurl+getID, {courseName:currentCourse, assignments:arr})
     .then(res => {
         console.log(res)
+        setchange(true)
     })
     .catch(err => console.log('ERROR --->',err))
+
     
 }
     return (
@@ -90,9 +96,8 @@ let arr = []
             </div>
             <div className="course-list-container">
                 
-                <Courses/>
-               
-                
+              <Courses/>
+
             </div>
 
 
