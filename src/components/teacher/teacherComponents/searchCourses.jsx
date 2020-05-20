@@ -30,7 +30,9 @@ export default function SearchCourses() {
             (e) =>
               e.courseName.toLowerCase().match(input.toLowerCase())
           ).map((e) => {
-            return <div key={e._id}>{e.courseName} <button onClick={()=> del(e._id,setchange)}>Delete</button></div>
+            return <div key={e._id} onClick={()=>dispatch(actions.currentCourse(e))}>
+               {e.courseName} <button onClick={()=> del(e._id,setchange)}>Delete</button>
+                </div>
         });
 
 
@@ -95,7 +97,7 @@ function getList(url,dispatch){
 
     axios.get(url)
     .then((res)=>{
-        console.log(res)
+       
         temp.push(...res.data)
 
         dispatch(actions.addCourses([...temp]))

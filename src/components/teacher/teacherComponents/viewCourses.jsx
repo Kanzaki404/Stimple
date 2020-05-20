@@ -1,13 +1,20 @@
 import React,{useState} from 'react';
 import Courses from './list/courses';
 import {Input,Button, Icon, Modal} from 'semantic-ui-react';
+import {useSelector} from "react-redux"
+import axios from 'axios'
 export default function ViewCourses() {
+    const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal/"
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
     const [input, setInput] = useState('')
-
+    const [desInput, setDesInput] = useState('')
+    const currentCourse = useSelector(state=>state.courses.currentCourseName)
+    const currentData = useSelector(state=>state.courses.currentCourseData)
+    const getID = useSelector(state=>state.courses.currCurrentID)
+    const allData = useSelector(state=>state.courses.courses)
     function handler(e){
-        console.log(e);
+        
         setDate(e)
       }
     const addBtn = 
@@ -38,7 +45,7 @@ export default function ViewCourses() {
      </div>
      <div className="Desctiption">
          <h5>Description:</h5>
-         <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
+         <textarea  value={desInput} onChange={(e) => setDesInput(e.target.value)} id="subject" name="subject" placeholder="Write something.." ></textarea>
      </div>
      <div className="Deadline:">
          <h5>Deadline:</h5>
@@ -46,23 +53,39 @@ export default function ViewCourses() {
 
      </div>
      <div className="button-group">
-        <Button onClick={()=> setModalState(false)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
+        <Button onClick={()=> addAssig()} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
         <Button onClick={()=> setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
      </div>
 
   </Modal.Content>
 </Modal>
+    function addAssig(){
+
+    setModalState(false)
+    console.log('idMaybe',getID)
+    console.log('assigName',input)
+    console.log('description',desInput)
+    if(input !== ''){
+        axios.put(APIurl+getID, {courseName:currentCourse, assignments:{assigName:input,description:desInput, deadline:date}})
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => console.log('ERROR --->',err))
+    }
+}
     return (
         <div className="view-courses">
             <div className="course-info">
                 <div className="course-info-up">
-                <h1>Javascript</h1>
+                    <h1>{currentCourse}</h1>
                 {modalAddNew}
                 </div>
                 <hr/>
             </div>
             <div className="course-list-container">
+                
                 <Courses/>
+               
                 
             </div>
 
