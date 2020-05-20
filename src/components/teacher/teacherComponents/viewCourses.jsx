@@ -4,6 +4,7 @@ import {Input,Button, Icon, Modal} from 'semantic-ui-react';
 export default function ViewCourses() {
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
+    const [input, setInput] = useState('')
 
     function handler(e){
         console.log(e);
@@ -11,7 +12,7 @@ export default function ViewCourses() {
       }
     const addBtn = 
     <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  >
-        <Icon name="add"/>
+        <Icon  name="add"/>
         Add new Assignment
     </Button>
     const modalAddNew =
@@ -19,7 +20,7 @@ export default function ViewCourses() {
   trigger={addBtn}
   centered={false}
   open={modalState}
-  onClose={modalState}
+  onClose={()=>setModalState(false)}
 
   >
   <Modal.Header>New Assignment:</Modal.Header>
@@ -28,7 +29,9 @@ export default function ViewCourses() {
          <h5>Title:</h5>
          <Input className="input-title"
                 transparent
-                // icon={{ name: 'search', link: true }}
+                placeholder='Search Students...'
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
 
 
             />
@@ -43,8 +46,8 @@ export default function ViewCourses() {
 
      </div>
      <div className="button-group">
-        <Button onClick={()=> setModalState(false)} inverted color='green' className="confirmBtn"><Icon Icon name="checkmark"/>Add</Button>
-        <Button onClick={()=> setModalState(false)} className="cancelBtn"><Icon Icon name="cancel"/>Cancel</Button>
+        <Button onClick={()=> setModalState(false)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
+        <Button onClick={()=> setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
      </div>
 
   </Modal.Content>
@@ -60,20 +63,7 @@ export default function ViewCourses() {
             </div>
             <div className="course-list-container">
                 <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
-                <Courses/>
+                
             </div>
 
 

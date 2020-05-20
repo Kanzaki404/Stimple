@@ -89,7 +89,7 @@ return (
             trigger={detailButton}
             basic size='small'
             open={modalState}
-            onClose={modalState}>
+            onClose={()=>setModalState(false)}>
            <Modal.Content>
              <div className="registerForm">
                 <Form.Input className="regForm" type="email" placeholder="Email..." icon="mail" iconPosition="left"></Form.Input>

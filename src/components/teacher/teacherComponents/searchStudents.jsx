@@ -58,7 +58,7 @@ export default function SearchStudents({getStudents, studentList}) {
                         {p.username}
                       </li>
                   ))} */}
-                 {studentList2} 
+                 {studentList2}
               </div>
         </div>
 

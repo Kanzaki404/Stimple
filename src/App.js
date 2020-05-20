@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar username={username} studentList={studentList} setStudentList={setStudentList} />}
+        {showLogIn ? null : <NavBar username={username} />}
       </header>
 
       <main>
@@ -82,7 +82,7 @@ function App() {
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </main>
-      <footer>Hej</footer>
+      <footer>Hejdå</footer>
     </div>
   );
 }
