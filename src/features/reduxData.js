@@ -23,8 +23,8 @@ const initialState = {
 
 const reducer = createReducer(initialState, {
     [addCourses]: (state, action) => {
-        console.log('asfsaffaf',action.payload[0].assignments)
-        return { ...state, courses: action.payload,currentCourseName: action.payload[0].courseName,currentCourseData:action.payload.assignments  }
+        console.log('asfsaffaf',action.payload.assignments)
+        return { ...state, courses: action.payload,currentCourseName: action.payload[0].courseName,currentCourseData:action.payload[0].assignments  }
 
     },
     [currentCourse]: (state, action) => {

@@ -1,9 +1,11 @@
 import React,{useState} from 'react';
 import Courses from './list/courses';
 import {Input,Button, Icon, Modal} from 'semantic-ui-react';
-import {useSelector} from "react-redux"
+import {useDispatch,useSelector} from "react-redux"
+import {actions} from '../../../features/reduxData'
 import axios from 'axios'
 export default function ViewCourses() {
+    const dispatch = useDispatch();
     const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal/"
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
@@ -11,7 +13,7 @@ export default function ViewCourses() {
     const [desInput, setDesInput] = useState('')
     const currentCourse = useSelector(state=>state.courses.currentCourseName)
     const currentData = useSelector(state=>state.courses.currentCourseData)
-    const getID = useSelector(state=>state.courses.currCurrentID)
+    const getID = useSelector(state=>state.courses.currentID)
     const allData = useSelector(state=>state.courses.courses)
     function handler(e){
         
@@ -59,19 +61,23 @@ export default function ViewCourses() {
 
   </Modal.Content>
 </Modal>
+let arr = []
     function addAssig(){
 
     setModalState(false)
-    console.log('idMaybe',getID)
-    console.log('assigName',input)
-    console.log('description',desInput)
-    if(input !== ''){
-        axios.put(APIurl+getID, {courseName:currentCourse, assignments:{assigName:input,description:desInput, deadline:date}})
+    arr = [...currentData]
+    console.log('idMaybe',arr)
+    arr.push({assigName:input,description:desInput, deadline:date})
+    console.log('idMaybe1',arr)
+   // dispatch(actions.addNewAssig(arr))
+
+   console.log('scscscscscsc',getID)
+        axios.put(APIurl+getID, {courseName:currentCourse, assignments:arr})
     .then(res => {
         console.log(res)
     })
     .catch(err => console.log('ERROR --->',err))
-    }
+    
 }
     return (
         <div className="view-courses">

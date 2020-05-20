@@ -23,45 +23,31 @@ export default function Courses () {
         </p>
     </Modal.Content>
   </Modal>
-   
-    // const assignments = currentCourseData.map((e)=>
-    // <div className ="courses-cards" key={e.assigName}>
+    console.log(currentCourseData)
+    const assignments =  currentCourseData.map((e)=>
+    <div className ="courses-cards" key={e.assigName}>
 
-    //         <div className="upper-items">
-    //             <h2>{e.assigName}</h2>
-    //         </div>
-    //         <div className="lower-items">
-    //             <p>Deadline {e.deadline }</p>
-    //             <div className="button-group">
+            <div className="upper-items">
+                <h2>{e.assigName}</h2>
+            </div>
+            <div className="lower-items">
+                <p>Deadline {e.deadline }</p>
+                <div className="button-group">
 
-    //             <Button className="editBtn"><Icon name="edit"/>Edit</Button>
-    //             {modal}
-    //             </div>
-    //         </div>
-    //     </div>
+                <Button className="editBtn"><Icon name="edit"/>Edit</Button>
+                {modal}
+                </div>
+            </div>
+        </div>
     
     
     
-    // )key={currentCourseData.assigName}
+    )
     
 
     return (
         <div>
-                <div className ="courses-cards" >
-
-                        <div className="upper-items">
-                            {/* <h2>{currentCourseData.assigName}</h2> */}
-                        </div>
-                        <div className="lower-items">
-                            {/* <p>Deadline {currentCourseData.deadline }</p> */}
-                            <div className="button-group">
-
-                            <Button className="editBtn"><Icon name="edit"/>Edit</Button>
-                            {modal}
-                        </div>
-                </div>
-
-                </div>
+                {assignments}
         </div>
 
     )
