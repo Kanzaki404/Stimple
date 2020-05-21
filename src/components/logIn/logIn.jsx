@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
-import {useDispatch,useSelector} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import {actions} from '../../features/menu'
 
 
