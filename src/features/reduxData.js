@@ -8,7 +8,9 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 // const decreaseAmount = createAction('decreaseAmount');
 const addCourses = createAction('addCourses')
 const currentCourse = createAction('currentCourse')
-const actions = {addCourses,currentCourse};
+const addAssig = createAction('addAssig')
+
+const actions = {addCourses,currentCourse,addAssig};
 
 
 const initialState = {
@@ -23,15 +25,22 @@ const initialState = {
 
 const reducer = createReducer(initialState, {
     [addCourses]: (state, action) => {
-        console.log('asfsaffaf',action.payload.assignments)
-        return { ...state, courses: action.payload,currentCourseName: action.payload[0].courseName,currentCourseData:action.payload[0].assignments  }
+        console.log('asfsaffaf', action.payload.assignments)
+        return { ...state, courses: action.payload, currentCourseName: action.payload[0].courseName, currentCourseData:action.payload[0].assignments  }
 
     },
     [currentCourse]: (state, action) => {
 
-        console.log('IS THIS THE ID?' +action.payload.assignments)
-        console.log('the arrat of assigs',state)
-        return { ...state, currentCourseName: action.payload.courseName,currentCourseData:action.payload.assignments,currentID:action.payload._id }
+        //console.log('the arrat of assigs',state)
+        return { ...state, currentCourseName: action.payload.courseName, currentCourseData:action.payload.assignments, currentID:action.payload._id }
+
+    },
+    [addAssig]: (state, action) => {
+
+        console.log('PayLoad' + action.payload)
+       action.payload.forEach(e=>console.log('Each ELEMENT',e))
+        //console.log('the arrat of assigs',state)
+        return { ...state, currentCourseData:action.payload }
 
     }
 })
