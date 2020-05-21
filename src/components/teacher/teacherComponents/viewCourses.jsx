@@ -69,7 +69,7 @@ export default function ViewCourses() {
 </Modal>
 
 let arr = [];
-    
+
 function addAssig(){
 
     setModalState(false)

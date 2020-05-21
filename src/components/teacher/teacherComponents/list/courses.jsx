@@ -1,27 +1,27 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Button, Icon, Modal} from 'semantic-ui-react';
-import {useSelector} from "react-redux"
 
 
 export default function Courses () {
-    const currentCourseData = useSelector(state=>state.courses.currentCourseData)
-   useEffect(() => {
-       console.log('courses re-rendered')
-       
-   }, [currentCourseData])
-
-    const descr = currentCourseData.map((e)=>
-    <p className="assign-detail" key={e.assigName}>
-        
-    {e.description}
-     </p>
-  )
-    const detailBtn =  <Button className="infoBtn"><Icon name="info"/>Detail</Button>
-    const modal = 
+    const detailBtn =  <Button className="infoBtn"><Icon Icon name="info"/>Detail</Button>
+    const modal =
     <Modal trigger={detailBtn} centered={false}>
     <Modal.Header>Assignment # Details:</Modal.Header>
     <Modal.Content>
-       {descr}
+       <p className="assign-detail">
+       Lorem Ipsum is simply dummy text of the printing and
+       typesetting industry. Lorem Ipsum has been the
+       industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book. It has
+        survived not only five centuries, but also the leap
+        into electronic typesetting, remaining essentially
+        unchanged. It was popularised in the 1960s with
+        the release of Letraset sheets containing Lorem
+        Ipsum passages, and more recently with desktop
+        publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.
+        </p>
 
         <p className="links"> Links:
             <div>
@@ -30,29 +30,21 @@ export default function Courses () {
         </p>
     </Modal.Content>
   </Modal>
-    let assignSplice = [...currentCourseData]
-    assignSplice.splice(0,1);
-    const assignments =  assignSplice.map((e)=>
-    <div className ="courses-cards" key={e.assigName}>
+
+    return (
+        <div className ="courses-cards">
 
             <div className="upper-items">
-                <h2>{e.assigName}</h2>
+                <h2>Assignment Name</h2>
             </div>
             <div className="lower-items">
-                <p>Deadline {e.deadline }</p>
+                <p>Deadline 24/12/2020</p>
                 <div className="button-group">
 
-                <Button className="editBtn"><Icon name="edit"/>Edit</Button>
+                <Button className="editBtn"><Icon Icon name="edit"/>Edit</Button>
                 {modal}
                 </div>
             </div>
-        </div>
-    )
-    
-
-    return (
-        <div>
-                {assignments}
         </div>
 
     )

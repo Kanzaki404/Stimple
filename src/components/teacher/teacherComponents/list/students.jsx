@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import { Button, Header, Icon, Modal, Progress, Dropdown } from 'semantic-ui-react'
-export default function Students() {
+import { Button, Header, Icon, Modal,Progress, Dropdown } from 'semantic-ui-react'
+export default function Students({sendData}) {
     const [percent, setPrecent] = useState(0)
-    const [incr ,setInc] = useState(0)
+    const [incr , setInc] = useState(0)
     const [modalState, setModalState] = useState(false)
     const detailButton = <Button onClick={()=> setModalState(true)}>Test</Button>
     // function testIncrement(inc){
@@ -20,12 +20,12 @@ export default function Students() {
            <h2>JavaScript 2</h2>
            <div className="low-items">
             <div className="modal-grades">
-            <Modal
+            <Modal 
             className="modal-title"
             trigger={detailButton}
             basic size='small'
             open={modalState}
-            onClose={()=>setModalState(false)}>
+            onClose={modalState}>
 
                 <Header icon='tag' content='JavaScript 1' />
                 <hr/>
@@ -64,7 +64,7 @@ export default function Students() {
                 </Modal.Actions>
             </Modal>
             </div>
-
+           
             <p>Assignment: {incr}/3</p>
            <Progress className='prog-bar' active percent={percent} indicating />
            </div>
