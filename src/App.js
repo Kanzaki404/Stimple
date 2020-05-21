@@ -56,10 +56,6 @@ function App() {
                   <Icon name="clipboard list" />
                   Courses
                 </Menu.Item>
-                <Menu.Item as="a" className="remove-border">
-                  <Icon name="add" />
-                  New Course
-                </Menu.Item>
               </div>
             ) : (
               <div>

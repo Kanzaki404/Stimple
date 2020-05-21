@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Icon, Modal} from 'semantic-ui-react';
 import {useSelector} from "react-redux"
 
 
 export default function Courses () {
     const currentCourseData = useSelector(state=>state.courses.currentCourseData)
-   
+   useEffect(() => {
+       console.log('courses re-rendered')
+       
+   }, [currentCourseData])
 
     const descr = currentCourseData.map((e)=>
-    <p className="assign-detail">
+    <p className="assign-detail" key={e.assigName}>
         
     {e.description}
      </p>
@@ -44,9 +47,6 @@ export default function Courses () {
                 </div>
             </div>
         </div>
-    
-    
-    
     )
     
 

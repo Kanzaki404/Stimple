@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
 import {useDispatch, useSelector} from "react-redux"
 import {actions} from '../../features/menu'
-import { useForm } from "react-hook-form";
+// import { useForm } from "react-hook-form";
 
 
 const LogIn = ({setUsername, username, setStudentList, studentList}) => {
@@ -14,7 +14,7 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     const [modalState, setModalState] = useState(false);
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
     /* const [termsNcondition, setTermsNcondition] = useState(""); */
-    const { register, handleSubmit, errors } = useForm();
+    // const { register, handleSubmit, errors } = useForm();
 
     const handleChange = event => {
       setSelected(event.target.value);
@@ -44,7 +44,7 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
         }else if (selected === 'Teacher' && username && pw){
           dispatch(actions.LoggedIn('Teacher'))
         } */
-        if(regTeacher === "asd123" && username && pw)
+        if(regTeacher === "a" && username && pw)
           dispatch(actions.LoggedIn('Teacher'))
         else if (pw && username)
           dispatch(actions.LoggedIn('Student'))

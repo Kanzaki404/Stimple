@@ -18,7 +18,9 @@ export default function ViewCourses() {
     const [change, setchange] = useState(false)
     useEffect(() => {
         setchange(false)
-    }, [change])
+
+        console.log(change)
+    }, [currentData])
     function handler(e){
 
         setDate(e)
@@ -65,25 +67,33 @@ export default function ViewCourses() {
 
   </Modal.Content>
 </Modal>
-let arr = []
-    function addAssig(){
+
+let arr = [];
+    
+function addAssig(){
 
     setModalState(false)
     arr = [...currentData]
     console.log('idMaybe',arr)
     arr.push({assigName:input,description:desInput, deadline:date})
     console.log('idMaybe1',arr)
-   // dispatch(actions.addNewAssig(arr))
+
 
    console.log('scscscscscsc',getID)
         axios.put(APIurl+getID, {courseName:currentCourse, assignments:arr})
     .then(res => {
         console.log(res)
-        setchange(true)
+
+        // dispatch(actions.currentCourse(allData()))
+        // setchange(true)
+        // arr.forEach(e =>{
+        dispatch(actions.addAssig(arr))
+        // })
+
     })
     .catch(err => console.log('ERROR --->',err))
 
-    
+
 }
     return (
         <div className="view-courses">
@@ -95,8 +105,8 @@ let arr = []
                 <hr/>
             </div>
             <div className="course-list-container">
-                
-              <Courses/>
+
+              <Courses />
 
             </div>
 

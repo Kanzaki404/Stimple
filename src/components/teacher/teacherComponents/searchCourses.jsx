@@ -19,7 +19,7 @@ export default function SearchCourses() {
         useEffect(() => {
             setchange(false)
             console.log('currentArr', testArr)
-            getList(APIurl,dispatch)
+            getList(APIurl, dispatch)
 
 
         }, [change])
@@ -30,17 +30,21 @@ export default function SearchCourses() {
             (e) =>
               e.courseName.toLowerCase().match(input.toLowerCase())
           ).map((e) => {
-            return <div key={e._id} onClick={()=>dispatch(actions.currentCourse(e))}>
+            return <div key={e._id} onClick={()=>chooseCourse(e)}>
                {e.courseName} <button onClick={()=> del(e._id,setchange)}>Delete</button>
                 </div>
         });
 
-
+        function chooseCourse(el){
+            dispatch(actions.currentCourse(el))
+            
+        }
+    
     const addNewCourseBtn =
-    <Button onClick={()=>setModalState(true)} color='blue' className="coursesAddBtn"  >
+        <Button onClick={()=>setModalState(true)} color='blue' className="coursesAddBtn"  >
                 <Icon  name="add"/>
                 Add new Course
-            </Button>
+        </Button>
     const addCourseModal =
     <Modal
         trigger={addNewCourseBtn}
@@ -97,7 +101,7 @@ function getList(url,dispatch){
 
     axios.get(url)
     .then((res)=>{
-       
+
         temp.push(...res.data)
 
         dispatch(actions.addCourses([...temp]))
