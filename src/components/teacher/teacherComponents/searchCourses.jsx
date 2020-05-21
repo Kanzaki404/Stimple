@@ -16,7 +16,7 @@ export default function SearchCourses() {
         const [change, setchange] = useState(false)
         const dispatch = useDispatch()
         const testArr = useSelector(state=>state.courses.courses)
-        
+
         useEffect(() => {
             setchange(false)
             console.log('currentArr', testArr)
@@ -35,13 +35,13 @@ export default function SearchCourses() {
                {e.courseName} <button onClick={()=> del(e._id,setchange,dispatch,testArr)}>Delete</button>
                 </div>
         });
-        
+
         function chooseCourse(el){
             console.log(el.assignments)
             dispatch(actions.currentCourse(el))
-           
+
         }
-    
+
     const addNewCourseBtn =
         <Button onClick={()=>setModalState(true)} color='blue' className="coursesAddBtn"  >
                 <Icon  name="add"/>
@@ -72,6 +72,7 @@ export default function SearchCourses() {
             <div className="button-group">
                 <Button onClick={()=>modalAction(APIurl,modalInput,assigContent,setModalState,setchange,dispatch,testArr)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
                 <Button onClick={()=>setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
+
             </div>
 
         </Modal.Content>
@@ -108,7 +109,7 @@ function getList(url,dispatch,setchange){
 
         if(res.data.length !== 0){
             dispatch(actions.addCourses([...temp]))
-            
+
 
         }
         temp = []
@@ -128,7 +129,7 @@ function modalAction(APIurl,modalInput,assigContent,setModalState,setchange,disp
         temp.push({courseName:modalInput, assignments:assigContent})
 
         dispatch(actions.addCourses(temp))
-        
+
     })
     .catch(err => console.log('ERROR --->',err))
     }

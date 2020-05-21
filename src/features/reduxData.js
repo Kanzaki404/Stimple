@@ -9,8 +9,9 @@ import { createAction, createReducer } from '@reduxjs/toolkit';
 const addCourses = createAction('addCourses')
 const currentCourse = createAction('currentCourse')
 const addAssig = createAction('addAssig')
+const setCurrentCourse = createAction('setCurrentCourse')
 
-const actions = {addCourses,currentCourse,addAssig};
+const actions = {addCourses,currentCourse,addAssig,setCurrentCourse};
 
 
 const initialState = {
@@ -26,7 +27,7 @@ const initialState = {
 const reducer = createReducer(initialState, {
     [addCourses]: (state, action) => {
         //, currentCourseData:action.payload[0].assignments
-        console.log('asfsaffaf', action.payload)
+        console.log('asfsaffaf', action.currentCourseData)
         return { ...state, courses: action.payload, currentCourseName: 'Choose Course'  }
 
     },
@@ -42,6 +43,12 @@ const reducer = createReducer(initialState, {
        action.payload.forEach(e=>console.log('Each ELEMENT',e))
         //console.log('the arrat of assigs',state)
         return { ...state, currentCourseData:action.payload }
+
+    },
+    [setCurrentCourse]: (state, action) => {
+
+       
+        return { ...state, currentCourseName:action.payload }
 
     }
 })

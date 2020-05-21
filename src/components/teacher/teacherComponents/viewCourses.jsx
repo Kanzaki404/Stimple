@@ -91,8 +91,8 @@ function addAssig(){
         // setchange(true)
         // arr.forEach(e =>{
         dispatch(actions.addAssig(arr))
-        getList(APIurl,dispatch)
-        
+        getList(APIurl,dispatch,currentCourse)
+
         // })
 
     })
@@ -101,7 +101,7 @@ function addAssig(){
 
 }
 let temp = []
-function getList(url,dispatch){// FIND OUT WHY THIS WORKS
+function getList(url,dispatch,currentCourse){// FIND OUT WHY THIS WORKS
 
     axios.get(url)
     .then((res)=>{
@@ -110,6 +110,7 @@ function getList(url,dispatch){// FIND OUT WHY THIS WORKS
 
         if(res.data.length !== 0){
             dispatch(actions.addCourses([...temp]))
+            dispatch(actions.setCurrentCourse(currentCourse))
 
 
         }
