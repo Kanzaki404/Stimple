@@ -7,7 +7,7 @@ import {actions} from '../../../features/reduxData'
 
 
 export default function SearchCourses() {
-        const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal"
+        const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal1"
         const assigContent =  [{ assigName: '', description: '', deadline: '' }]
         const [input, setInput] = useState('')
         const [modalInput, setModalInput] = useState('')
@@ -16,10 +16,11 @@ export default function SearchCourses() {
         const [change, setchange] = useState(false)
         const dispatch = useDispatch()
         const testArr = useSelector(state=>state.courses.courses)
+        
         useEffect(() => {
             setchange(false)
             console.log('currentArr', testArr)
-            getList(APIurl, dispatch)
+            getList(APIurl, dispatch,setchange)
 
 
         }, [change])
@@ -31,13 +32,14 @@ export default function SearchCourses() {
               e.courseName.toLowerCase().match(input.toLowerCase())
           ).map((e) => {
             return <div key={e._id} onClick={()=>chooseCourse(e)}>
-               {e.courseName} <button onClick={()=> del(e._id,setchange)}>Delete</button>
+               {e.courseName} <button onClick={()=> del(e._id,setchange,dispatch,testArr)}>Delete</button>
                 </div>
         });
-
+        
         function chooseCourse(el){
+            console.log(el.assignments)
             dispatch(actions.currentCourse(el))
-            
+           
         }
     
     const addNewCourseBtn =
@@ -68,7 +70,7 @@ export default function SearchCourses() {
                 <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
             </div>
             <div className="button-group">
-                <Button onClick={()=>modalAction(APIurl,modalInput,assigContent,setModalState,setchange)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
+                <Button onClick={()=>modalAction(APIurl,modalInput,assigContent,setModalState,setchange,dispatch,testArr)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
                 <Button onClick={()=>setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
             </div>
 
@@ -97,20 +99,24 @@ export default function SearchCourses() {
 }
 
 let temp = []
-function getList(url,dispatch){
+function getList(url,dispatch,setchange){
 
     axios.get(url)
     .then((res)=>{
-
+        console.log(res)
         temp.push(...res.data)
 
-        dispatch(actions.addCourses([...temp]))
+        if(res.data.length !== 0){
+            dispatch(actions.addCourses([...temp]))
+            
+
+        }
         temp = []
     })
-    .catch(err => console.log('ERROR --->',err))
+    .catch(err => console.log('ERROR1 --->',err))
 }
 
-function modalAction(APIurl,modalInput,assigContent,setModalState,setchange){
+function modalAction(APIurl,modalInput,assigContent,setModalState,setchange,dispatch,testArr){
 
     console.log('here!')
     if(modalInput !== ''){
@@ -118,18 +124,27 @@ function modalAction(APIurl,modalInput,assigContent,setModalState,setchange){
     .then(res => {
         console.log(res)
         setchange(true)
+        let temp = testArr;
+        temp.push({courseName:modalInput, assignments:assigContent})
+
+        dispatch(actions.addCourses(temp))
+        
     })
     .catch(err => console.log('ERROR --->',err))
     }
     setModalState(false)
 }
 
-function del(id,setchange){
+function del(id,setchange,testArr,dispatch){
 
     axios.delete("https://jsonbox.io/RP_DD_Coders_Student_Portal/" + id)
   .then(response => {
     console.log(response)
     setchange(true)
+    let temp = testArr;
+        temp.pop()
+
+        dispatch(actions.addCourses(temp))
   })
   .catch(e => console.log(e))
 
