@@ -5,19 +5,19 @@ import {useSelector} from "react-redux"
 
 export default function Courses () {
     const currentCourseData = useSelector(state=>state.courses.currentCourseData)
-   useEffect(() => {
-       console.log('courses re-rendered')
-       
-   }, [currentCourseData])
+//    useEffect(() => {
+//        console.log('courses re-rendered')
 
+//    }, [])
+    console.log(currentCourseData)
     const descr = currentCourseData.map((e)=>
     <p className="assign-detail" key={e.assigName}>
-        
+
     {e.description}
      </p>
   )
     const detailBtn =  <Button className="infoBtn"><Icon name="info"/>Detail</Button>
-    const modal = 
+    const modal =
     <Modal trigger={detailBtn} centered={false}>
     <Modal.Header>Assignment # Details:</Modal.Header>
     <Modal.Content>
@@ -32,6 +32,7 @@ export default function Courses () {
   </Modal>
     let assignSplice = [...currentCourseData]
     assignSplice.splice(0,1);
+
     const assignments =  assignSplice.map((e)=>
     <div className ="courses-cards" key={e.assigName}>
 
@@ -48,7 +49,7 @@ export default function Courses () {
             </div>
         </div>
     )
-    
+
 
     return (
         <div>
