@@ -30,9 +30,17 @@
     margin-top: 15px;
     text-align: left;
     padding: 10px;
-    width: 15vw;
+    width: 240px;
     line-height: 2rem;
+    cursor: pointer;
 
+}
+
+.coursesAddBtn{
+
+    width: 240px !important;
+    height: 40px !important;
+    margin-top: 2px  !important;
 }
 
 .search-student-container:first-child{

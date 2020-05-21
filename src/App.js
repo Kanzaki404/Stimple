@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar username={username} studentList={studentList} setStudentList={setStudentList} />}
+        {showLogIn ? null : <NavBar username={username} />}
       </header>
 
       <main>
@@ -56,10 +56,6 @@ function App() {
                   <Icon name="clipboard list" />
                   Courses
                 </Menu.Item>
-                <Menu.Item as="a" className="remove-border">
-                  <Icon name="add" />
-                  New Course
-                </Menu.Item>
               </div>
             ) : (
               <div>
@@ -82,7 +78,7 @@ function App() {
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </main>
-      <footer>Hej</footer>
+      <footer>Hejdå</footer>
     </div>
   );
 }

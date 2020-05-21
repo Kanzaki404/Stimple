@@ -16,7 +16,7 @@ export default function TeacherMain({username}) {
                     <TeacherProfile username={username} />
                 </div>
                 <div className="progress-comp">
-                    {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses />}
+                    {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses />}                    
                 </div>
                 <div className="student-overview">
                 {teachMenu === 'students' ? <ViewStudents /> : <ViewCourses />}
