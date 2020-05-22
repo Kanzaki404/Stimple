@@ -18,7 +18,7 @@ export default function ViewStudents() {
             </Grid.Column>
 
             <Grid.Column verticalAlign="middle" textAlign="left" width={6}>
-              <h3>Name: {currentStudent}</h3>
+              <h3>{currentStudent}</h3>
               <br />
               <span>Phone: 123 123 12 12</span>
               <br />

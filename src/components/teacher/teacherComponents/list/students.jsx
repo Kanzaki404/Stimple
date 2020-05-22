@@ -33,8 +33,8 @@ export default function Students() {
   const dispatch = useDispatch();
   const courses = useSelector((state) => state.courses.courses);
 
-  const [percent, setPrecent] = useState(0);
-  const [incr, setInc] = useState(0);
+  const [percent, setPrecent] = useState();
+  const [incr, setInc] = useState(40);
   const [modalState, setModalState] = useState(false);
   const detailButton = (
     <Button onClick={() => setModalState(true)}>Set Grade</Button>
@@ -50,22 +50,22 @@ export default function Students() {
     { key: 3, text: "VG", value: 3 },
   ];
 
- 
+
 
   console.log("CK", courses);
   const studentList = courses.map((e) => (
     <div className="course-comp" key={e.courseName}>
-      <h2>{e.courseName}</h2>
-       
+      <h2>{e.courseName}</h2> <p className='go-right'>Total assignments: {e.assignments.length}</p>
+
         {e.assignments.map((el,index) => (
         <div className='sorted-assign'>
             <p>Assignment {index+1} : <h3>{el.assigName}</h3></p>
           {/* <p></p> */}
-          <p>Deadline: {el.deadline}</p>
+          <p>Deadline: <h4>{el.deadline}</h4></p>
         </div>
       ))}
-        
-      
+
+
       <div className="low-items">
         <div className="modal-grades">
           <Modal
@@ -122,11 +122,12 @@ export default function Students() {
           </Modal>
         </div>
 
-        <p>Assignment: {incr}/3</p>
-        <Progress className="prog-bar" active percent={percent} indicating />
+       
+        <Progress className="prog-bar" active percent={Math.floor(Math.random() * Math.floor(e.assignments.length * 35))} indicating />
+           
       </div>
     </div>
   ));
-
+//
   return <div>{studentList}</div>;
 }

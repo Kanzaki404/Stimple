@@ -8,14 +8,6 @@
 
 .left-items{
     float: left;
-
-    img{
-
-    }
-
-    p{
-
-    }
 }
 
 .right-items{
@@ -59,4 +51,13 @@
 .sorted-assign {
     margin: 2rem;
     display: list-item;
+    border-bottom: 1px solid #ccc !important;
+    
+    h4{
+        margin-top: 8px !important;
+        margin-bottom: 15px !important;
+    }
+    h3{
+        margin-top: 8px !important;
+    }
 }
