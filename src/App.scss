@@ -62,6 +62,9 @@ main > div{
     transform: rotate(360deg);
   }
 }
+body ::-webkit-scrollbar {
+  width: 5px !important;
+}
 
 ::-webkit-scrollbar {
   width: 5px;
