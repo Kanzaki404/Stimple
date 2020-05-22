@@ -33,6 +33,11 @@
     width: 240px;
     line-height: 2rem;
     cursor: pointer;
+    div {
+        display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    }
 
 }
 

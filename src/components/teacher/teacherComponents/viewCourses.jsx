@@ -6,7 +6,7 @@ import {actions} from '../../../features/reduxData'
 import axios from 'axios'
 export default function ViewCourses() {
     const dispatch = useDispatch();
-    const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal/"
+    const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal1/"
     const [date, setDate] = useState('2020-05-18')
     const [modalState, setModalState] = useState(false)
     const [input, setInput] = useState('')
@@ -14,22 +14,24 @@ export default function ViewCourses() {
     const currentCourse = useSelector(state=>state.courses.currentCourseName)
     const currentData = useSelector(state=>state.courses.currentCourseData)
     const getID = useSelector(state=>state.courses.currentID)
-    const allData = useSelector(state=>state.courses.courses)
+
     const [change, setchange] = useState(false)
     useEffect(() => {
         setchange(false)
 
         console.log(change)
-    }, [currentData])
+    }, [])
     function handler(e){
 
         setDate(e)
       }
+
     const addBtn =
     <Button color='blue' onClick={()=> setModalState(true)} className="addBtn"  >
         <Icon  name="add"/>
         Add new Assignment
     </Button>
+
     const modalAddNew =
   <Modal
   trigger={addBtn}
@@ -69,7 +71,8 @@ export default function ViewCourses() {
 </Modal>
 
 let arr = [];
-    
+
+
 function addAssig(){
 
     setModalState(false)
@@ -88,12 +91,32 @@ function addAssig(){
         // setchange(true)
         // arr.forEach(e =>{
         dispatch(actions.addAssig(arr))
+        getList(APIurl,dispatch,currentCourse)
+
         // })
 
     })
     .catch(err => console.log('ERROR --->',err))
 
 
+}
+let temp = []
+function getList(url,dispatch,currentCourse){// FIND OUT WHY THIS WORKS
+
+    axios.get(url)
+    .then((res)=>{
+        console.log(res)
+        temp.push(...res.data)
+
+        if(res.data.length !== 0){
+            dispatch(actions.addCourses([...temp]))
+            dispatch(actions.setCurrentCourse(currentCourse))
+
+
+        }
+        temp = []
+    })
+    .catch(err => console.log('ERROR1 --->',err))
 }
     return (
         <div className="view-courses">
