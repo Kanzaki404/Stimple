@@ -138,7 +138,7 @@ function modalAction(APIurl,modalInput,assigContent,setModalState,setchange,disp
 
 function del(id,setchange,testArr,dispatch){
 
-    axios.delete("https://jsonbox.io/RP_DD_Coders_Student_Portal/" + id)
+    axios.delete("https://jsonbox.io/RP_DD_Coders_Student_Portal1/" + id)
   .then(response => {
     console.log(response)
     setchange(true)

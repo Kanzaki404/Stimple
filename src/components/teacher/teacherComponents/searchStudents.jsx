@@ -1,6 +1,11 @@
 import React, {useState} from 'react'
+import {useDispatch,useSelector} from "react-redux"
+import {actions} from '../../../features/reduxData'
 import { Input, Menu, Label } from 'semantic-ui-react'
 export default function SearchStudents({getStudents, studentList}) {
+    const dispatch = useDispatch()
+    
+    // const testArr = useSelector(state=>state.courses.Students)
     const [input, setInput] = useState('')
     const testArr = [
         'Alexander Colik',
@@ -38,8 +43,14 @@ export default function SearchStudents({getStudents, studentList}) {
           e.toLowerCase().match(input.toLowerCase())
       )
     .map((e) => {
-        return <div key={e}>{e}</div>
+        return <div key={e} onClick={()=>chooseStudent(e)}>{e}</div>
     });
+
+    function chooseStudent(el){
+        console.log(el)
+        dispatch(actions.students(el))
+
+    }
 
     
 

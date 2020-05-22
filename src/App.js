@@ -64,6 +64,7 @@ function App() {
                   Home
                 </Menu.Item>
                 <Menu.Item as="a">
+                <Icon name="calendar alternate outline" />
                   Schedule
                 </Menu.Item>
               </div>
