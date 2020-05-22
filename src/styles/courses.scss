@@ -1,0 +1,111 @@
+.course-comp{
+
+    padding: 10px;
+    padding-bottom: 0;
+    // box-shadow: 0 0 0 1px #d4d4d510, 0 2px 4px 0 rgba(34, 36, 38, 0.048), 0 2px 10px 0 rgba(34, 36, 38, 0.055) !important;
+    h2{
+        text-align: left;
+        margin-bottom: 0 !important;
+        margin-top: 20px !important;
+        margin-left: 20px !important;
+
+    }
+}
+
+.button-group {
+
+    .deleteBtn{
+        background-color:#d9534f !important;
+        color: white !important;
+        float: right;
+        margin: 0.5px;
+    }
+
+    .deleteBtn:hover{
+        background-color:black !important;
+        color: black;
+
+    }
+
+
+}
+@media only screen and (max-width: 767px) {
+
+
+    .ui.modal>.content {
+        display: block;
+        padding: 1rem !important;
+        text-align: center;
+    }
+
+}
+
+@media(max-width: 349px) {
+
+    .button-group {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+   .confirmBtn {
+
+    margin-bottom: 8px !important;
+    width: 104px !important;
+
+   }
+   .cancelBtn {
+
+    margin-bottom: 8px !important;
+
+   }
+
+}
+
+
+
+@media(max-width: 620px) {
+
+    .low-items {
+      text-align: left;
+      margin-left: 20px;
+      Button{
+          float: left !important;
+      }
+
+     }
+    }
+.low-items{
+    margin-top: 90px;
+    margin-bottom: 20px;
+
+    button{
+        float: right;
+        margin-top: -6px !important;
+    }
+
+    p{
+        float: right;
+        padding-top: 3px;
+        padding-right: 10px;
+    }
+}
+
+.prog-bar{
+    width: 60% !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+
+}
+
+.assign-detail {
+
+    line-height: 1.5rem;
+}
+
+.links {
+    font-weight: bold;;
+}
+

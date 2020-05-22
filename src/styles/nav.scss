@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+.ui.dimmer {
+    background-color: rgba(0, 0, 0, 0.87) !important;
+}
+.menu-btn{
+    margin-right: 1rem;
+    margin-left: 5rem;
+    margin-top: 4px;
+    width: 25px;
+    height: 29px;
+}
+
+// .rotate {
+//     -moz-transition: all .5s linear;
+//     -webkit-transition: all .5s linear;
+//     transition: all .5s linear;
+// }
+// .rotate.down {
+//     -moz-transform:rotate(90deg);
+//     -webkit-transform:rotate(90deg);
+//     transform:rotate(90deg);
+// }
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95vw;
+    color: snow;
+    background-color: #3a3a3a;
+    p{
+        font-size: 1rem;
+    }
+    h1{
+        margin: auto;
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: baseline;
+    margin-left: 2rem;
+    
+}
+
+.logged-in {
+    display: flex;
+    margin: auto 0;
+    // margin-left: 79rem;
+  p{
+    margin: auto !important;
+  }
+
+}
+
+.logout-btn{
+    background-color: #E65425 !important;
+    margin-right: 2rem;
+    margin-left: 25px !important;
+    img{
+        min-width: 13px;
+        max-width: 13px;
+    }
+}
+
+@media(max-width: 835px) {
+
+    .menu-btn {
+        margin-left: 0rem;
+    }
+}
+
+@media(max-width: 863px) {
+
+    .menu-btn {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 443px) {
+
+    .logged-in {
+
+    p {
+
+        display: none!important;}
+
+    }
+}
+
+

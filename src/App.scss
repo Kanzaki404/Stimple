@@ -1,0 +1,103 @@
+@import './styles/containers.scss';
+@import './styles/stats.scss';
+@import './styles/nav.scss';
+@import './styles/courses.scss';
+@import './styles/login.scss';
+@import './styles/searchStudent.scss';
+@import './styles/viewStudent';
+@import './styles/viewCourses';
+main > div{
+  margin: 0 !important;
+}
+.ui.inverted.menu {
+  background: #3a3a3a !important;
+
+}
+.ui.inverted.icon.menu .item {
+  color: snow !important;
+  border: none !important;
+}
+
+.ui.segment {
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #3a3a3a;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body ::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(102, 102, 102);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: #888;  */
+  background: rgba(0, 0, 0, 0.096) !important;
+
+}
+
+footer{
+  background-color: #282c34;
+    min-height: 5vh;
+    color: white;
+}
+
+
+
+@media(max-width: 1300px) {
+
+  ::-webkit-scrollbar {
+
+    margin-right: 1000px;
+
+
+  }
+
+}

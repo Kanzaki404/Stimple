@@ -1,0 +1,54 @@
+.search-student-container{
+
+    height: 35vh;
+    padding: 10px;
+
+}
+
+// .side-border{
+//     padding-top: 10px;
+//     overflow-y: scroll;
+//     max-height: 715px;
+// }
+
+// .side-border-teacher{
+//     margin-top: 40px;
+//     overflow-y: scroll;
+//     max-height: 500px;
+// }
+// .item:last-child {
+//     border: 1px solid #ccc !important;
+//     border-radius: 6px;
+//     margin-bottom: 10px;
+// }
+.student-list-container{
+
+    overflow-y: scroll;
+    max-height: 30vh;
+    min-height: 30vh;
+    border: 1px solid rgba(204, 204, 204, 0.52);
+    margin-top: 15px;
+    text-align: left;
+    padding: 10px;
+    width: 240px;
+    line-height: 2rem;
+    cursor: pointer;
+    div {
+        display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    }
+
+}
+
+.coursesAddBtn{
+
+    width: 240px !important;
+    height: 40px !important;
+    margin-top: 2px  !important;
+}
+
+.search-student-container:first-child{
+    height: 4vh;
+}
+
