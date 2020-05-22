@@ -10,8 +10,9 @@ const addCourses = createAction('addCourses')
 const currentCourse = createAction('currentCourse')
 const addAssig = createAction('addAssig')
 const setCurrentCourse = createAction('setCurrentCourse')
+const students = createAction('students')
 
-const actions = {addCourses,currentCourse,addAssig,setCurrentCourse};
+const actions = {addCourses,currentCourse,addAssig,setCurrentCourse,students};
 
 
 const initialState = {
@@ -19,8 +20,8 @@ const initialState = {
     courses: [],
     currentCourseName: '',
     currentCourseData: [],
-    currentID: ''
-
+    currentID: '',
+    Students: ''
 
 }
 
@@ -47,10 +48,17 @@ const reducer = createReducer(initialState, {
     },
     [setCurrentCourse]: (state, action) => {
 
-       
+
         return { ...state, currentCourseName:action.payload }
 
+    },
+    [students]: (state, action) => {
+
+
+        return { ...state, Students:action.payload }
+
     }
+
 })
 
 export { actions, reducer };

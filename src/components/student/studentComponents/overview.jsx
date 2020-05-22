@@ -39,7 +39,7 @@ export default function Overview() {
             as='a'
             name='Current'
             active={tab === 'Current'}
-            onClick={() => handleClick('Current','JavaScript1')}
+            onClick={() => handleClick('Current','Current')}
             > Current
               <Label color='yellow' floating circular>
                 1
@@ -49,7 +49,7 @@ export default function Overview() {
             as='a'
             name='Completed'
             active={tab === 'Completed'}
-            onClick={() => handleClick('Completed','JavaScript2')}
+            onClick={() => handleClick('Completed','Completed')}
           > Completed
               <Label color='teal' floating circular>
               3
@@ -79,15 +79,7 @@ export default function Overview() {
         </Menu>
         <div className="side-border">
         <Courses sendData={data}/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
-              <Courses/>
+
         </div>
 
         </div>

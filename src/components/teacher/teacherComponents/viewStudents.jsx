@@ -1,48 +1,34 @@
 import React from "react";
-import {  Grid } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 import Students from "./list/students";
-import Student from "../teacherAssets/student2.jpg";
-
+import Student from "../../teacher/teacherAssets/graduated.png";
+import { useSelector } from "react-redux";
 
 export default function ViewStudents() {
+  const currentStudent = useSelector((state) => state.courses.Students);
   return (
     <div className="student-overview-container">
       <div className="search-students">
         <h2>View Students</h2>
-        <hr/>
+        <hr />
         <div className="focused-wrapper">
           <Grid>
             <Grid.Column width={4}>
-            <span>Name: Alex Colik</span>
-              <br/>
+              <img className="student-photo" src={Student} alt="Studentimage" />
+            </Grid.Column>
+
+            <Grid.Column verticalAlign="middle" textAlign="left" width={6}>
+              <h3>Name: {currentStudent}</h3>
+              <br />
               <span>Phone: 123 123 12 12</span>
-              <br/>
+              <br />
               <span>E-mail: example@gmail.com</span>
             </Grid.Column>
-
-            <Grid.Column verticalAlign='middle' textAlign="left" width={4}>
-
-              <img
-                className="student-photo"
-                src={Student}
-                alt="Studentimage"
-              />
-            </Grid.Column>
           </Grid>
+          <div className="side-border-teacher">
+            <Students />
+          </div>
         </div>
-      </div>
-
-      <div className="side-border-teacher">
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
-        <Students />
       </div>
     </div>
   );
