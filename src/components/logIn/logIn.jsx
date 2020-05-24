@@ -11,6 +11,7 @@ const LogIn = ({setUsername, username}) => {
     const [pw, setPw] = useState("");
     const [modalState, setModalState] = useState(false);
     const [showError, setShowError] = useState(false);
+    const [showErrorAll, setShowErrorAll] = useState(false);
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
 
     const handleChangePw = event => {
@@ -30,27 +31,38 @@ const LogIn = ({setUsername, username}) => {
       <span className="ErrorMsg"> No whitespaces allowed! </span>
     )
 
+    const ErrorMessageAll = () => (
+      <span className="ErrorMsg"> You must fill the required fields! </span>
+    )
+
     const handleLoginBtn = () => {
-        if(regTeacher === "asd123" && !username.includes(" ") && pw )
+        if(regTeacher === "asd123" && !username.includes(" ") && pw && username )
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw && !username.includes(" "))
+        else if (pw && username &&!username.includes(" "))
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
           ErrorMessage()
         }
+        else if(!username && !pw)
+          setShowErrorAll(true)
+          ErrorMessageAll()
     }
 
     const registerBtn = () => {
-      if(regTeacher === "asd123" && !username.includes(" ") && pw )
+      if(regTeacher === "asd123" && !username.includes(" ") && pw && username)
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw && !username.includes(" "))
+        else if (pw && username && !username.includes(" "))
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
           ErrorMessage()
         }
-    }
+        else if(!username && !pw){
+          setShowErrorAll(true)
+          ErrorMessageAll()
+        }
+   }
 
 return (
   <Segment placeholder className="loginForm">
@@ -78,9 +90,11 @@ return (
             label='Teacher-key'
             onChange={handleChangeRegTeacher}
           />
-
-        <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
         
+        <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
+
+        {showErrorAll ? <ErrorMessageAll /> : null}
+
         <Divider horizontal>Or</Divider>
 
         <Modal
@@ -99,15 +113,17 @@ return (
               </div>
            </Modal.Content>
             <Modal.Actions className="asd">
-                <Button color='green'   inverted  onClick={registerBtn} disabled={!username || !pw} >
+                <Button color='green'   inverted  onClick={registerBtn}  >
                     <Icon name='sign in' /> Sign up and Log in!
                 </Button>
             </Modal.Actions>
+            <div className="ErrorMsg-All"> {showErrorAll ? <ErrorMessageAll /> : null} </div>
         </Modal>
         </Form>
   </Segment>
 
-)}
+)
+}
 
 
 export default LogIn;
