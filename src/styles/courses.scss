@@ -29,6 +29,20 @@
 
 
 }
+
+.delButtonCourse{
+    border: solid 1px red;
+    border-radius: 5px;
+    background: transparent;
+    color: red;
+}
+
+.delButtonCourse:hover{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
 @media only screen and (max-width: 767px) {
 
 
