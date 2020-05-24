@@ -12,7 +12,6 @@ function App() {
 
   const dispatch = useDispatch();
   const [username, setUsername] = useState("") // leave it for now till actual solution
-  const [studentList,setStudentList] =useState([])
   
   const sideBarToggle = useSelector(state=> state.menu.toggle)
   const category = useSelector(state=> state.menu.loggedIn)
@@ -28,7 +27,7 @@ function App() {
       <main>
         {showLogIn ? (
 
-          <LogIn username={username} studentList={studentList} setStudentList={setStudentList} setUsername={setUsername} />
+          <LogIn username={username} setUsername={setUsername} />
 
         ) : null}
         <Sidebar.Pushable as={Segment}>
@@ -79,7 +78,7 @@ function App() {
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </main>
-      <footer>Hejdå</footer>
+      {/* <footer>Hejdå</footer> */}
     </div>
   );
 }
