@@ -75,7 +75,7 @@ return (
           <Form.Input
             icon='lock'
             iconPosition='left'
-            label='Teacher-key (optional)'
+            label='Teacher-key'
             onChange={handleChangeRegTeacher}
           />
 
