@@ -31,8 +31,8 @@ export default function SearchCourses() {
             (e) =>
               e.courseName.toLowerCase().match(input.toLowerCase())
           ).map((e) => {
-            return <div key={e._id} onClick={()=>chooseCourse(e)}>
-               {e.courseName} <button onClick={()=> del(e._id,setchange,dispatch,testArr)}>Delete</button>
+            return <div className="courseDiv" key={e._id} onClick={()=>chooseCourse(e)}>
+               {e.courseName} <button className="delButtonCourse" onClick={()=> del(e._id,setchange,dispatch,testArr)}>Delete</button>
                 </div>
         });
 
