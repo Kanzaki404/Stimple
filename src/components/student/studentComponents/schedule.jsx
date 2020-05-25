@@ -24,7 +24,7 @@ export default function schedule() {
     </div>
     <div class="content">
       <div>
-        <div class="accent-orange-gradient"></div>
+        <div class="accent-orange-gradient">JavaScript 1</div>
       </div>
       <div></div>
       <div></div>
