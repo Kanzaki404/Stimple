@@ -12,7 +12,7 @@ export default function SearchCourses() {
         const [input, setInput] = useState('')
         const [modalInput, setModalInput] = useState('')
         const [modalState, setModalState] = useState(false)
-        const [dropdown, setDropdown] = useState(false);
+        const [dropdown, setDropdown] = useState(true);
         //const [testArr, setTestArr] = useState([])
         const [change, setchange] = useState(false)
         const dispatch = useDispatch()
@@ -104,15 +104,15 @@ const dropDownJSX = (
         <div className='search-student-container'>
 
 
-            <div class="dropdown">  
+            <div class="dropdown">
               <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
                 Courses
               </button>
               {dropdown ? dropDownJSX : null}
             </div>
-            
-              
-              
+
+
+
         </div>
 
     )
