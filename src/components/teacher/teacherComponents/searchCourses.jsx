@@ -12,7 +12,7 @@ export default function SearchCourses() {
         const [input, setInput] = useState('')
         const [modalInput, setModalInput] = useState('')
         const [modalState, setModalState] = useState(false)
-        const [dropdown, setDropdown] = useState(true);
+        const [dropdown, setDropdown] = useState(false);
         //const [testArr, setTestArr] = useState([])
         const [change, setchange] = useState(false)
         const dispatch = useDispatch()

@@ -61,3 +61,17 @@
         margin-top: 8px !important;
     }
 }
+
+.student-list-dissapear{
+    display: block;
+}
+
+@media(min-width: 904px) {
+
+    .student-list-dissapear {
+
+        display: none !important;
+
+    }
+}
+

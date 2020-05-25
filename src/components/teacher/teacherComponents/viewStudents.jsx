@@ -4,12 +4,16 @@ import Students from "./list/students";
 import Student from "../../teacher/teacherAssets/graduated.png";
 import { useSelector } from "react-redux";
 
-export default function ViewStudents() {
+export default function ViewStudents({copyComp2}) {
   const currentStudent = useSelector((state) => state.courses.Students);
   return (
     <div className="student-overview-container">
+
       <div className="search-students">
         <h2>View Students</h2>
+      <div className="student-list-dissapear">
+      {copyComp2}
+      </div>
         <hr />
         <div className="focused-wrapper">
           <Grid>

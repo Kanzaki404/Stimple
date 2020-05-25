@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Icon, Modal, Input } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { Button, Icon, Modal, Input, Dropdown } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { actions } from "../../../../features/reduxData";
@@ -11,16 +11,28 @@ export default function Courses() {
     (state) => state.courses.currentCourseData
   );
   const getID = useSelector((state) => state.courses.currentID);
+  const currentCourseName =  useSelector((state) => state.courses.currentCourseName);
+  const currentCourseAssignments =  useSelector((state) => state.courses.currentCourseData);
   const testArr = useSelector((state) => state.courses.courses);
-
-  //    useEffect(() => {
-  //        console.log('courses re-rendered')
-
-  //    }, [])
+  const [change, setChange] = useState(false)
   const [modalState, setModalState] = useState(false);
   const [input, setInput] = useState("");
   const [desInput, setDesInput] = useState("");
   const [date, setDate] = useState("");
+
+
+
+     useEffect(() => {
+      setChange(false)
+         console.log('courses re-rendered')
+        // getList(dispatch, currentCourseName)
+
+     }, [change])
+
+
+
+
+  
 
   function handler(e) {
     setDate(e);
@@ -88,15 +100,18 @@ export default function Courses() {
     </Modal>
   );
 
-  console.log(currentCourseData);
+
+  const options = [
+    { key: 'delete', icon: 'delete', text: 'Remove Assignment', value: 'delete' }
+
+  ]
+ 
 
   let assignSplice = [...currentCourseData];
   assignSplice.splice(0, 1);
 
-  const assignments = assignSplice.map((e,index) => (
-
+  const assignments = assignSplice.map((e, index) => (
     <div className="courses-cards" key={e.assigName}>
-
       <div className="upper-items">
         <h2>{e.assigName}</h2>
       </div>
@@ -104,29 +119,35 @@ export default function Courses() {
         <p>Deadline {e.deadline}</p>
         <div className="button-group">
 
-          {modalEdit }
 
-          <Modal trigger={<Button  className="infoBtn"><Icon name="info" />Detail</Button>} 
+
+
+          <Modal
+            trigger={
+              <Button className="infoBtn">
+                <Icon name="info" />
+                Detail
+              </Button>
+            }
             centered={false}
             closeIcon
-            >
-              
-              <Modal.Header>Assignment # Details:</Modal.Header>
-                <Modal.Content>
-                  <p className="assign-detail">
-                      {assignSplice[index].description}
-                  </p>
-                  <p className="links">
-                    {" "}
-                    Links:
-                    <div>
-                      <a href="http://" target="_blank" rel="noopener noreferrer">
-                        PDF Link
-                      </a>
-                    </div>
-                  </p>
-                </Modal.Content>
+          >
+            <Modal.Header>{e.assigName} Details:</Modal.Header>
+            <Modal.Content>
+              <p className="assign-detail">{assignSplice[index].description}</p>
+              <p className="links">
+                {" "}
+                Links:
+                <div>
+                  <a href="http://" target="_blank" rel="noopener noreferrer">
+                    PDF Link
+                  </a>
+                </div>
+              </p>
+            </Modal.Content>
           </Modal>
+          {modalEdit}
+          <Button color="red" onClick={()=>del(getID,currentCourseName,currentCourseAssignments,e,dispatch,setChange)}>Delete</Button>
         </div>
       </div>
     </div>
@@ -135,45 +156,44 @@ export default function Courses() {
   return <div>{assignments}</div>;
 }
 
-// let arr = [];
-// function addAssig(setModalState,currentCourseData,input,desInput,date,getID,dispatch,APIurl){
 
-//     setModalState(false)
-//     arr = [...currentCourseData]
-//     console.log('idMaybe',arr)
-//     arr.push({assigName:input,description:desInput, deadline:date})
-//     console.log('idMaybe1',arr)
+function del(id,courseName,assignments,toBeRemovedElement,dispatch,setChange){
+  // -> get id of course(get Course)                Done! 
+  // -> get current course name                     Done! 
+  // -> get list asssignment of specific course     Done!
+  // -> get element to be removed                   Done!
+  // -> remove element from assignment list         Done!
+  // -> update api                                  Done!
+  // -> update Redux                                Done!
+  let tempAssig = [...assignments];
+  tempAssig = tempAssig.filter(el => el.assigName !== toBeRemovedElement.assigName);
+  
 
-//    console.log('scscscscscsc',getID)
-//         axios.put(APIurl+getID, {courseName:currentCourseData, assignments:arr})
-//     .then(res => {
-//         console.log(res)
+  axios.put("https://jsonbox.io/RP_DD_Coders_Student_Portal1/" + id, {courseName:courseName, assignments:tempAssig})
+  .then(response => {
+    console.log(response)
+    setChange(true)
+    //getList(dispatch,courseName)
+    dispatch(actions.addAssig(tempAssig))
+  })
+  .catch(e => console.log(e))
 
-//         // dispatch(actions.currentCourse(allData()))
-//         // setchange(true)
-//         // arr.forEach(e =>{
-//         dispatch(actions.addAssig(arr))
-//         //getList(APIurl,dispatch)
+}
 
-//         // })
+// let temp = [];
+// function getList(dispatch, currentCourse) {
 
+//   axios
+//     .get("https://jsonbox.io/RP_DD_Coders_Student_Portal1/")
+//     .then((res) => {
+//       console.log(res);
+//       temp.push(...res.data);
+      
+//       if (res.data.length !== 0) {
+//         dispatch(actions.addCourses([...temp]));
+//         dispatch(actions.setCurrentCourse(currentCourse));
+//       }
+//       temp = [];
 //     })
-//     .catch(err => console.log('ERROR --->',err))
-
-// }
-
-// function del(id,setchange,currentCourseData,dispatch){
-
-//     axios.delete("https://jsonbox.io/RP_DD_Coders_Student_Portal1/" + id)
-//   .then(response => {
-//     console.log(response)
-//     setchange(false)
-//     console.log(currentCourseData)
-//     // let temp = currentCourseData;
-//     //     temp.pop()
-
-//     //     dispatch(actions.addCourses(temp))
-//   })
-//   .catch(e => console.log(e))
-
+//     .catch((err) => console.log("ERROR1 --->", err));
 // }
