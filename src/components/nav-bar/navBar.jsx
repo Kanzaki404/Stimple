@@ -6,19 +6,19 @@ import {useDispatch} from "react-redux"
 import {actions} from '../../features/menu'
 export default function NavBar({username}) {
     const [modalState, setModalState] = useState(false)
-    
+
     const logOutButton = <Button onClick={()=>setModalState(true)} className='logout-btn'><img src={Logout} alt="logout"/></Button>
-    
+
 
     function choice(){
-        
+
         setModalState(false)
         window.location.reload();
     }
     const dispatch = useDispatch();
     return (
         <div className='navbar'>
-        
+
             <div className='nav-wrapper'>
             <img onClick={()=>dispatch(actions.sideNavToggler(true))} className='menu-btn rotate' src={Hamburger} alt="menu"/>
             <h1>Stimple</h1>
@@ -27,9 +27,9 @@ export default function NavBar({username}) {
             </div>
             <div className='logged-in'>
             <p>Logged in as: {username}</p>
-            <Modal 
-            trigger={logOutButton} 
-            basic size='small' 
+            <Modal
+            trigger={logOutButton}
+            basic size='small'
             open={modalState}
             onClose={()=>setModalState(false)}>
                 <Header icon='log out' content='You will be logged out, are you sure?' />
@@ -49,8 +49,8 @@ export default function NavBar({username}) {
                 </Modal.Actions>
             </Modal>
             </div>
-        
-        
+
+
             </div>
     )
 }

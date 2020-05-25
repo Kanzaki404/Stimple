@@ -4,7 +4,7 @@ import { Input, Button, Icon, Modal } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../features/reduxData";
 import axios from "axios";
-export default function ViewCourses() {
+export default function ViewCourses({copyComp}) {
   const dispatch = useDispatch();
   const APIurl = "https://jsonbox.io/RP_DD_Coders_Student_Portal1/";
   const [date, setDate] = useState("2020-05-18");
@@ -38,6 +38,7 @@ export default function ViewCourses() {
       centered={false}
       open={modalState}
       onClose={() => setModalState(false)}
+     
     >
       <Modal.Header>New Assignment:</Modal.Header>
       <Modal.Content>
@@ -132,28 +133,7 @@ export default function ViewCourses() {
       })
       .catch((err) => console.log("ERROR1 --->", err));
   }
-  const [dropdown, setDropdown] = useState(false);
-  const dropDownJSX = (
-    <div id="myDropdown" className="dropdown-content">
-      <input
-        type="text"
-        placeholder="Search.."
-        id="myInput"
-        onkeyup="filterFunction()"
-      />
-      <div className="drop-down-content">
-
-            <a href="#about">About</a>
-            <a href="#base">Base</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#custom">Custom</a>
-            <a href="#support">Support</a>
-            <a href="#tools">Tools</a>
-    </div>
-    <button className="dropdown-addCourse-button">Add New Course</button>
-    </div>
-  );
+  
   return (
     <div className="view-courses">
       <div className="course-info">
@@ -163,17 +143,14 @@ export default function ViewCourses() {
             {modalAddNew}
           </div>
           <div className="course-infor-up-right">
-            <div class="dropdown">
-              <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
-                Courses
-              </button>
-              {dropdown ? dropDownJSX : null}
-            </div>
+            {copyComp}
           </div>
         </div>
 
       </div>
+      
       <div className="course-list-container">
+      
         <Courses />
       </div>
     </div>

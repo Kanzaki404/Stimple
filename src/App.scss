@@ -6,6 +6,7 @@
 @import './styles/searchStudent.scss';
 @import './styles/viewStudent';
 @import './styles/viewCourses';
+@import './styles/schedule';
 
 main > div{
   margin: 0 !important;
@@ -90,6 +91,9 @@ footer{
   background-color: #282c34;
     min-height: 5vh;
     color: white;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
 }
 
 

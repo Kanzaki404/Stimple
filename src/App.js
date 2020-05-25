@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavBar from "./components/nav-bar/navBar";
+import NavBarLogin from "./components/nav-bar/navBarLogin";
 import "./App.scss";
 import "semantic-ui-css/semantic.min.css";
 import Student from "./components/student/studentMain";
@@ -12,16 +13,16 @@ function App() {
 
   const dispatch = useDispatch();
   const [username, setUsername] = useState("") // leave it for now till actual solution
-  
+
   const sideBarToggle = useSelector(state=> state.menu.toggle)
   const category = useSelector(state=> state.menu.loggedIn)
   const showLogIn = useSelector(state=> state.menu.showLogInScreen)
-  
+
 
   return (
     <div className="App">
       <header className="App-header">
-        {showLogIn ? null : <NavBar username={username} />}
+        {showLogIn ? <NavBarLogin/> : <NavBar username={username} />}
       </header>
 
       <main>
@@ -58,11 +59,15 @@ function App() {
               </div>
             ) : (
               <div>
-                <Menu.Item as="a">
+                <Menu.Item as="a"
+                onClick={()=>dispatch(actions.changeMenu('schedule'))}
+                >
                 <Icon name="home" />
                   Home
                 </Menu.Item>
-                <Menu.Item as="a">
+                <Menu.Item
+                onClick={()=>dispatch(actions.changeMenu('homeStudent'))}
+                 as="a">
                 <Icon name="calendar alternate outline" />
                   Schedule
                 </Menu.Item>
@@ -78,7 +83,7 @@ function App() {
           </Sidebar.Pusher>
         </Sidebar.Pushable>
       </main>
-      {/* <footer>Hejdå</footer> */}
+      <footer>Copyrights &copy;2020</footer>
     </div>
   );
 }

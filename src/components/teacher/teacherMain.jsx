@@ -6,7 +6,7 @@ import ViewCourses from "./teacherComponents/viewCourses";
 import SearchCourses from "./teacherComponents/searchCourses";
 import {useSelector} from "react-redux"
 export default function TeacherMain({username}) {
-    
+    const seachCourseCompoenent = <SearchCourses />
     const teachMenu = useSelector(state=> state.menu.status)
 
     return (
@@ -16,10 +16,10 @@ export default function TeacherMain({username}) {
                     <TeacherProfile username={username} />
                 </div>
                 <div className="progress-comp">
-                    {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses />}                    
+                    {teachMenu === 'students' ? <SearchStudent /> : <SearchCourses/> }
                 </div>
                 <div className="student-overview">
-                {teachMenu === 'students' ? <ViewStudents /> : <ViewCourses />}
+                {teachMenu === 'students' ? <ViewStudents /> : <ViewCourses copyComp={seachCourseCompoenent} />}
 
                 </div>
             </div>

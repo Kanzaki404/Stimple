@@ -37,15 +37,20 @@
     div {
         display: flex;
     justify-content: space-between;
-    margin-top: 5px;
+
     cursor: pointer;
     }
-    div:hover{
-        
-    }
+    // div:hover{
+
+    // }
 
 }
-
+.courseDiv{
+    margin-bottom: 5px;
+}
+.courseDiv:hover{
+    background-color: #ccc;
+}
 .coursesAddBtn{
 
     width: 240px !important;
