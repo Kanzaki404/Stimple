@@ -91,7 +91,7 @@ export default function Courses() {
 
   const options = [
     { key: 'delete', icon: 'delete', text: 'Remove Assignment', value: 'delete' }
-    
+
   ]
   console.log(currentCourseData);
 
@@ -106,10 +106,10 @@ export default function Courses() {
       <div className="lower-items">
         <p>Deadline {e.deadline}</p>
         <div className="button-group">
-          
-         
-          
-            
+
+
+
+
           <Modal
             trigger={
               <Button className="infoBtn">
