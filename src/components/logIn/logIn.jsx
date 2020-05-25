@@ -36,7 +36,7 @@ const LogIn = ({setUsername, username}) => {
     )
 
     const handleLoginBtn = () => {
-        if(regTeacher === "asd123" && !username.includes(" ") && pw && username )
+        if(regTeacher === "a" && !username.includes(" ") && pw && username )
           dispatch(actions.LoggedIn('Teacher'))
         else if (pw && username &&!username.includes(" "))
           dispatch(actions.LoggedIn('Student'))
@@ -50,7 +50,7 @@ const LogIn = ({setUsername, username}) => {
     }
 
     const registerBtn = () => {
-      if(regTeacher === "asd123" && !username.includes(" ") && pw && username)
+      if(regTeacher === "a" && !username.includes(" ") && pw && username)
           dispatch(actions.LoggedIn('Teacher'))
         else if (pw && username && !username.includes(" "))
           dispatch(actions.LoggedIn('Student'))
@@ -90,7 +90,7 @@ return (
             label='Teacher-key'
             onChange={handleChangeRegTeacher}
           />
-        
+
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
 
         {showErrorAll ? <ErrorMessageAll /> : null}

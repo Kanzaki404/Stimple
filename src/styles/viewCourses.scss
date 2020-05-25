@@ -119,9 +119,17 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 }
 
-// .course-infor-up-left{
-//     float: left;
-// }
+@media(max-width: 906px){
+    .course-infor-up-left{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.course-infor-up-left{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 .course-infor-up-right{
@@ -129,7 +137,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 .dropbtn {
-    background-color: #4CAF50;
+    background-color: #3a3a3a;;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -140,7 +148,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
   }
 
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
+    background-color: #2185d0;
   }
 
   #myInput {
@@ -228,7 +236,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 .course-info-up {
-    display: flex;
+    // display: flex;
 }
 
 

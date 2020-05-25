@@ -156,7 +156,6 @@ hr {
 .course-comp {
   border: 1px solid #ccc;
   border-radius: 10px;
-  min-height: 20vh;
   padding: 1rem;
   margin: 15px;
   box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
@@ -228,8 +227,11 @@ hr {
 }
 
 @media (max-width: 578px) {
-  .item:last-child {
-    display: none !important;
+  .right{
+    .item:last-child {
+      display: none !important;
+    }
+
   }
 }
 

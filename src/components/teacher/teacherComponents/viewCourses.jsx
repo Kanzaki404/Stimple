@@ -140,10 +140,10 @@ export default function ViewCourses({copyComp}) {
         <div className="course-info-up">
           <div className="course-infor-up-left">
             <h1>{currentCourse}</h1>
-            {modalAddNew}
-          </div>
           <div className="course-infor-up-right">
             {copyComp}
+          </div>
+            {modalAddNew}
           </div>
         </div>
 
