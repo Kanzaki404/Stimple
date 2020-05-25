@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+.ui.basic.modal{
+    text-align: center;
+}
+
+
 .nav-login{
     text-align: center;
     font-family: 'Poiret One', cursive !important;
@@ -24,9 +30,9 @@
 //     -webkit-transform:rotate(90deg);
 //     transform:rotate(90deg);
 // }
-.navbar-login{
+// .navbar-login{
     
-}
+// }
 
 .navbar{
     display: flex;
