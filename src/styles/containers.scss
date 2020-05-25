@@ -24,6 +24,13 @@ hr {
   text-align: left;
 }
 
+.focused-wrapper {
+
+  text-align: center;
+}
+
+
+
 .ui.grid {
   justify-content: center;
 }
@@ -39,6 +46,7 @@ hr {
 }
 .student-overview-container {
   width: 55vw;
+  margin-top: 8vh;
   .active {
     background: none #282c34c4 !important;
     color: rgba(255, 255, 255, 0.95) !important;
@@ -167,7 +175,7 @@ hr {
 .side-border {
   padding-top: 10px;
   overflow-y: scroll;
-  max-height: 45vh;
+  max-height: 65vh;
 }
 
 .side-border-teacher {
@@ -243,7 +251,18 @@ hr {
   .side-border {
     max-height: 60vh;
   }
+
+
 }
+
+@media(max-width: 430px) {
+
+  .student-photo {
+    display: none !important;
+  }
+}
+
+
 
 @media(max-width: 620px) {
 

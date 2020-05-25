@@ -12,6 +12,7 @@ export default function Courses() {
   );
   const getID = useSelector((state) => state.courses.currentID);
   const testArr = useSelector((state) => state.courses.courses);
+
   //    useEffect(() => {
   //        console.log('courses re-rendered')
 
@@ -88,49 +89,44 @@ export default function Courses() {
   );
 
   console.log(currentCourseData);
-  //del(getID,setModalState,currentCourseData,dispatch)
-  const descr = currentCourseData.map((e) => (
-    <p className="assign-detail" key={e.assigName}>
-      {e.description}
-    </p>
-  ));
-  const detailBtn = (
-    <Button className="infoBtn">
-      <Icon name="info" />
-      Detail
-    </Button>
-  );
-  const modal = (
-    <Modal trigger={detailBtn} centered={false}>
-      <Modal.Header>Assignment # Details:</Modal.Header>
-      <Modal.Content>
-        {descr}
 
-        <p className="links">
-          {" "}
-          Links:
-          <div>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              PDF Link
-            </a>
-          </div>
-        </p>
-      </Modal.Content>
-    </Modal>
-  );
   let assignSplice = [...currentCourseData];
   assignSplice.splice(0, 1);
 
-  const assignments = assignSplice.map((e) => (
+  const assignments = assignSplice.map((e,index) => (
+
     <div className="courses-cards" key={e.assigName}>
+
       <div className="upper-items">
         <h2>{e.assigName}</h2>
       </div>
       <div className="lower-items">
         <p>Deadline {e.deadline}</p>
         <div className="button-group">
-          {modalEdit}
-          {modal}
+
+          {modalEdit }
+
+          <Modal trigger={<Button  className="infoBtn"><Icon name="info" />Detail</Button>} 
+            centered={false}
+            closeIcon
+            >
+              
+              <Modal.Header>Assignment # Details:</Modal.Header>
+                <Modal.Content>
+                  <p className="assign-detail">
+                      {assignSplice[index].description}
+                  </p>
+                  <p className="links">
+                    {" "}
+                    Links:
+                    <div>
+                      <a href="http://" target="_blank" rel="noopener noreferrer">
+                        PDF Link
+                      </a>
+                    </div>
+                  </p>
+                </Modal.Content>
+          </Modal>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ export default function SearchCourses() {
         const [input, setInput] = useState('')
         const [modalInput, setModalInput] = useState('')
         const [modalState, setModalState] = useState(false)
+        const [dropdown, setDropdown] = useState(false);
         //const [testArr, setTestArr] = useState([])
         const [change, setchange] = useState(false)
         const dispatch = useDispatch()
@@ -39,6 +40,7 @@ export default function SearchCourses() {
         function chooseCourse(el){
             console.log(el.assignments)
             dispatch(actions.currentCourse(el))
+            setDropdown(false)
 
         }
 
@@ -79,20 +81,38 @@ export default function SearchCourses() {
     </Modal>
 
 
+const dropDownJSX = (
+  <div id="myDropdown" className="dropdown-content">
+    <input
+      type="text"
+      icon={{ name: 'search', link: true }}
+      placeholder='Search Courses...'
+      value={input}
+      onChange={(e) => setInput(e.target.value)}
+    />
+    <div className="drop-down-content">
+
+    <div className="student-list-container">
+                {courseNames}
+              </div>
+  </div>
+  {addCourseModal}
+  </div>
+);
 
     return (
         <div className='search-student-container'>
-            <Input
-                transparent
-                icon={{ name: 'search', link: true }}
-                placeholder='Search Courses...'
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-              />
-              <div className="student-list-container">
-                {courseNames}
-              </div>
-              {addCourseModal}
+
+
+            <div class="dropdown">  
+              <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
+                Courses
+              </button>
+              {dropdown ? dropDownJSX : null}
+            </div>
+            
+              
+              
         </div>
 
     )
