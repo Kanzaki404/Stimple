@@ -2,9 +2,13 @@
     min-height: 80vh;
     margin-right: 5rem;
     margin-top: 3rem;
+    width: 55vw !important;
 
 }
 
+.addBtn{
+    margin: 10px !important;
+}
 .course-info-up{
     display: flex;
     justify-content: space-between;
@@ -137,14 +141,17 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 .dropbtn {
-    background-color: #3a3a3a;;
-    color: white;
+    color: black;
     padding: 16px;
     font-size: 16px;
-    border: none;
-    border-radius: 3px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     cursor: pointer;
     width: 246px;
+  }
+
+  .dropdown2 {
+    margin-top: -15px;
   }
 
   .dropbtn:hover, .dropbtn:focus {
@@ -199,12 +206,19 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
 
   .course-info-up {
-    display: block;
+    display: flex;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
     margin-bottom: 10px;
-}
 
+}
+.addAssign{
+
+    button{
+
+        width: 95% !important;
+    }
+}
 
   @media(max-width: 906px){
 
@@ -214,6 +228,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 .view-courses{
     min-height: 80vh;
     margin:auto;
+    justify-content: center;
+    display: contents;
+    
 }
 
 .lower-items {
@@ -235,9 +252,9 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     width: 86vw;
 }
 
-// .course-info-up {
-//     // display: flex;
-// }
+.course-info-up {
+    display: contents;
+}
 
 
 
