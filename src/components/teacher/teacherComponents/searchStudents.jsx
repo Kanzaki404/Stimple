@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from '../../../features/reduxData'
-import { Input, Menu, Label } from 'semantic-ui-react'
+import { Input, Menu, Label, Icon } from 'semantic-ui-react'
+
 export default function SearchStudents({}) {
+ 
     const dispatch = useDispatch()
     const [dropdown, setDropdown] = useState(false);
     // const testArr = useSelector(state=>state.courses.Students)
@@ -73,11 +75,14 @@ export default function SearchStudents({}) {
 
     return (
         <div className='search-student-container'>
+                    
            <div className="dropdown">
               <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
-                Students
-              </button>
+                <h3>View Students<Icon name="angle down"/></h3>
+                
+                </button>
               {dropdown ? dropDownJSX : null}
+
             </div>
         </div>
 

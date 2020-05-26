@@ -6,6 +6,14 @@
 
 }
 
+.search-students{
+    h1{
+        border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    }
+}
+
 .left-items{
     float: left;
 }
@@ -70,7 +78,7 @@
 
     .student-list-dissapear {
 
-        display: none !important;
+        // display: none !important;
 
     }
 }

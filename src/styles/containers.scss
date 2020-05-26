@@ -4,9 +4,18 @@
     margin-bottom: 30px !important;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Quicksand', sans-serif !important;
+
+}
+
+.ui.card>.content>.header, .ui.cards>.card>.content>.header {
+  font-family: 'Quicksand', sans-serif !important;
+}
+
 hr {
-  width: 50%;
-  margin-top: 30px;
+  // width: 50%;
+  // margin-top: 30px;
 }
 .remove-border {
   border: none !important;
@@ -83,6 +92,7 @@ hr {
   }
   .content {
     border-top: none !important;
+    margin-top: 15px !important;
     // border-bottom: 1px solid #5a5c62 !important;
     .ui.card > :last-child {
       border-radius: 0 !important;
@@ -97,9 +107,9 @@ hr {
 
 .progress-comp {
   grid-area: "Stats";
-  display: inline-grid !important;
+  // display: inline-grid !important;
   justify-content: center !important;
-  margin-top: -3rem !important;
+  // margin-top: -3rem !important;
 }
 
 .student-overview {
@@ -165,8 +175,8 @@ hr {
     text-align: center !important;
   }
   .go-right{
-    text-align: right;
-    margin-right: 2rem;
+    text-align: center;
+    margin-top: 8px;
     font-size: 15px !important;
   }
 }
@@ -264,7 +274,11 @@ hr {
   }
 }
 
-
+.assignment{
+  
+    margin-top: 8px !important;
+  
+}
 
 @media(max-width: 620px) {
 

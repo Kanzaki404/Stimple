@@ -1,11 +1,12 @@
 import React, {useState}from 'react'
 import Courses from './courses'
 import { Input, Menu, Label } from 'semantic-ui-react'
-
+import {useSelector} from 'react-redux'
 export default function Overview() {
-
+    const courses = useSelector(state => state.courses.courses);
     const [tab, setTab] = useState('Current');
     const [data, setData] = useState('JavaScript1')
+    const [input, setInput] = useState('')
     // const [currentCourse, setCurrentCourses] = useState([
     //   {name:'JavaScript 2', completion: 1 },
     //   {name:'JavaScript 3', completion: 2 }
@@ -23,15 +24,8 @@ export default function Overview() {
     function handleClick(tab,data){
         setTab(tab)
         setData(data)
-        // switch(tab){
-        //   case 'Current':
-        //   return currentCourse;
-        //   case 'Completed':
-        //     return completedCourses
-        //   case 'Uncomplete':
-        //     return uncomplete
-        // }
     }
+    const listToBeSent = courses.filter((e) => e.courseName.toLowerCase().match(input.toLowerCase()))
     return (
         <div className='student-overview-container'>
            <Menu attached='top' tabular>
@@ -73,12 +67,14 @@ export default function Overview() {
                 transparent
                 icon={{ name: 'search', link: true }}
                 placeholder='Search courses..'
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
               />
             </Menu.Item>
           </Menu.Menu>
         </Menu>
         <div className="side-border">
-        <Courses sendData={data}/>
+        <Courses sendData={data} sendCourses={listToBeSent}/>
 
         </div>
 

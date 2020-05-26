@@ -18,6 +18,7 @@
     margin-top: 4px;
     width: 25px;
     height: 29px;
+   
 }
 
 // .rotate {
@@ -35,6 +36,7 @@
 // }
 
 .navbar{
+   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -61,6 +63,8 @@
 .logged-in {
     display: flex;
     margin: auto 0;
+    font-family: 'Quicksand', sans-serif !important;
+
     // margin-left: 79rem;
   p{
     margin: auto !important;
