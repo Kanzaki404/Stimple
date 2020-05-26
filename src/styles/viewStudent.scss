@@ -6,11 +6,18 @@
 
 }
 
+// .search-student-container{
+//     .dropbtn{
+//         margin-top: -20px;
+//     }
+// }
+
+
 .search-students{
     h1{
-        border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+        // border-bottom: 1px solid #ccc;
+    // padding-bottom: 10px;
+    // margin-bottom: 10px;
     }
 }
 
@@ -71,13 +78,21 @@
 }
 
 .student-list-dissapear{
-    display: block;
+    display: flex ;
+    justify-content: space-between ;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+
 }
 
-@media(min-width: 904px) {
+@media(max-width: 904px) {
 
     .student-list-dissapear {
-
+        display: block ;
+    justify-content: center;
+    h1{
+        margin-bottom: 24px !important;
+    }
         // display: none !important;
 
     }

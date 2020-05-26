@@ -9,6 +9,12 @@ h1, h2, h3, h4, h5 {
 
 }
 
+.drop-student{
+  
+    margin-top: -20px;
+  
+}
+
 .ui.card>.content>.header, .ui.cards>.card>.content>.header {
   font-family: 'Quicksand', sans-serif !important;
 }
@@ -184,13 +190,13 @@ hr {
 .side-border {
   padding-top: 10px;
   overflow-y: scroll;
-  max-height: 65vh;
+  max-height: 63vh;
 }
 
 .side-border-teacher {
   margin-top: 40px;
   overflow-y: scroll;
-  max-height: 45vh;
+  max-height: 63vh;
 }
 .item:last-child {
   border: 1px solid #ccc !important;
@@ -212,6 +218,7 @@ hr {
   .student-overview {
     grid-area: Overview;
     margin: auto;
+    margin-top: -20px;
   }
 
   .student-container {
