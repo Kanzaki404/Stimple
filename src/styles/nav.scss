@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+.ui.basic.modal{
+    text-align: center;
+}
+
+
+.nav-login{
+    text-align: center;
+    font-family: 'Poiret One', cursive !important;
+}
 .ui.dimmer {
     background-color: rgba(0, 0, 0, 0.87) !important;
 }
@@ -8,6 +18,7 @@
     margin-top: 4px;
     width: 25px;
     height: 29px;
+   
 }
 
 // .rotate {
@@ -20,7 +31,12 @@
 //     -webkit-transform:rotate(90deg);
 //     transform:rotate(90deg);
 // }
+// .navbar-login{
+    
+// }
+
 .navbar{
+   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -32,7 +48,7 @@
     }
     h1{
         margin: auto;
-        font-family: 'Poiret One', cursive;
+        font-family: 'Poiret One', cursive !important;
         font-weight: bold;
     }
 }
@@ -47,6 +63,8 @@
 .logged-in {
     display: flex;
     margin: auto 0;
+    font-family: 'Quicksand', sans-serif !important;
+
     // margin-left: 79rem;
   p{
     margin: auto !important;

@@ -3,29 +3,30 @@ import React, { useState } from 'react'
 import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
 import {useDispatch, useSelector} from "react-redux"
 import {actions} from '../../features/menu'
-// import { useForm } from "react-hook-form";
 
 
-const LogIn = ({setUsername, username, setStudentList, studentList}) => {
+const LogIn = ({setUsername, username}) => {
     const dispatch = useDispatch();
-    const [selected, setSelected] = useState("")
     const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("");
+    const [mail, setMail] = useState("");
     const [modalState, setModalState] = useState(false);
+    const [showError, setShowError] = useState(false);
+    const [showErrorAll, setShowErrorAll] = useState(false);
+    const [showErrorUsername, setShowErrorUsername] = useState(false);
+    const [showErrorPassword, setShowErrorPassword] = useState(false);
+    const [showErrorTeacher, setShowErrorTeacher] = useState(false);
+    const [showErrorMail, setShowErrorMail] = useState(false);
+    const [count, setCount] = useState(3)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-    /* const [termsNcondition, setTermsNcondition] = useState(""); */
-    // const { register, handleSubmit, errors } = useForm();
-
-    const handleChange = event => {
-      setSelected(event.target.value);
-    };
-
-    /* const handleChangeTerms = event => {
-      setTermsNcondition(event.target.value);
-    }; */
+    let myRe = new RegExp(/^.+@.+$/); //eslint-disable-line
 
     const handleChangePw = event => {
       setPw(event.target.value);
+    };
+
+    const handleChangeMail = event => {
+      setMail(event.target.value);
     };
 
     const handleChangeRegTeacher = event => {
@@ -33,60 +34,113 @@ const LogIn = ({setUsername, username, setStudentList, studentList}) => {
     };
 
     const handleChangeUsername = event => {
-      localStorage.setItem("username", event.target.value)
       setUsername(event.target.value);
     };
 
+    const ErrorMessage = () => (
+      <span className="ErrorMsg"> No whitespaces allowed! </span>
+    )
+
+    const ErrorMessageMail = () => (
+      <span className="ErrorMsg"> Must be a valid email-adress! </span>
+    )
+
+    const ErrorMessageTeacher = () => (
+      <span className="ErrorMsg"> Wrong key, try again! Tries left: {count} </span>
+    )
+
+    const ErrorMessageUsername = () => (
+      <span className="ErrorMsg"> You need to type a username! </span>
+    )
+
+    const ErrorMessagePassword = () => (
+      <span className="ErrorMsg"> Password must be longer than 3 characters! </span>
+    )
+
+    const ErrorMessageAll = () => (
+      <span className="ErrorMsg"> You must fill the required fields! </span>
+    )
+
     const handleLoginBtn = () => {
-        /* if (selected === 'Student' && username && pw){
-          dispatch(actions.LoggedIn('Student'))
-          //setStudentList([...studentList, {username: username}])
-        }else if (selected === 'Teacher' && username && pw){
+        if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username )
           dispatch(actions.LoggedIn('Teacher'))
-        } */
-        if(regTeacher === "a" && username && pw)
-          dispatch(actions.LoggedIn('Teacher'))
-        else if (pw && username)
+        else if (pw.length >= 3 && username && !username.includes(" ") && !regTeacher)
           dispatch(actions.LoggedIn('Student'))
-        
+        else if (username.includes(" ")){
+          setShowError(true)
+          ErrorMessage()
+        }
+        else if(!username && !pw){
+          setShowErrorAll(true)
+          ErrorMessageAll()
+        }
+        else if(!username){
+          setShowErrorUsername(true)
+          ErrorMessageUsername()
+        }
+        else if(pw.length <= 3){
+          setShowErrorPassword(true)
+          ErrorMessagePassword()
+        }
+        else if( regTeacher !== "a"){
+          console.log("ACTIVATED")
+          setShowErrorTeacher(true)
+          ErrorMessageTeacher()
+          setCount(count - 1);
+          if(count == 1 ){
+            window.location.reload(false);
+          }
+        }
     }
 
     const registerBtn = () => {
-      setModalState(false)
-      if (regTeacher === "asd123" && username && pw)
-      dispatch(actions.LoggedIn('Teacher'))
-      else {
-        dispatch(actions.LoggedIn('Student'))
-        //setStudentList([...studentList, {username: username}])
-      }
-    }
-
-
-
+      if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username && mail.includes("@"))
+          dispatch(actions.LoggedIn('Teacher'))
+        else if (pw.length >= 3 && username && !username.includes(" ") && mail.includes("@"))
+          dispatch(actions.LoggedIn('Student'))
+        else if (username.includes(" ")){
+          setShowError(true)
+          ErrorMessage()
+        }
+        else if(!username && !pw && !mail){
+          setShowErrorAll(true)
+          ErrorMessageAll()
+        }
+        else if(!username){
+          setShowErrorUsername(true)
+          ErrorMessageUsername()
+        }
+        else if(pw.length <= 3){
+          setShowErrorPassword(true)
+          ErrorMessagePassword()
+        }
+        else if(!mail.includes("@")){
+          setShowErrorMail(true)
+          ErrorMessageMail()
+        }
+   }
 
 return (
   <Segment placeholder className="loginForm">
         <Form>
-            {/* <div className="radioBtns">
-                <Form.Input type="radio" label='Student' value="Student" onChange={handleChange} checked={selected === 'Student'} ></Form.Input>
-                <Form.Input type="radio" label='Teacher' value="Teacher" onChange={handleChange} checked={selected === 'Teacher'} ></Form.Input>
-            </div> */}
           <Form.Input
             icon='user'
             iconPosition='left'
-            label='Username'
+            label='* Username'
             onChange={handleChangeUsername}
-            required
           />
+          {showErrorUsername ? <ErrorMessageUsername /> : null}
+          {showError ? <ErrorMessage /> : null}
+          
 
           <Form.Input
             icon='lock'
             iconPosition='left'
-            label='Password'
+            label='* Password'
             type="password"
             onChange={handleChangePw}
-            required
           />
+          {showErrorPassword ? <ErrorMessagePassword /> : null}
 
           <Form.Input
             icon='lock'
@@ -94,8 +148,12 @@ return (
             label='Teacher-key'
             onChange={handleChangeRegTeacher}
           />
+          {showErrorTeacher ? <ErrorMessageTeacher /> : null}
 
-        <Button className='login-btn' content='Login' onClick={handleLoginBtn} /* disabled={!pw || !username || !selected} */ primary  />
+        <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
+
+        {showErrorAll ? <ErrorMessageAll /> : null}
+
         <Divider horizontal>Or</Divider>
 
         <Modal
@@ -105,30 +163,28 @@ return (
             onClose={()=>setModalState(false)}>
            <Modal.Content>
              <div className="registerForm">
-                <Form.Input className="regForm" type="email" placeholder="Email... (opt)"  icon="mail" iconPosition="left"></Form.Input>
+                <Form.Input className="regForm" type="email" placeholder="Email..."  icon="mail" iconPosition="left" onChange={handleChangeMail}></Form.Input>
+                <div className="ErrorMsg"> {showErrorMail ? <ErrorMessageMail /> : null} </div>
                 <Form.Input className="regForm" type="text" placeholder="Username..." required icon="user" iconPosition="left" onChange={handleChangeUsername} ></Form.Input>
+                  <div className="ErrorMsg"> {showErrorUsername ? <ErrorMessageUsername /> : null} </div>
+                  <div className="ErrorMsg"> {showError ? <ErrorMessage /> : null} </div>
                 <Form.Input className="regForm" type="password" placeholder="Password..." required icon="lock" iconPosition="left" onChange={handleChangePw} ></Form.Input>
+                  <div className="ErrorMsg">{showErrorPassword ? <ErrorMessagePassword /> : null} </div>
                 <label className="regForm asd">To sign up as a Teacher you will need a key from your workplace!</label>
-                <Form.Input className="regForm" type="text" placeholder="Teacher key... (opt)" icon="lock" iconPosition="left" onChange={handleChangeRegTeacher}></Form.Input>
-                {/* <Form.Checkbox className="regForm" 
-                onChange={handleChangeTerms}
-                required
-                error={{
-                  content: 'You must agree to the terms and conditions',
-                  pointing: 'left',
-                }}/> */}
+                <Form.Input className="regForm" type="text" placeholder="Teacher key... (optional)" icon="lock" iconPosition="left" onChange={handleChangeRegTeacher}></Form.Input>
               </div>
            </Modal.Content>
             <Modal.Actions className="asd">
-                <Button color='green'   inverted  onClick={registerBtn} disabled={!username || !pw} >
+                <Button color='green'   inverted  onClick={registerBtn}  >
                     <Icon name='sign in' /> Sign up and Log in!
                 </Button>
             </Modal.Actions>
+            <div className="ErrorMsg-All"> {showErrorAll ? <ErrorMessageAll /> : null} </div>
         </Modal>
         </Form>
   </Segment>
-
-)}
+)
+}
 
 
 export default LogIn;

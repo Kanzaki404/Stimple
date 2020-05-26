@@ -1,0 +1,50 @@
+"filename", "language", "JSON", "Markdown", "HTML", "JavaScript", "SCSS", "CSS", "Log", "XML", "JavaScript React", "comment", "blank", "total"
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\README.md", "Markdown", 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 32, 69
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\debug.log", "Log", 0, 0, 0, 0, 0, 0, 114, 0, 0, 0, 1, 115
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\package-lock.json", "JSON", 14872, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 14873
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\package.json", "JSON", 47, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 48
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\public\index.html", "HTML", 0, 0, 20, 0, 0, 0, 0, 0, 0, 23, 1, 44
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\public\manifest.json", "JSON", 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 26
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\App.js", "JavaScript", 0, 0, 0, 82, 0, 0, 0, 0, 0, 0, 10, 92
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\App.scss", "SCSS", 0, 0, 0, 0, 82, 0, 0, 0, 0, 3, 26, 111
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\App.test.js", "JavaScript", 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\assets\button.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 1, 11
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\assets\menu.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 1, 3
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\assets\technology.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\logIn\logIn.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 108, 0, 24, 132
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\nav-bar\navBar.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 45, 2, 12, 59
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\nav-bar\navBarLogin.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 12, 21
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentComponents\courses.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 41, 1, 11, 53
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentComponents\overview.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 60, 22, 6, 88
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentComponents\schedule.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 3, 83
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentComponents\stats.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 23, 0, 4, 27
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentComponents\studentProfile.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 1, 19
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\student\studentMain.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 3, 29
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherAssets\delete.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 1, 9
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\list\course-items.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 2, 11
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\list\courses.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 118, 35, 27, 180
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\list\students.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 112, 8, 14, 134
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\searchCourses.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 133, 1, 39, 173
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\searchStudents.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 65, 4, 9, 78
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\teacherProfile.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 1, 21
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\viewCourses.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 137, 5, 17, 159
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherComponents\viewStudents.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 33, 0, 3, 36
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\components\teacher\teacherMain.jsx", "JavaScript React", 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 3, 29
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\features\menu.js", "JavaScript", 0, 0, 0, 24, 0, 0, 0, 0, 0, 5, 15, 44
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\features\reduxData.js", "JavaScript", 0, 0, 0, 35, 0, 0, 0, 0, 0, 8, 22, 65
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\features\rootReducer.js", "JavaScript", 0, 0, 0, 8, 0, 0, 0, 0, 0, 1, 3, 12
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\index.css", "CSS", 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 6, 12
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\index.js", "JavaScript", 0, 0, 0, 18, 0, 0, 0, 0, 0, 3, 4, 25
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\logo.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 7, 0, 0, 1, 8
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\serviceWorker.js", "JavaScript", 0, 0, 0, 98, 0, 0, 0, 0, 0, 31, 13, 142
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\setupTests.js", "JavaScript", 0, 0, 0, 1, 0, 0, 0, 0, 0, 4, 1, 6
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\containers.scss", "SCSS", 0, 0, 0, 0, 228, 0, 0, 0, 0, 12, 49, 289
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\courses.scss", "SCSS", 0, 0, 0, 0, 88, 0, 0, 0, 0, 1, 37, 126
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\login.scss", "SCSS", 0, 0, 0, 0, 59, 0, 0, 0, 0, 0, 12, 71
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\nav.scss", "SCSS", 0, 0, 0, 0, 70, 0, 0, 0, 0, 11, 20, 101
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\schedule.scss", "SCSS", 0, 0, 0, 0, 89, 0, 0, 0, 0, 2, 5, 96
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\searchStudent.scss", "SCSS", 0, 0, 0, 0, 34, 0, 0, 0, 0, 17, 14, 65
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\stats.scss", "SCSS", 0, 0, 0, 0, 153, 0, 0, 0, 0, 3, 36, 192
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\viewCourses.scss", "SCSS", 0, 0, 0, 0, 225, 0, 0, 0, 0, 2, 61, 288
+"c:\Users\Kanzaki\Desktop\ReactProject\stimple\src\styles\viewStudent.scss", "SCSS", 0, 0, 0, 0, 45, 0, 0, 0, 0, 7, 11, 63
+"Total", "-", 14944, 37, 20, 274, 1073, 6, 114, 31, 1063, 211, 580, 18353

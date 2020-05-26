@@ -2,9 +2,13 @@
     min-height: 80vh;
     margin-right: 5rem;
     margin-top: 3rem;
+    width: 55vw !important;
 
 }
 
+.addBtn{
+    margin: 10px !important;
+}
 .course-info-up{
     display: flex;
     justify-content: space-between;
@@ -26,7 +30,7 @@
 
 .course-list-container{
     overflow: scroll;
-    max-height: 60vh;
+    max-height: 63vh;
     overflow-x: hidden;
 }
 
@@ -115,15 +119,119 @@ input[type="date"]::-webkit-calendar-picker-indicator{
         color:white !important;
         transition: ease-in-out 0.3s;
     }
-    
+
 
 }
 
 @media(max-width: 906px){
+    .course-infor-up-left{
+        display: flex;
+        flex-direction: column;
+    }
+}
 
+.course-infor-up-left{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.course-infor-up-right{
+    display:none
+}
+
+.dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 246px;
+    
+  }
+
+  .dropdown2 {
+    margin-top: -15px;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #2185d0;
+  }
+
+  #myInput {
+    box-sizing: border-box ;
+
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #myInput:focus {outline: 3px solid #ddd;}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    input{
+        border: 1px solid #ccc;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+    }
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+  .show {display: block;}
+
+
+  .course-info-up {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+}
+.addAssign{
+
+    button{
+
+        width: 95% !important;
+    }
+}
+
+  @media(max-width: 906px){
+
+.course-infor-up-right{
+    display:block
+}
 .view-courses{
     min-height: 80vh;
     margin:auto;
+    justify-content: center;
+    display: contents;
+    
 }
 
 .lower-items {
@@ -146,11 +254,23 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 }
 
 .course-info-up {
-    display: block;
+    display: contents;
 }
 
-}
 
+
+}
+.dropdown-addCourse-button{
+    background-color: transparent;
+    border: none;
+    border-top: solid 1px #ccc;
+    width: 100%;
+    height: 40px;
+    text-align: initial;
+}
+.dropdown-addCourse-button:hover{
+    background-color: #ddd;
+}
 
 @media(max-width: 745px) {
 

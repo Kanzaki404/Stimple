@@ -6,8 +6,12 @@
 @import './styles/searchStudent.scss';
 @import './styles/viewStudent';
 @import './styles/viewCourses';
+@import './styles/schedule';
+
 main > div{
   margin: 0 !important;
+  font-family: 'Quicksand', sans-serif !important;
+
 }
 .ui.inverted.menu {
   background: #3a3a3a !important;
@@ -26,6 +30,21 @@ main > div{
 
 .App {
   text-align: center;
+  // letter-spacing: 0.5px;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  // background: url('');
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-attachment: fixed;
+  // z-index: -1;
+  // height: 100vh;
+  // overflow: auto;
+
 }
 
 .App-logo {
@@ -48,6 +67,7 @@ main > div{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
@@ -87,6 +107,9 @@ footer{
   background-color: #282c34;
     min-height: 5vh;
     color: white;
+    display: flex !important;
+    justify-content: center !important;
+    flex-direction: column !important;
 }
 
 
