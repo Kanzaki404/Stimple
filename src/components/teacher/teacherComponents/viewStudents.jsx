@@ -14,7 +14,6 @@ export default function ViewStudents({copyComp2}) {
       <div className="student-list-dissapear">
       {copyComp2}
       </div>
-        <hr />
         <div className="focused-wrapper">
           <Grid>
             <Grid.Column width={4}>
