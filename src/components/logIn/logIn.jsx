@@ -9,17 +9,24 @@ const LogIn = ({setUsername, username}) => {
     const dispatch = useDispatch();
     const [regTeacher, setRegTeacher] = useState("");
     const [pw, setPw] = useState("");
+    const [mail, setMail] = useState("");
     const [modalState, setModalState] = useState(false);
     const [showError, setShowError] = useState(false);
     const [showErrorAll, setShowErrorAll] = useState(false);
     const [showErrorUsername, setShowErrorUsername] = useState(false);
     const [showErrorPassword, setShowErrorPassword] = useState(false);
     const [showErrorTeacher, setShowErrorTeacher] = useState(false);
+    const [showErrorMail, setShowErrorMail] = useState(false);
     const [count, setCount] = useState(3)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
+    let myRe = new RegExp(/^.+@.+$/); //eslint-disable-line
 
     const handleChangePw = event => {
       setPw(event.target.value);
+    };
+
+    const handleChangeMail = event => {
+      setMail(event.target.value);
     };
 
     const handleChangeRegTeacher = event => {
@@ -32,6 +39,10 @@ const LogIn = ({setUsername, username}) => {
 
     const ErrorMessage = () => (
       <span className="ErrorMsg"> No whitespaces allowed! </span>
+    )
+
+    const ErrorMessageMail = () => (
+      <span className="ErrorMsg"> Must be a valid email-adress! </span>
     )
 
     const ErrorMessageTeacher = () => (
@@ -83,15 +94,15 @@ const LogIn = ({setUsername, username}) => {
     }
 
     const registerBtn = () => {
-      if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username)
+      if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username && mail.includes("@"))
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw.length >= 3 && username && !username.includes(" "))
+        else if (pw.length >= 3 && username && !username.includes(" ") && mail.includes("@"))
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
           ErrorMessage()
         }
-        else if(!username && !pw){
+        else if(!username && !pw && !mail){
           setShowErrorAll(true)
           ErrorMessageAll()
         }
@@ -99,9 +110,13 @@ const LogIn = ({setUsername, username}) => {
           setShowErrorUsername(true)
           ErrorMessageUsername()
         }
-        else if(pw.length <= 4){
+        else if(pw.length <= 3){
           setShowErrorPassword(true)
           ErrorMessagePassword()
+        }
+        else if(!mail.includes("@")){
+          setShowErrorMail(true)
+          ErrorMessageMail()
         }
    }
 
@@ -116,6 +131,7 @@ return (
           />
           {showErrorUsername ? <ErrorMessageUsername /> : null}
           {showError ? <ErrorMessage /> : null}
+          
 
           <Form.Input
             icon='lock'
@@ -147,7 +163,8 @@ return (
             onClose={()=>setModalState(false)}>
            <Modal.Content>
              <div className="registerForm">
-                <Form.Input className="regForm" type="email" placeholder="Email... (optional)"  icon="mail" iconPosition="left"></Form.Input>
+                <Form.Input className="regForm" type="email" placeholder="Email..."  icon="mail" iconPosition="left" onChange={handleChangeMail}></Form.Input>
+                <div className="ErrorMsg"> {showErrorMail ? <ErrorMessageMail /> : null} </div>
                 <Form.Input className="regForm" type="text" placeholder="Username..." required icon="user" iconPosition="left" onChange={handleChangeUsername} ></Form.Input>
                   <div className="ErrorMsg"> {showErrorUsername ? <ErrorMessageUsername /> : null} </div>
                   <div className="ErrorMsg"> {showError ? <ErrorMessage /> : null} </div>
