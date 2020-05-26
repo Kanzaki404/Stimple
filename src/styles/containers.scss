@@ -5,8 +5,8 @@
 }
 
 hr {
-  width: 50%;
-  margin-top: 30px;
+  // width: 50%;
+  // margin-top: 30px;
 }
 .remove-border {
   border: none !important;
@@ -165,8 +165,8 @@ hr {
     text-align: center !important;
   }
   .go-right{
-    text-align: right;
-    margin-right: 2rem;
+    text-align: center;
+    margin-top: 8px;
     font-size: 15px !important;
   }
 }
@@ -264,7 +264,11 @@ hr {
   }
 }
 
-
+.assignment{
+  
+    margin-top: 8px !important;
+  
+}
 
 @media(max-width: 620px) {
 

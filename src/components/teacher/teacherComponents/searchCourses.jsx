@@ -107,7 +107,8 @@ const dropDownJSX = (
             <div class="dropdown">
               <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
                 Courses
-              </button>
+                <Icon name="angle down"/>
+            </button>
               {dropdown ? dropDownJSX : null}
             </div>
 

@@ -7,7 +7,7 @@
         text-align: left;
         margin-bottom: 0 !important;
         margin-top: 20px !important;
-        margin-left: 20px !important;
+        // margin-left: 20px !important;
 
     }
 }
@@ -108,10 +108,14 @@
 }
 
 .prog-bar{
-    width: 60% !important;
+    width: 100% !important;
     margin-top: 10px !important;
     margin-bottom: 0 !important;
-
+    
+}
+.ui.active.progress .bar {
+    
+    transition: ease-in-out 0.3s !important;
 }
 
 .assign-detail {

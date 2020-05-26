@@ -10,7 +10,7 @@ export default function ViewStudents({copyComp2}) {
     <div className="student-overview-container">
 
       <div className="search-students">
-        <h2>View Students</h2>
+        <h1>View Students</h1>
       <div className="student-list-dissapear">
       {copyComp2}
       </div>

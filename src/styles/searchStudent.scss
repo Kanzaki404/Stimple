@@ -33,6 +33,12 @@
     padding: 10px;
     width: 240px;
     line-height: 2rem;
+    div{
+        &:hover{
+            background-color: #ccc;
+        }
+
+    }
 
 
     div {
