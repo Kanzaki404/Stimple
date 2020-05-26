@@ -13,6 +13,8 @@ const LogIn = ({setUsername, username}) => {
     const [showError, setShowError] = useState(false);
     const [showErrorAll, setShowErrorAll] = useState(false);
     const [showErrorUsername, setShowErrorUsername] = useState(false);
+    const [showErrorPassword, setShowErrorPassword] = useState(false);
+    const [showErrorTeacher, setShowErrorTeacher] = useState(false);
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
 
     const handleChangePw = event => {
@@ -24,7 +26,6 @@ const LogIn = ({setUsername, username}) => {
     };
 
     const handleChangeUsername = event => {
-      localStorage.setItem("username", event.target.value)
       setUsername(event.target.value);
     };
 
@@ -32,8 +33,16 @@ const LogIn = ({setUsername, username}) => {
       <span className="ErrorMsg"> No whitespaces allowed! </span>
     )
 
+    const ErrorMessageTeacher = () => (
+      <span className="ErrorMsg"> You trying to fix your grades? Type the right key or dont even try. </span>
+    )
+
     const ErrorMessageUsername = () => (
       <span className="ErrorMsg"> You need to type a username! </span>
+    )
+
+    const ErrorMessagePassword = () => (
+      <span className="ErrorMsg"> Password must be longer than 3 characters! </span>
     )
 
     const ErrorMessageAll = () => (
@@ -41,9 +50,9 @@ const LogIn = ({setUsername, username}) => {
     )
 
     const handleLoginBtn = () => {
-        if(regTeacher === "a" && !username.includes(" ") && pw && username )
+        if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username )
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw && username && !username.includes(" "))
+        else if (pw.length >= 3 && username && !username.includes(" ") && regTeacher === "a" || !regTeacher )
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
@@ -56,13 +65,23 @@ const LogIn = ({setUsername, username}) => {
         else if(!username){
           setShowErrorUsername(true)
           ErrorMessageUsername()
+        }
+        else if(pw.length <= 3){
+          setShowErrorPassword(true)
+          ErrorMessagePassword()
+        }
+        else if( regTeacher !== "a"){
+          console.log("ACTIVATED")
+          setShowErrorTeacher(true)
+          ErrorMessageTeacher()
+          
         }
     }
 
     const registerBtn = () => {
-      if(regTeacher === "a" && !username.includes(" ") && pw && username)
+      if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username)
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw && username && !username.includes(" "))
+        else if (pw.length >= 3 && username && !username.includes(" "))
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
@@ -75,6 +94,10 @@ const LogIn = ({setUsername, username}) => {
         else if(!username){
           setShowErrorUsername(true)
           ErrorMessageUsername()
+        }
+        else if(pw.length <= 4){
+          setShowErrorPassword(true)
+          ErrorMessagePassword()
         }
    }
 
@@ -97,6 +120,7 @@ return (
             type="password"
             onChange={handleChangePw}
           />
+          {showErrorPassword ? <ErrorMessagePassword /> : null}
 
           <Form.Input
             icon='lock'
@@ -104,6 +128,7 @@ return (
             label='Teacher-key'
             onChange={handleChangeRegTeacher}
           />
+          {showErrorTeacher ? <ErrorMessageTeacher /> : null}
 
         <Button className='login-btn' content='Login' onClick={handleLoginBtn} primary  />
 
@@ -120,9 +145,10 @@ return (
              <div className="registerForm">
                 <Form.Input className="regForm" type="email" placeholder="Email... (optional)"  icon="mail" iconPosition="left"></Form.Input>
                 <Form.Input className="regForm" type="text" placeholder="Username..." required icon="user" iconPosition="left" onChange={handleChangeUsername} ></Form.Input>
-                <div className="ErrorMsg"> {showErrorUsername ? <ErrorMessageUsername /> : null} </div>
-                <div className="ErrorMsg"> {showError ? <ErrorMessage /> : null} </div>
+                  <div className="ErrorMsg"> {showErrorUsername ? <ErrorMessageUsername /> : null} </div>
+                  <div className="ErrorMsg"> {showError ? <ErrorMessage /> : null} </div>
                 <Form.Input className="regForm" type="password" placeholder="Password..." required icon="lock" iconPosition="left" onChange={handleChangePw} ></Form.Input>
+                  <div className="ErrorMsg">{showErrorPassword ? <ErrorMessagePassword /> : null} </div>
                 <label className="regForm asd">To sign up as a Teacher you will need a key from your workplace!</label>
                 <Form.Input className="regForm" type="text" placeholder="Teacher key... (optional)" icon="lock" iconPosition="left" onChange={handleChangeRegTeacher}></Form.Input>
               </div>
