@@ -15,6 +15,7 @@ const LogIn = ({setUsername, username}) => {
     const [showErrorUsername, setShowErrorUsername] = useState(false);
     const [showErrorPassword, setShowErrorPassword] = useState(false);
     const [showErrorTeacher, setShowErrorTeacher] = useState(false);
+    const [count, setCount] = useState(3)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
 
     const handleChangePw = event => {
@@ -34,7 +35,7 @@ const LogIn = ({setUsername, username}) => {
     )
 
     const ErrorMessageTeacher = () => (
-      <span className="ErrorMsg"> You trying to fix your grades? Type the right key or dont even try. </span>
+      <span className="ErrorMsg"> Wrong key, try again! Tries left: {count} </span>
     )
 
     const ErrorMessageUsername = () => (
@@ -52,7 +53,7 @@ const LogIn = ({setUsername, username}) => {
     const handleLoginBtn = () => {
         if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username )
           dispatch(actions.LoggedIn('Teacher'))
-        else if (pw.length >= 3 && username && !username.includes(" ") && regTeacher === "a" || !regTeacher )
+        else if (pw.length >= 3 && username && !username.includes(" ") && !regTeacher)
           dispatch(actions.LoggedIn('Student'))
         else if (username.includes(" ")){
           setShowError(true)
@@ -74,7 +75,10 @@ const LogIn = ({setUsername, username}) => {
           console.log("ACTIVATED")
           setShowErrorTeacher(true)
           ErrorMessageTeacher()
-          
+          setCount(count - 1);
+          if(count == 1 ){
+            window.location.reload(false);
+          }
         }
     }
 
