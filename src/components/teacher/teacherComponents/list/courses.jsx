@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Icon, Modal, Input, Dropdown } from "semantic-ui-react";
+import { Button, Icon, Modal, Input,Label } from "semantic-ui-react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { actions } from "../../../../features/reduxData";
@@ -19,7 +19,8 @@ export default function Courses() {
   const [input, setInput] = useState("");
   const [desInput, setDesInput] = useState("");
   const [date, setDate] = useState("");
-
+  const errorMessageTitle = <Label basic color='red' pointing='below' >Please enter a Title longer than 3 characters</Label>
+  const errorMessageDescription = <Label basic color='red' pointing='below' >Please enter a Descripting longer than 20 characters</Label>
 
 
      useEffect(() => {
@@ -78,7 +79,7 @@ const [selectedIndex, setSelectedIndex] = useState(0)
           </Modal>
 
           <Modal
-      trigger={<Button onClick={() => defaultValue(assignSplice[index].assigName, assignSplice[index].description,assignSplice[index].deadline,index) }>Editt</Button>}
+      trigger={<Button onClick={() => defaultValue(assignSplice[index].assigName, assignSplice[index].description,assignSplice[index].deadline,index) }>Edit</Button>}
       centered={false}
       open={modalState}
       onClose={() => setModalState(false)}
@@ -87,6 +88,7 @@ const [selectedIndex, setSelectedIndex] = useState(0)
       <Modal.Content>
         <div className="title">
           <h5>Title:</h5>
+          {input.length < 3 && input.length > 0? errorMessageTitle : null} 
           <Input
             className="input-title"
             transparent
@@ -97,7 +99,7 @@ const [selectedIndex, setSelectedIndex] = useState(0)
         </div>
         <div className="Desctiption">
           <h5>Description:</h5>
-
+          {desInput.length < 20 && desInput.length > 0? errorMessageDescription : null} 
           <textarea
             value={desInput}
             onChange={(e) => setDesInput(e.target.value)}
@@ -117,6 +119,7 @@ const [selectedIndex, setSelectedIndex] = useState(0)
         </div>
         <div className="button-group">
           <Button
+           disabled={input.length < 3 || desInput.length < 20}
             onClick={() => editAction()}
             inverted
             color="green"

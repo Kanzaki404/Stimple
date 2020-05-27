@@ -112,7 +112,7 @@ export default function Students() {
         </div>
         {e.assignments.map((el,index) => (
         <div className='sorted-assign'>
-            <p>Assignment {index+1} : <h3>{el.assigName}</h3></p>
+            <p>Assignment {index+1} :</p>  <h3>{el.assigName}</h3>
           {/* <p></p> */}
           <p>Deadline: <h4>{el.deadline}</h4></p>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Courses from "./list/courses";
-import { Input, Button, Icon, Modal } from "semantic-ui-react";
+import { Input, Button, Icon, Modal,Label } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "../../../features/reduxData";
 import axios from "axios";
@@ -24,7 +24,8 @@ export default function ViewCourses({copyComp}) {
   function handler(e) {
     setDate(e);
   }
-
+  const errorMessageTitle = <Label basic color='red' pointing='below' >Please enter a Title longer than 3 characters</Label>
+  const errorMessageDescription = <Label basic color='red' pointing='below' >Please enter a Descripting longer than 20 characters</Label>
   const addBtn = (
     <Button color="blue" onClick={() => setModalState(true)} className="addBtn">
       <Icon name="add" />
@@ -44,6 +45,7 @@ export default function ViewCourses({copyComp}) {
       <Modal.Content>
         <div className="title">
           <h5>Title:</h5>
+          {input.length < 3 && input.length > 0? errorMessageTitle : null} 
           <Input
             className="input-title"
             transparent
@@ -54,6 +56,7 @@ export default function ViewCourses({copyComp}) {
         </div>
         <div className="Desctiption">
           <h5>Description:</h5>
+          {desInput.length < 20 && desInput.length > 0? errorMessageDescription : null} 
           <textarea
             value={desInput}
             onChange={(e) => setDesInput(e.target.value)}
@@ -73,6 +76,7 @@ export default function ViewCourses({copyComp}) {
         </div>
         <div className="button-group">
           <Button
+            disabled={input.length < 3 || desInput.length < 20}
             onClick={() => addAssig()}
             inverted
             color="green"

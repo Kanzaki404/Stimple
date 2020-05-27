@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-import imagee from '../studentAssets/studentSample.jpg'
+import imagee from '../studentAssets/student-pic.png'
 export default function StudentProfile({username}) {
 
   return (

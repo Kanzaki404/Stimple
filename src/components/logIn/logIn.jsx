@@ -1,8 +1,8 @@
 
-import React, { useState } from 'react'
-import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react'
-import {useDispatch, useSelector} from "react-redux"
-import {actions} from '../../features/menu'
+import React, { useState } from 'react';
+import { Button, Divider, Form, Grid, Segment, Radio, Modal, Icon, Input } from 'semantic-ui-react';
+import {useDispatch, useSelector} from "react-redux";
+import {actions} from '../../features/menu';
 
 
 const LogIn = ({setUsername, username}) => {
@@ -19,7 +19,7 @@ const LogIn = ({setUsername, username}) => {
     const [showErrorMail, setShowErrorMail] = useState(false);
     const [count, setCount] = useState(3)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-    
+
 
     const handleChangePw = event => {
       setPw(event.target.value);
@@ -131,7 +131,7 @@ return (
           />
           {showErrorUsername ? <ErrorMessageUsername /> : null}
           {showError ? <ErrorMessage /> : null}
-          
+
 
           <Form.Input
             icon='lock'
