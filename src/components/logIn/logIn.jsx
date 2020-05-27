@@ -19,7 +19,7 @@ const LogIn = ({setUsername, username}) => {
     const [showErrorMail, setShowErrorMail] = useState(false);
     const [count, setCount] = useState(3)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-    let myRe = new RegExp(/^.+@.+$/); //eslint-disable-line
+    
 
     const handleChangePw = event => {
       setPw(event.target.value);
