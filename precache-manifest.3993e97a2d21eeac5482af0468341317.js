@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f35154a8a8a670c53d34e9ead9a5d961",
+    "revision": "576069e5d7347c42ada8e8accd52d1c4",
     "url": "/Stimple/index.html"
   },
   {
-    "revision": "1a0159a4dd0aab39ce82",
+    "revision": "ba4958ceb6795add080f",
     "url": "/Stimple/static/css/2.52601dda.chunk.css"
   },
   {
-    "revision": "0bbb9c326d1b35f7962d",
-    "url": "/Stimple/static/css/main.784b03cc.chunk.css"
+    "revision": "cc0649ab358ac07ccd33",
+    "url": "/Stimple/static/css/main.c4d90527.chunk.css"
   },
   {
-    "revision": "1a0159a4dd0aab39ce82",
-    "url": "/Stimple/static/js/2.5c78c8f8.chunk.js"
+    "revision": "ba4958ceb6795add080f",
+    "url": "/Stimple/static/js/2.10cd79e5.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/Stimple/static/js/2.5c78c8f8.chunk.js.LICENSE.txt"
+    "url": "/Stimple/static/js/2.10cd79e5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0bbb9c326d1b35f7962d",
-    "url": "/Stimple/static/js/main.8f86cca6.chunk.js"
+    "revision": "cc0649ab358ac07ccd33",
+    "url": "/Stimple/static/js/main.19363a55.chunk.js"
   },
   {
     "revision": "85263a1d65bcb99eaf45",
@@ -50,10 +50,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9c74e172f87984c48ddf5c8108cabe67",
     "url": "/Stimple/static/media/flags.9c74e172.png"
-  },
-  {
-    "revision": "bc84a30ba2ab228cc2ee30718a97d562",
-    "url": "/Stimple/static/media/graduated.bc84a30b.png"
   },
   {
     "revision": "0ab54153eeeca0ce03978cc463b257f7",
@@ -100,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Stimple/static/media/outline-icons.ef60a4f6.woff"
   },
   {
-    "revision": "508bdd726eedcaafb9759e1f4f45dca3",
-    "url": "/Stimple/static/media/studentSample.508bdd72.jpg"
+    "revision": "7381059ebf48db0fb0fdf38dc3c55bb7",
+    "url": "/Stimple/static/media/student-pic.7381059e.png"
   },
   {
     "revision": "39c95d2619e6d459c2f397e2d1f82ba0",
