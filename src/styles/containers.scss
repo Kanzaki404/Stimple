@@ -4,9 +4,24 @@
     margin-bottom: 30px !important;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: 'Quicksand', sans-serif !important;
+
+}
+
+.drop-student{
+  
+    margin-top: -20px;
+  
+}
+
+.ui.card>.content>.header, .ui.cards>.card>.content>.header {
+  font-family: 'Quicksand', sans-serif !important;
+}
+
 hr {
-  width: 50%;
-  margin-top: 30px;
+  // width: 50%;
+  // margin-top: 30px;
 }
 .remove-border {
   border: none !important;
@@ -83,6 +98,7 @@ hr {
   }
   .content {
     border-top: none !important;
+    margin-top: 15px !important;
     // border-bottom: 1px solid #5a5c62 !important;
     .ui.card > :last-child {
       border-radius: 0 !important;
@@ -97,9 +113,9 @@ hr {
 
 .progress-comp {
   grid-area: "Stats";
-  display: inline-grid !important;
+  // display: inline-grid !important;
   justify-content: center !important;
-  margin-top: -3rem !important;
+  // margin-top: -3rem !important;
 }
 
 .student-overview {
@@ -156,7 +172,6 @@ hr {
 .course-comp {
   border: 1px solid #ccc;
   border-radius: 10px;
-  min-height: 20vh;
   padding: 1rem;
   margin: 15px;
   box-shadow: 0 0 0 1px #d4d4d5, 0 2px 4px 0 rgba(34, 36, 38, 0.12),
@@ -166,8 +181,8 @@ hr {
     text-align: center !important;
   }
   .go-right{
-    text-align: right;
-    margin-right: 2rem;
+    text-align: center;
+    margin-top: 8px;
     font-size: 15px !important;
   }
 }
@@ -175,13 +190,13 @@ hr {
 .side-border {
   padding-top: 10px;
   overflow-y: scroll;
-  max-height: 65vh;
+  max-height: 63vh;
 }
 
 .side-border-teacher {
   margin-top: 40px;
   overflow-y: scroll;
-  max-height: 45vh;
+  max-height: 63vh;
 }
 .item:last-child {
   border: 1px solid #ccc !important;
@@ -203,6 +218,7 @@ hr {
   .student-overview {
     grid-area: Overview;
     margin: auto;
+    // margin-top: -20px;
   }
 
   .student-container {
@@ -228,8 +244,11 @@ hr {
 }
 
 @media (max-width: 578px) {
-  .item:last-child {
-    display: none !important;
+  .right{
+    .item:last-child {
+      display: none !important;
+    }
+
   }
 }
 
@@ -262,7 +281,11 @@ hr {
   }
 }
 
-
+.assignment{
+  
+    margin-top: 8px !important;
+  
+}
 
 @media(max-width: 620px) {
 
@@ -282,5 +305,7 @@ hr {
   }
 
 }
+
+
 
 

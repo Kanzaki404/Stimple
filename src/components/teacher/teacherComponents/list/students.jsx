@@ -56,18 +56,7 @@ export default function Students() {
   const studentList = courses.map((e) => (
     <div className="course-comp" key={e.courseName}>
       <h2>{e.courseName}</h2> <p className='go-right'>Total assignments: {e.assignments.length}</p>
-
-        {e.assignments.map((el,index) => (
-        <div className='sorted-assign'>
-            <p>Assignment {index+1} : <h3>{el.assigName}</h3></p>
-          {/* <p></p> */}
-          <p>Deadline: <h4>{el.deadline}</h4></p>
-        </div>
-      ))}
-
-
-      <div className="low-items">
-        <div className="modal-grades">
+      <div className="modal-grades">
           <Modal
             className="modal-title"
             trigger={detailButton}
@@ -77,7 +66,7 @@ export default function Students() {
             onClose={() => setModalState(false)}
           >
             <Header icon="tag" content="JavaScript 1" />
-            <hr />
+            <hr /> 
             <Modal.Content>
               <div className="item-grade">
                 <div className="grade">
@@ -121,6 +110,17 @@ export default function Students() {
             </Modal.Actions>
           </Modal>
         </div>
+        {e.assignments.map((el,index) => (
+        <div className='sorted-assign'>
+            <p>Assignment {index+1} : <h3>{el.assigName}</h3></p>
+          {/* <p></p> */}
+          <p>Deadline: <h4>{el.deadline}</h4></p>
+        </div>
+      ))}
+
+
+      <div className="low-items">
+        
 
        
         <Progress className="prog-bar" active percent={Math.floor(Math.random() * Math.floor(e.assignments.length * 35))} indicating />

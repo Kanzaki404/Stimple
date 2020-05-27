@@ -136,19 +136,21 @@ export default function ViewCourses({copyComp}) {
   
   return (
     <div className="view-courses">
-      <div className="course-info">
+     
         <div className="course-info-up">
-          <div className="course-infor-up-left">
+          
             <h1>{currentCourse}</h1>
-            {modalAddNew}
-          </div>
-          <div className="course-infor-up-right">
             {copyComp}
-          </div>
+          <div className="course-infor-up-right">
         </div>
 
-      </div>
       
+      
+          </div>
+            <div className='addAssign'> {modalAddNew}</div>
+           
+          
+          
       <div className="course-list-container">
       
         <Courses />

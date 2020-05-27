@@ -7,25 +7,25 @@
         text-align: left;
         margin-bottom: 0 !important;
         margin-top: 20px !important;
-        margin-left: 20px !important;
+        // margin-left: 20px !important;
 
     }
 }
 
 .button-group {
 
-    .deleteBtn{
-        background-color:#d9534f !important;
-        color: white !important;
-        float: right;
-        margin: 0.5px;
-    }
+    // .deleteBtn{
+    //     background-color:#d9534f !important;
+    //     color: white !important;
+    //     float: right;
+    //     margin: 0.5px;
+    // }
 
-    .deleteBtn:hover{
-        background-color:black !important;
-        color: black;
+    // .deleteBtn:hover{
+    //     background-color:black !important;
+    //     color: black;
 
-    }
+    // }
 
 
 }
@@ -108,10 +108,14 @@
 }
 
 .prog-bar{
-    width: 60% !important;
+    width: 100% !important;
     margin-top: 10px !important;
     margin-bottom: 0 !important;
-
+    
+}
+.ui.active.progress .bar {
+    
+    transition: ease-in-out 0.3s !important;
 }
 
 .assign-detail {

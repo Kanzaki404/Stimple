@@ -7,7 +7,7 @@ import Schedule from './studentComponents/schedule'
 
 export default function StudentMain({username}) {
   const studentMenu = useSelector(state=> state.menu.status)
-  const home = 
+  const home =
   <>
  <div className="profile-comp">
   <StudentProfile username={username} />
@@ -18,9 +18,9 @@ export default function StudentMain({username}) {
 <div className="student-overview">
   <Overview />
 </div>
-    
+
   </>
- 
+
   return (
     <div className="student-container">
      {studentMenu === 'homeStudent' ? <Schedule/>:home}
