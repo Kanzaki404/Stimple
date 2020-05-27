@@ -18,8 +18,9 @@ const LogIn = ({setUsername, username}) => {
     const [showErrorTeacher, setShowErrorTeacher] = useState(false);
     const [showErrorMail, setShowErrorMail] = useState(false);
     const [count, setCount] = useState(3)
+    const [disabled, setDisabled] = useState(false)
     const detailButton = <Button className='sign-up-btn' content='Sign up' icon='signup' size='big' onClick={()=> setModalState(true)}></Button>
-
+    
 
     const handleChangePw = event => {
       setPw(event.target.value);
@@ -62,7 +63,7 @@ const LogIn = ({setUsername, username}) => {
     )
 
     const handleLoginBtn = () => {
-        if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username )
+        if(regTeacher === "asd123" && !username.includes(" ") && pw.length >= 3 && username )
           dispatch(actions.LoggedIn('Teacher'))
         else if (pw.length >= 3 && username && !username.includes(" ") && !regTeacher)
           dispatch(actions.LoggedIn('Student'))
@@ -82,19 +83,20 @@ const LogIn = ({setUsername, username}) => {
           setShowErrorPassword(true)
           ErrorMessagePassword()
         }
-        else if( regTeacher !== "a"){
-          console.log("ACTIVATED")
+        else if( regTeacher !== "asd123"){
           setShowErrorTeacher(true)
           ErrorMessageTeacher()
           setCount(count - 1);
           if(count == 1 ){
-            window.location.reload(false);
+           /*  window.location.reload(false); */
+           setDisabled(!disabled)
+           setRegTeacher("")
           }
         }
     }
 
     const registerBtn = () => {
-      if(regTeacher === "a" && !username.includes(" ") && pw.length >= 3 && username && mail.includes("@"))
+      if(regTeacher === "asd123" && !username.includes(" ") && pw.length >= 3 && username && mail.includes("@"))
           dispatch(actions.LoggedIn('Teacher'))
         else if (pw.length >= 3 && username && !username.includes(" ") && mail.includes("@"))
           dispatch(actions.LoggedIn('Student'))
@@ -147,6 +149,7 @@ return (
             iconPosition='left'
             label='Teacher-key'
             onChange={handleChangeRegTeacher}
+            disabled={disabled}
           />
           {showErrorTeacher ? <ErrorMessageTeacher /> : null}
 
