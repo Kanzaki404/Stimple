@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Stimple/static/css/main.20fbdcf3.chunk.css",
+    "main.css": "/Stimple/static/css/main.784b03cc.chunk.css",
     "main.js": "/Stimple/static/js/main.8f86cca6.chunk.js",
     "main.js.map": "/Stimple/static/js/main.8f86cca6.chunk.js.map",
     "runtime-main.js": "/Stimple/static/js/runtime-main.1830222e.js",
@@ -9,10 +9,10 @@
     "static/js/2.5c78c8f8.chunk.js": "/Stimple/static/js/2.5c78c8f8.chunk.js",
     "static/js/2.5c78c8f8.chunk.js.map": "/Stimple/static/js/2.5c78c8f8.chunk.js.map",
     "index.html": "/Stimple/index.html",
-    "precache-manifest.a503241c0f0aab21b78b149e7961ff83.js": "/Stimple/precache-manifest.a503241c0f0aab21b78b149e7961ff83.js",
+    "precache-manifest.90f43da313ececda2333a1d7ffcff07c.js": "/Stimple/precache-manifest.90f43da313ececda2333a1d7ffcff07c.js",
     "service-worker.js": "/Stimple/service-worker.js",
     "static/css/2.52601dda.chunk.css.map": "/Stimple/static/css/2.52601dda.chunk.css.map",
-    "static/css/main.20fbdcf3.chunk.css.map": "/Stimple/static/css/main.20fbdcf3.chunk.css.map",
+    "static/css/main.784b03cc.chunk.css.map": "/Stimple/static/css/main.784b03cc.chunk.css.map",
     "static/js/2.5c78c8f8.chunk.js.LICENSE.txt": "/Stimple/static/js/2.5c78c8f8.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/Stimple/static/media/outline-icons.ef60a4f6.woff",
     "static/media/graduated.png": "/Stimple/static/media/graduated.bc84a30b.png",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.1830222e.js",
     "static/css/2.52601dda.chunk.css",
     "static/js/2.5c78c8f8.chunk.js",
-    "static/css/main.20fbdcf3.chunk.css",
+    "static/css/main.784b03cc.chunk.css",
     "static/js/main.8f86cca6.chunk.js"
   ]
 }
