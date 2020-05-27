@@ -5,7 +5,7 @@ $bg-color: #34495e;
 $default-size: 1em;
 $label-font-size: $default-size / 4;
 $label-font-size-redo: $default-size * 4;
-$rand: 20;
+$rand: 10;
 
 // -- mixins
 @mixin size($width, $height) {
