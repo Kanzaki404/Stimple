@@ -66,7 +66,7 @@ export default function Students() {
             onClose={() => setModalState(false)}
           >
             <Header icon="tag" content="JavaScript 1" />
-            <hr />
+            <hr /> 
             <Modal.Content>
               <div className="item-grade">
                 <div className="grade">
