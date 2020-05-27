@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {Button, Icon,Input,Modal} from 'semantic-ui-react';
+import {Button, Icon,Input,Modal,Label} from 'semantic-ui-react';
 import axios from 'axios'
 import {useDispatch,useSelector} from "react-redux"
 import {actions} from '../../../features/reduxData'
@@ -43,6 +43,7 @@ export default function SearchCourses() {
             setDropdown(false)
 
         }
+        const errorMessageTitle = <Label basic color='red' pointing='below' >Please enter a Title longer than 3 characters</Label>
 
     const addNewCourseBtn =
         <Button onClick={()=>setModalState(true)} color='blue' className="coursesAddBtn"  >
@@ -61,18 +62,26 @@ export default function SearchCourses() {
         <Modal.Content>
             <div className="title">
                 <h5>Title:</h5>
-                <Input className="input-title"
+                <div>
+
+                {modalInput.length < 3 && modalInput.length < 3? errorMessageTitle : null}
+
+                <Input
+                        className="input-title"
                         transparent
                         value={modalInput}
                         onChange={(e) => setModalInput(e.target.value)}
+
                     />
+                </div>
+
             </div>
             <div className="Desctiption">
                 <h5>Description:</h5>
                 <textarea id="subject" name="subject" placeholder="Write something.." ></textarea>
             </div>
             <div className="button-group">
-                <Button onClick={()=>modalAction(APIurl,modalInput,assigContent,setModalState,setchange,dispatch,testArr)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
+                <Button disabled={modalInput.length < 3 } onClick={()=>modalAction(APIurl,modalInput,assigContent,setModalState,setchange,dispatch,testArr)} inverted color='green' className="confirmBtn"><Icon  name="checkmark"/>Add</Button>
                 <Button onClick={()=>setModalState(false)} className="cancelBtn"><Icon name="cancel"/>Cancel</Button>
 
             </div>
@@ -104,8 +113,8 @@ const dropDownJSX = (
         <div className='search-student-container'>
 
 
-            <div class="dropdown dropdown2">
-              <button onClick={() => setDropdown(!dropdown)} class="dropbtn">
+            <div className="dropdown dropdown2">
+              <button onClick={() => setDropdown(!dropdown)} className="dropbtn">
                 Courses
                 <Icon name="angle down"/>
             </button>

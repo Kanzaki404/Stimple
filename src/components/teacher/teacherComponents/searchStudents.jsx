@@ -77,7 +77,7 @@ export default function SearchStudents({}) {
         <div className='search-student-container'>
 
            <div className="dropdown ">
-              <button onClick={() => setDropdown(!dropdown)} class="dropbtn drop-student">
+              <button onClick={() => setDropdown(!dropdown)} className="dropbtn drop-student">
                 <h3>View Students<Icon name="angle down"/></h3>
 
                 </button>
