@@ -34,7 +34,7 @@ const reducer = createReducer(initialState, {
     },
     [currentCourse]: (state, action) => {
 
-        //console.log('the arrat of assigs',state)
+        //console.log('the array of assigs',state)
         return { ...state, currentCourseName: action.payload.courseName, currentCourseData:action.payload.assignments, currentID:action.payload._id }
 
     },
